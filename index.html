@@ -130,15 +130,15 @@
             <h3>SDLC · Dev &amp; Testing</h3>
             <p>Stage B · to come</p>
           </div>
-          <div class="stream">
-            <p class="stream__num">Stream 3</p>
+          <div class="stream stream--ours">
+            <p class="stream__num">Stream 3 · Ankit</p>
             <h3>SDLC · Testing &amp; Performance</h3>
-            <p>Stage C · to come</p>
+            <p>Stage C · proposed phasing in §05</p>
           </div>
           <div class="stream stream--ours">
-            <p class="stream__num">Stream 4 · You are here</p>
+            <p class="stream__num">Stream 4 · Ankit · You are here</p>
             <h3>DevOps + Observability</h3>
-            <p>Ankit · this document</p>
+            <p>Always-on · runtime layer</p>
           </div>
           <div class="stream">
             <p class="stream__num">Stream 5</p>
@@ -146,7 +146,7 @@
             <p>Deepak</p>
           </div>
         </div>
-        <p class="section-tag">DevOps' double role: <strong>(1)</strong> a stream of its own that ships independently — repo scaffolding, CI, observability, secrets, runtime; <strong>(2)</strong> an always-on vertical that checks every phase of every stage.</p>
+        <p class="section-tag">Ankit owns <strong>two streams</strong>: <strong>Stream 3</strong> (SDLC Testing &amp; Performance — Stage C) and <strong>Stream 4</strong> (DevOps + Observability — always-on). Plus DevOps acts as one of the <strong>three always-on verticals</strong> (KM · PG · DevOps) that check every phase of every stage. Stream 2 (Dev &amp; Testing) is engineering-led; DevOps supports it as a vertical.</p>
       </section>
 
       <!-- PERSONAS + VERTICALS -->
@@ -424,49 +424,168 @@
 
       <!-- BEYOND STAGE A -->
       <section id="beyond">
-        <h2><span class="num">05</span> Beyond Stage A — Stages B, C, and Operate</h2>
-        <p>Prody's pitch covers Stage A today. Stages B and C are slated to follow. DevOps' work continues into both stages and owns the always-on Operate layer end-to-end.</p>
+        <h2><span class="num">05</span> Beyond Stage A — Streams 2, 3, 4 + the glue</h2>
+        <p>Prody's pitch covers Stage A today. Three more streams continue beyond it. <strong>Two of those streams are Ankit's: Stream 3 (Stage C) and Stream 4 (always-on Operate).</strong> Plus: the inter-stream glue — skills and tools that bridge handoffs so artefacts don't fall on the floor.</p>
 
-        <div class="beyond-grid">
-          <article class="beyond-card">
-            <p class="beyond-card__tag">Stream 2 · Stage B</p>
+        <!-- Stream 2 / Stage B — Engineering led -->
+        <div class="substream">
+          <header class="substream__head">
+            <span class="substream__num">Stream 2 · Stage B</span>
             <h3>SDLC · Dev &amp; Testing</h3>
-            <p class="beyond-card__when">After Sol Doc sign-off — when the first AI-coding prompt fires.</p>
-            <h4>DevOps' contribution</h4>
-            <ul class="bullets">
-              <li><strong>AI-aware code guardrails</strong> — secrets scan, hallucination check (imports vs declared deps), test-quality gate, <code>ai-generated</code> PR label.</li>
-              <li><strong>Self-service review environments</strong> in under 15 minutes — provisioned from §5.11 Tech Stack via Terraform.</li>
-              <li>Pre-commit baseline enforced via the repo template.</li>
-              <li>Three env tiers (review / UAT / performance) chosen per stack.</li>
-            </ul>
-          </article>
+            <span class="substream__badge">Engineering-led · DevOps supports as vertical</span>
+          </header>
+          <p class="substream__when">After Sol Doc sign-off — when the first AI-coding prompt fires. Owner TBD; DevOps does not claim this stream.</p>
+          <h4>What DevOps brings as an always-on vertical</h4>
+          <ul class="bullets">
+            <li><strong>AI-aware code guardrails</strong> — secrets scan · hallucination check (imports vs declared deps) · test-quality gate · <code>ai-generated</code> PR label</li>
+            <li><strong>Self-service review environments in &lt; 15 min</strong> — provisioned from §5.11 Tech Stack via Terraform modules</li>
+            <li>Pre-commit baseline enforced via the repo template (shipped Day 1 — see §09 Adopt)</li>
+            <li>Three env tiers — review · UAT · performance — chosen per stack</li>
+          </ul>
+        </div>
 
-          <article class="beyond-card">
-            <p class="beyond-card__tag">Stream 3 · Stage C</p>
+        <!-- Stream 3 / Stage C — Ankit-owned -->
+        <div class="substream substream--ours">
+          <header class="substream__head">
+            <span class="substream__num">Stream 3 · Stage C</span>
             <h3>SDLC · Testing &amp; Performance</h3>
-            <p class="beyond-card__when">Before Go-Live — validates the §5.12 Security commitments.</p>
-            <h4>DevOps' contribution</h4>
-            <ul class="bullets">
-              <li><strong>Kotwal</strong> — Dhwani's own scanner — runs CERT tests, penetration tests, OSS vulnerability checks as required gates.</li>
-              <li>Load testing and performance baseline tracked across releases.</li>
-              <li>Evidence packet auto-assembled for the Security sign-off.</li>
-              <li>Release-readiness portal: promote-to-prod enabled only when every required check is green.</li>
-            </ul>
-          </article>
+            <span class="substream__badge substream__badge--ours">Ankit-owned · second stream</span>
+          </header>
+          <p class="substream__when">Before Go-Live · validates the §5.12 Security and performance commitments from the Sol Doc.</p>
 
-          <article class="beyond-card beyond-card--accent">
-            <p class="beyond-card__tag">Always-on · Operate layer</p>
-            <h3>Runtime &amp; feedback</h3>
-            <p class="beyond-card__when">After Go-Live · for the life of the application.</p>
-            <h4>DevOps' contribution</h4>
-            <ul class="bullets">
-              <li><strong>Mukhbir</strong> — Dhwani's own monitoring — uptime, SSL, security headers, response health.</li>
-              <li>Default observability stack on every project (metrics · logs · traces · alerts).</li>
-              <li>Per-project status pages — clients see system health themselves.</li>
-              <li>Auto weekly / monthly project health reports to project owners.</li>
-              <li>Blameless incident review · quarterly portfolio review feeding into KM.</li>
-            </ul>
-          </article>
+          <p>Stage C is not yet pitched by Prody — the structure below is <strong>DevOps' proposal</strong>, to be validated with the working group. Three phases · eight steps · same shape as Stage A.</p>
+
+          <div class="phases-grid">
+            <article class="phase-card">
+              <p class="phase-card__num">Phase C-1</p>
+              <h3>Functional Verification</h3>
+              <p class="phase-card__q">Does it do what the Sol Doc said?</p>
+              <ul>
+                <li>C-1 · E2E test execution</li>
+                <li>C-2 · Client UAT sign-off</li>
+              </ul>
+              <p class="phase-card__gate">Gate: <strong>Critical journeys 100% pass · client UAT signed</strong></p>
+            </article>
+            <article class="phase-card">
+              <p class="phase-card__num">Phase C-2</p>
+              <h3>Non-Functional Verification</h3>
+              <p class="phase-card__q">Does it behave under load and attack?</p>
+              <ul>
+                <li>C-3 · Performance baseline</li>
+                <li>C-4 · Load test at peak × 1.5</li>
+                <li>C-5 · Security scan (Kotwal-led)</li>
+                <li>C-6 · Compliance audit (govt projects)</li>
+              </ul>
+              <p class="phase-card__gate">Gate: <strong>p95 ≤ target · err &lt; 1% · 0 crit/high</strong></p>
+            </article>
+            <article class="phase-card">
+              <p class="phase-card__num">Phase C-3</p>
+              <h3>Release Readiness</h3>
+              <p class="phase-card__q">Can we promote, defensibly?</p>
+              <ul>
+                <li>C-7 · Evidence packet assembly</li>
+                <li>C-8 · Release Readiness Report sign-off</li>
+              </ul>
+              <p class="phase-card__gate">Gate: <strong>RRR signed by TL · QA · Security · DevOps · AM</strong></p>
+            </article>
+          </div>
+
+          <h4>Per-step proposal · Stage C</h4>
+          <div class="grid-wrap">
+            <table class="grid">
+              <thead>
+                <tr><th>#</th><th>Step</th><th>Phase</th><th>Tool</th><th>Skill (DevOps to build)</th><th>Agent</th><th>LLM</th><th>Gate</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>C-1</strong></td><td>E2E Test Execution</td><td>Functional</td><td>Playwright</td><td><code>e2e-from-workflow</code> · derives Playwright stubs from §5.5 workflows</td><td><code>e2e-runner</code>, <code>tdd-guide</code></td><td>Sonnet</td><td>Critical journeys 100% pass</td></tr>
+                <tr><td><strong>C-2</strong></td><td>Client UAT Sign-off</td><td>Functional</td><td>GitHub PR + UAT-tier env</td><td>(manual sign-off captured in PR)</td><td>—</td><td>—</td><td>Client signed in PR; P0/P1 closed</td></tr>
+                <tr><td><strong>C-3</strong></td><td>Performance Baseline</td><td>Non-Functional</td><td>k6</td><td><code>load-profile-author</code> · derives load profile from §5.6 process workflows</td><td>—</td><td>Sonnet</td><td>p95 latency within Sol Doc target</td></tr>
+                <tr><td><strong>C-4</strong></td><td>Load Test (Peak × 1.5)</td><td>Non-Functional</td><td>k6</td><td><code>load-profile-author</code> (reused)</td><td>—</td><td>Sonnet</td><td>Error rate &lt; 1% at peak × 1.5</td></tr>
+                <tr class="grid--accent"><td><strong>C-5</strong></td><td>Security Scan</td><td>Non-Functional</td><td><strong>Kotwal</strong> + Semgrep + OWASP ZAP + Trivy</td><td><code>security-evidence-author</code> · aggregates scan outputs into a Sol Doc §5.12 evidence pack</td><td><code>security-reviewer</code> · <strong>Kotwal</strong></td><td>Opus</td><td>0 Critical · 0 High · ≤ 5 Medium with justification</td></tr>
+                <tr><td><strong>C-6</strong></td><td>Compliance Audit (govt)</td><td>Non-Functional</td><td>Audit log review</td><td><code>compliance-checklist-author</code> · runs govt-scheme checklist (DPDP · IT Rules · scheme-specific)</td><td>—</td><td>Opus</td><td>Retention policy verified · IP whitelist set</td></tr>
+                <tr><td><strong>C-7</strong></td><td>Evidence Packet Assembly</td><td>Readiness</td><td>RRR pipeline (custom)</td><td><code>evidence-packet-author</code> · assembles scans + perf + UAT + compliance into a single archive</td><td><code>doc-updater</code></td><td>Sonnet</td><td>All reports archived and indexed</td></tr>
+                <tr class="grid--accent"><td><strong>C-8</strong></td><td>RRR Sign-off</td><td>Readiness</td><td>RRR portal (custom)</td><td><code>rrr-author</code> · generates the one-page Release Readiness Report</td><td>—</td><td>—</td><td>RRR signed by Tech Lead · QA · Security · DevOps · AM</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="caveat">Skill names marked <code>code-style</code> are <strong>new skills DevOps will author</strong> if Stage C lands as proposed. They follow Prody's naming convention (<code>*-author</code>) and live in the central skills repo (see §10 Evolve).</p>
+        </div>
+
+        <!-- Stream 4 / Operate -->
+        <div class="substream substream--ours">
+          <header class="substream__head">
+            <span class="substream__num">Stream 4 · Always-on</span>
+            <h3>Operate Layer — runtime · feedback · Mukhbir</h3>
+            <span class="substream__badge substream__badge--ours">Ankit-owned · always-on</span>
+          </header>
+          <p class="substream__when">After Go-Live · for the life of the application. Feeds insights back into Stream 5 (KM) and into the next Intent Check.</p>
+          <h4>What DevOps owns end-to-end</h4>
+          <ul class="bullets">
+            <li><strong>Mukhbir</strong> — Dhwani's own monitoring — uptime · SSL · security headers · response health · client-facing monthly reports via <code>mukhbir-ops-report</code></li>
+            <li>Default observability stack on every project — Prometheus · Loki · Tempo · Grafana — applied via the Day 1 starter (§09)</li>
+            <li>Per-project status pages — clients see system health themselves</li>
+            <li>Auto weekly + monthly project health reports to project owners</li>
+            <li>Blameless incident review template + quarterly portfolio review (feeds Stream 5 KM)</li>
+          </ul>
+        </div>
+
+        <!-- INTER-STREAM GLUE -->
+        <div class="substream substream--glue">
+          <header class="substream__head">
+            <span class="substream__num">In between</span>
+            <h3>Inter-stream glue — skills and tools that bridge handoffs</h3>
+            <span class="substream__badge">DevOps-owned · prevents work from falling on the floor</span>
+          </header>
+          <p class="substream__when">Streams run in parallel, but artefacts have to flow between them. These bridges are DevOps' job to build and maintain — so nothing drops when a stream hands off.</p>
+
+          <div class="bridges">
+            <article class="bridge">
+              <p class="bridge__from">Stream 1 → Stream 2</p>
+              <h4>RG outputs → Dev inputs</h4>
+              <ul>
+                <li><code>fr-to-ticket</code> · GitHub FR Issue → tracker ticket with branch <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>rbac-to-fixtures</code> · §5.4 RBAC matrix → Frappe permission fixtures / IAM / RBAC YAML <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>data-model-to-doctype</code> · §5.6 ER → Frappe DocType JSON + OpenAPI spec <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>mock-server-generator</code> · §5.7 interface table → mock server for early Dev <span class="tag tag--quarter">Quarter</span></li>
+                <li><code>tech-stack-to-iac</code> · §5.11 Tech Stack → Terraform module selection <span class="tag tag--sprint">Sprint</span></li>
+              </ul>
+            </article>
+
+            <article class="bridge">
+              <p class="bridge__from">Stream 2 → Stream 3</p>
+              <h4>Dev outputs → Testing inputs</h4>
+              <ul>
+                <li><code>e2e-from-workflow</code> · §5.5 Mermaid flow → Playwright test stubs <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>coverage-mapper</code> · test coverage mapped back to FR IDs (closes the loop) <span class="tag tag--quarter">Quarter</span></li>
+                <li>GitHub Action: PR merge → trigger Stage C pipeline (E2E · perf · security) <span class="tag tag--today">Today</span></li>
+                <li><code>load-profile-author</code> · §5.6 workflows → k6 load profile <span class="tag tag--sprint">Sprint</span></li>
+              </ul>
+            </article>
+
+            <article class="bridge">
+              <p class="bridge__from">Stream 3 → Operate</p>
+              <h4>Testing outputs → Operate inputs</h4>
+              <ul>
+                <li><code>rrr-author</code> · Release Readiness Report PDF generator <span class="tag tag--quarter">Quarter</span></li>
+                <li><code>observability-bootstrap</code> · Mukhbir + Prometheus + alerts wired <em>before</em> Go-Live <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>runbook-author</code> · Sol Doc §5.12 + deploy patterns → runbook <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>status-page-bootstrap</code> · seed per-project status page with the Sol Doc SLOs <span class="tag tag--sprint">Sprint</span></li>
+              </ul>
+            </article>
+
+            <article class="bridge">
+              <p class="bridge__from">Operate → Stream 5 (KM)</p>
+              <h4>Runtime learnings → Knowledge Management</h4>
+              <ul>
+                <li><code>incident-retro-author</code> · blameless post-mortem template from incident data <span class="tag tag--sprint">Sprint</span></li>
+                <li><code>monthly-report-author</code> · auto monthly project health report → KM archive <span class="tag tag--quarter">Quarter</span></li>
+                <li><code>learning-capturer</code> · incident retros → lessons-learned entries in the KM repo (Deepak) <span class="tag tag--quarter">Quarter</span></li>
+                <li><code>portfolio-review-author</code> · quarterly portfolio review deck — drives next Intent Check cycle <span class="tag tag--quarter">Quarter</span></li>
+              </ul>
+            </article>
+          </div>
+
+          <p class="caveat">All bridge skills follow Prody's naming convention (<code>*-author</code>) and live in the central skills repo (see §10 Evolve). Project repos pin specific versions; the bridges evolve via the same raise mechanism as Stage A skills.</p>
         </div>
       </section>
 
@@ -788,10 +907,10 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
         <p>Four quarters. Each phase delivers complete DevOps support for a contiguous slice of the AI-SDLC.</p>
         <ol class="phases">
           <li><span class="phases__tag">Phase 0 · Now</span><h4>Foundation</h4><p>Inventory tooling. Tier projects. Pick the pilot. Align with Prody's Stage A pitch (post 14 May closing). Confirm Kotwal CLI surface.</p></li>
-          <li><span class="phases__tag">Phase 1 · Q1</span><h4>Stage A repo template</h4><p>Dhwani project repo template with stakeholder / MoM / charter / FR / RBAC / workflow / data-model / wireframe / Sol Doc schemas pre-wired. CI seed in place. Pages → CloudFront for client domains.</p></li>
-          <li><span class="phases__tag">Phase 2 · Q2</span><h4>Stage B · code guardrails + envs</h4><p>AI-aware code guardrails live. Self-service env portal MVP. Pre-commit baseline reaches every active repo.</p></li>
-          <li><span class="phases__tag">Phase 3 · Q3</span><h4>Stage C · perf and security</h4><p>Release-readiness portal. Kotwal as required gate. Policy-as-code wired. Every release ships a Readiness Report.</p></li>
-          <li><span class="phases__tag">Phase 4 · Q4</span><h4>Operate · default-on</h4><p>Default observability on every active project. Mukhbir feeding status pages and auto-reports. Quarterly portfolio review formalised.</p></li>
+          <li><span class="phases__tag">Phase 1 · Q1</span><h4>Day 1 starter + bridges (RG → Dev)</h4><p>Stage A repo template live. CI seed. Pages → CloudFront. <code>fr-to-ticket</code> · <code>rbac-to-fixtures</code> · <code>data-model-to-doctype</code> · <code>tech-stack-to-iac</code> bridges shipped. First pilot project bootstrapped from the template.</p></li>
+          <li><span class="phases__tag">Phase 2 · Q2</span><h4>Stage B vertical + bridges (Dev → Testing)</h4><p>AI-aware code guardrails live in CI. Self-service env portal MVP. Pre-commit baseline on every active repo. <code>e2e-from-workflow</code> · <code>load-profile-author</code> bridges shipped.</p></li>
+          <li><span class="phases__tag">Phase 3 · Q3</span><h4>Stream 3 / Stage C end-to-end</h4><p>Proposed Stage C phasing validated and operational. Kotwal as required CI gate. Policy-as-code wired. <code>security-evidence-author</code> · <code>compliance-checklist-author</code> · <code>evidence-packet-author</code> · <code>rrr-author</code> built. First release passes through Stage C end-to-end with a published RRR.</p></li>
+          <li><span class="phases__tag">Phase 4 · Q4</span><h4>Stream 4 Operate + bridges to KM</h4><p>Default observability on every active project. Mukhbir feeding status pages and auto-reports. <code>incident-retro-author</code> · <code>monthly-report-author</code> · <code>learning-capturer</code> bridges live → Stream 5 (KM). Bi-weekly framework review and Champion role operational.</p></li>
         </ol>
       </section>
 
@@ -800,7 +919,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
         <h2><span class="num">13</span> What we need from leadership</h2>
         <p>Three categories of support to deliver Stream 4 on the timeline above.</p>
         <div class="asks">
-          <div class="ask"><p class="ask__label">People</p><h4>1–2 dedicated DevOps engineers, for four quarters.</h4><p>Part-time support from each project's Tech Lead during their rollout window.</p></div>
+          <div class="ask"><p class="ask__label">People</p><h4>2 dedicated DevOps engineers, for four quarters.</h4><p>DevOps owns <strong>two streams</strong> (3 and 4) plus the always-on vertical role. Two engineers covers: one anchoring Stage C (Testing &amp; Performance, including Kotwal integration and the RRR pipeline) and one anchoring the Operate layer + the Day 1 starter + bridge skills. Plus part-time support from each project's Tech Lead during their rollout window.</p></div>
           <div class="ask"><p class="ask__label">Tooling</p><h4>Stage A is free. Stage B/C/Operate need a small set of licences.</h4><p>The RG stack is GitHub + Claude CLI + Mermaid + Stitch + Fireflies — all free or already-licensed. Stage B/C/Operate need security scanning (Semgrep), observability, status page, paid env portal (or Backstage). Kotwal + Mukhbir anchor the internal layer.</p></div>
           <div class="ask"><p class="ask__label">Decisions</p><h4>Standards calls only leadership can make.</h4><ul><li>Front-end stack within the Frappe / Non-Frappe stacks — Vue vs. React?</li><li>CI/CD platform — standardise on GitHub Actions across all four stacks?</li><li>Cloud target — AWS primary, on-prem for government projects?</li><li>Build vs. buy the env portal — Backstage (OSS) or paid (Port / Cortex)?</li><li>Who classifies project criticality tiers?</li></ul></div>
         </div>
@@ -811,15 +930,18 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
         <h2><span class="num">14</span> Open questions for the closing sessions</h2>
         <p>Carrying into 12 May and 14 May, framed from Stream 4.</p>
         <ol class="questions">
-          <li>Does Stage A's gate at Sol Doc sign-off (Step 10) hand off to Stage B's first AI-coding prompt with no separate "Planning" step in between, or do we add an explicit Step 10½ for dev-plan + test-case decomposition?</li>
-          <li>Multi-persona handling on small projects — when one person plays PB and AM, which sign-offs (Charter, Sol Doc) must still be separated?</li>
-          <li>Which is the pilot project — exercises all 10 RG steps, not client-critical, and willing PM + Tech Lead?</li>
-          <li>Stage A is free. When does Stage B/C/Operate spend kick in, and against which project's P&amp;L?</li>
-          <li>Kotwal — CLI / API surface for CI gate use. Ready now, or Phase 0 task?</li>
-          <li>Backstage vs. paid portal — decision deadline for Stage B?</li>
-          <li>Project tiering — who owns the classification day-to-day?</li>
-          <li>Government-project specifics — data residency requirements per state and per scheme?</li>
-          <li>Phase-exit definition of "done" for each roadmap phase — who signs?</li>
+          <li><strong>Stream 2 owner.</strong> Who owns Stream 2 (Dev &amp; Testing)? Engineering broadly, or a named champion? Where does QA sit between Stream 2 and Stream 3?</li>
+          <li><strong>Stage C phasing.</strong> Does Prody / the working group accept the proposed Stage C structure (3 phases · 8 steps · table in §05)? Adjustments before we build the skills?</li>
+          <li><strong>Step 10 → first prompt.</strong> Does the Sol Doc sign-off hand off to Stage B's first AI-coding prompt directly, or is there an explicit Step 10½ for dev-plan + test-case decomposition?</li>
+          <li><strong>Multi-persona handling</strong> on small projects — when one person plays PB and AM, which sign-offs (Charter, Sol Doc) must still be separated?</li>
+          <li><strong>Pilot project.</strong> Which engagement exercises all 10 RG steps and Stage C, is not client-critical from day one, and has a willing PM + Tech Lead?</li>
+          <li><strong>Spend boundary.</strong> Stage A is free. When does Stage B/C/Operate spend kick in, and against which project's P&amp;L?</li>
+          <li><strong>Kotwal readiness.</strong> CLI / API surface for CI gate use — ready now, or Phase 0 task?</li>
+          <li><strong>Portal build vs. buy.</strong> Backstage vs. paid (Port / Cortex) — decision deadline for Stage B?</li>
+          <li><strong>Project tiering.</strong> Who owns the classification day-to-day?</li>
+          <li><strong>Govt-project specifics.</strong> Data residency requirements per state and per scheme?</li>
+          <li><strong>Phase-exit gates.</strong> Definition of "done" for each roadmap phase — who signs?</li>
+          <li><strong>Champion seed.</strong> DevOps offers to seed the first Champion term — confirmed, or should it rotate first to KM (Deepak) or PG?</li>
         </ol>
       </section>
 
