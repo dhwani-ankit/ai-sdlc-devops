@@ -26,9 +26,9 @@
         <a href="#stage-a">Stage A</a>
         <a href="#per-step">Per-step</a>
         <a href="#beyond">Beyond A</a>
-        <a href="#stacks">Stacks</a>
+        <a href="#adopt">Adopt</a>
+        <a href="#improve">Evolve</a>
         <a href="#tools">Tools</a>
-        <a href="#asks">Asks</a>
         <a href="quick.html" class="topnav__cta">Slide view →</a>
       </nav>
     </div>
@@ -53,6 +53,8 @@
         <li><a href="#stacks">The 4 distribution stacks</a></li>
         <li><a href="#grid">The full grid</a></li>
         <li><a href="#tools">Tools &amp; agents</a></li>
+        <li><a href="#adopt">Adopt — Day 1 kit</a></li>
+        <li><a href="#improve">Evolve — raises &amp; Champion</a></li>
         <li><a href="#outcomes">Outcomes</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#asks">What we need</a></li>
@@ -109,7 +111,7 @@
         <p>The AI-SDLC at Dhwani has been scoped over the 7 May and 12 May sessions. On <strong>14 May (Closing Session 2/2)</strong>, Prody's Group PM Office is pitching <strong>Stage A · Requirement Gathering</strong>. That deck is the authoritative source — its terminology, its 10 RG steps, its 3 phases, its tool philosophy, and its 4-stack overlay are the framework we operate within.</p>
         <p><strong>This document is the DevOps vertical's input.</strong> It reuses Prody's exact step names and skills. It positions DevOps as <em>Stream 4</em> (parallel to RG, Dev+Testing, Testing+Perf, and KM) and as one of the <em>three always-on verticals</em> (KM · Project Governance · DevOps) that check every phase.</p>
         <div class="callout">
-          <p><strong>In one line.</strong> DevOps plugs into every RG step, scales with the four distribution stacks, and owns the runtime/observability layer end-to-end. Five tools serve all ten RG steps — DevOps adds the infrastructure that makes those tools repeatable across projects.</p>
+          <p><strong>What DevOps adds on top of Prody's framework.</strong> Prody's pitch defines <em>what</em> the framework is. DevOps owns <em>how it gets adopted</em> (one-command starter — see §09), <em>how it evolves</em> (raise mechanism + Champion + bi-weekly review — see §10), and <em>how leadership measures it</em> (monthly telemetry — see §10). Three loops, owned by Stream 4.</p>
         </div>
       </section>
 
@@ -656,9 +658,117 @@
         </ol>
       </section>
 
+      <!-- ADOPTION -->
+      <section id="adopt">
+        <h2><span class="num">09</span> Adopt — what Day 1 looks like</h2>
+        <p>The framework only matters if a team can start using it on the first morning. This is the kit DevOps ships so adoption is one command, not a wiki crawl.</p>
+
+        <h3>The starter command</h3>
+        <div class="starter">
+<pre><code>gh repo create dhwani-{stack}-{client} \
+  --template dhwani-ris/ai-sdlc-stage-a-starter \
+  --private --clone
+
+cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
+          <p class="starter__note">One command. The repo arrives with every Stage A artefact pre-templated, CI seeded, Pages wired to CloudFront, <code>.claude/skills/</code> symlinked to the central skills repo, and the Dhwani agent catalogue available. The first Claude session opens with <code>stakeholder-mapper</code> ready to invoke.</p>
+        </div>
+
+        <h3>What's in the starter</h3>
+        <div class="starter-contents">
+          <div class="starter-item"><strong>Folders pre-cut</strong><p><code>/stakeholders</code> · <code>/moms</code> · <code>/charter</code> · <code>/fr</code> · <code>/rbac</code> · <code>/workflows</code> · <code>/data-model</code> · <code>/wireframes</code> · <code>/sol-doc</code></p></div>
+          <div class="starter-item"><strong>Schemas as Markdown</strong><p>Required-field templates per artefact. Mermaid placeholders for workflows and ER. Wireframe export targets for Google Stitch.</p></div>
+          <div class="starter-item"><strong>CI seeded</strong><p>Lint · link-check · Mermaid render · spell-check · PR-preview Pages URL · sign-off captured as signed git tag.</p></div>
+          <div class="starter-item"><strong>Pages → CloudFront</strong><p>Pre-configured. To launch on the client's domain, point one DNS record.</p></div>
+          <div class="starter-item"><strong>Skills + agents pre-wired</strong><p><code>.claude/skills/</code> symlinked to the central skills repo. <code>.claude/agents/</code> references Dhwani's catalogue (frappe-reviewer, security-reviewer, e2e-runner, …).</p></div>
+          <div class="starter-item"><strong>CODEOWNERS + branch protection</strong><p>Default Architect + AM as required reviewers on Charter and Sol Doc branches.</p></div>
+        </div>
+
+        <h3>First-hour quickstart per persona</h3>
+        <div class="quickstart">
+          <article class="quick">
+            <p class="quick__icon">PB</p>
+            <h4>Product Builder</h4>
+            <ol>
+              <li>Clone the starter repo.</li>
+              <li><code>claude /stakeholder-mapper</code> → fill the stakeholder template.</li>
+              <li>Open the Charter PR — Architect + AM as reviewers (already wired in CODEOWNERS).</li>
+              <li>Continue Steps 4–8 in the same PR-driven loop.</li>
+            </ol>
+          </article>
+          <article class="quick">
+            <p class="quick__icon">AR</p>
+            <h4>Architect</h4>
+            <ol>
+              <li>Verify the reference architecture pattern is selected in §5.11.</li>
+              <li>You're a required-reviewer on §5.11 / §5.12 / §5.16 by default.</li>
+              <li>Sign-off = a signed git tag. No extra tool, no extra meeting.</li>
+            </ol>
+          </article>
+          <article class="quick">
+            <p class="quick__icon">AM</p>
+            <h4>Account Manager</h4>
+            <ol>
+              <li>Stakeholder map and Charter are PR-driven — you sign off on the PR.</li>
+              <li>Your sign-off closes the Phase 1 gate.</li>
+              <li>UAT-tier env (Stage B) opens with one form on the portal — when Stage B ships.</li>
+            </ol>
+          </article>
+        </div>
+
+        <div class="callout">
+          <p><strong>The argument for "one command".</strong> Every minute spent setting up a new project is a minute not spent on the client's problem. The Dhwani starter gets the first hour back. The first <em>day</em> back if you also use the per-persona quickstart.</p>
+        </div>
+      </section>
+
+      <!-- CONTINUOUS IMPROVEMENT -->
+      <section id="improve">
+        <h2><span class="num">10</span> Evolve — how the framework stays alive</h2>
+        <p>Static methodology gets stale. The Dhwani AI-SDLC has a built-in raise mechanism so anyone using the framework can shape it. DevOps owns the pipework. Three loops.</p>
+
+        <div class="improve-grid">
+          <article class="improve-card">
+            <p class="improve-card__lbl">Loop 1 · Skills</p>
+            <h4>The Dhwani Skills Repo</h4>
+            <p><code>dhwani-ris/ai-sdlc-skills</code> (to be created)</p>
+            <p>One repo · all skills · semver-tagged. Every skill carries owner, version, change log, and an eval suite. Projects pin versions in <code>.claude/skills.lock.json</code>.</p>
+            <p>Prody's deck: <em>"AI raises PRs into the skills repo when gaps appear."</em> DevOps wires that up: a project Issue tagged <code>raise:skill</code> mirrors to the skills repo; <code>prompt-improver</code> drafts a PR within 24h; the eval suite gates merge.</p>
+          </article>
+
+          <article class="improve-card">
+            <p class="improve-card__lbl">Loop 2 · Raises</p>
+            <h4>How anyone surfaces a gap</h4>
+            <ol class="improve-flow">
+              <li>Hit a missing template, skill, or scaffold → open an Issue with the <code>Raise</code> template (PB, AR, AM, anyone).</li>
+              <li>Champion triages within 48h. Label is <code>accept</code> / <code>clarify</code> / <code>decline</code>, with a one-line reason.</li>
+              <li>Accepted raises enter the backlog. Sprint-sized: 2-week SLA. Bigger: ships in the next framework version.</li>
+              <li>Major changes get a version bump (v1.x → v1.x+1) with a migration note.</li>
+            </ol>
+          </article>
+
+          <article class="improve-card improve-card--accent">
+            <p class="improve-card__lbl">Loop 3 · Review</p>
+            <h4>Bi-weekly framework review + Champion</h4>
+            <p>From Prody's Slide 21: <em>"Bi-weekly framework review · Champion role to be named."</em></p>
+            <p><strong>The review:</strong> 30 minutes, every fortnight. DevOps stream chairs. Reviews gates passed, skill-PR throughput, open raises. Output: one slide, one decision.</p>
+            <p><strong>Champion proposal:</strong> 6-month term, rotated across KM / PG / DevOps in turn. Mandate: triage raises · own the bi-weekly review · sign off on minor framework updates. <strong>DevOps offers to seed the first term.</strong></p>
+          </article>
+        </div>
+
+        <h3>Telemetry — how leadership knows it's working</h3>
+        <p>One automated monthly slide. Source data flows from project repos (CI events) into a Dhwani internal dashboard. No one chases numbers manually.</p>
+        <div class="kpis">
+          <div class="kpi"><p class="kpi__lbl">Adoption</p><p class="kpi__big">% on latest</p><p class="kpi__sub">Projects on the current framework version. Target: &gt; 80% within 30 days of release.</p></div>
+          <div class="kpi"><p class="kpi__lbl">Speed</p><p class="kpi__big">Time-to-first-prompt</p><p class="kpi__sub">Charter sign-off → first AI-coding prompt. Target: &lt; 4 weeks for Frappe stack.</p></div>
+          <div class="kpi"><p class="kpi__lbl">Quality</p><p class="kpi__big">Gate pass rate</p><p class="kpi__sub">First-attempt pass % at Charter and Sol Doc gates. Drift here flags methodology fit.</p></div>
+          <div class="kpi"><p class="kpi__lbl">Health</p><p class="kpi__big">Skill-PR throughput</p><p class="kpi__sub">Skill PRs opened / merged / declined per month. Low = framework is stagnant. Healthy = active raises.</p></div>
+          <div class="kpi"><p class="kpi__lbl">Mix</p><p class="kpi__big">Stack split</p><p class="kpi__sub">Project distribution: mGrant · NuO · Frappe · Non-Frappe. Informs where to invest next.</p></div>
+          <div class="kpi"><p class="kpi__lbl">Demand</p><p class="kpi__big">Top raises</p><p class="kpi__sub">Top 3 skill / template gaps the team is asking for. Direct input to next roadmap cycle.</p></div>
+        </div>
+      </section>
+
       <!-- OUTCOMES -->
       <section id="outcomes">
-        <h2><span class="num">09</span> Outcomes</h2>
+        <h2><span class="num">11</span> Outcomes</h2>
         <p>Measurable promises across Stage A, Stage B/C support, and the Operate layer.</p>
         <div class="cards">
           <div class="card"><p class="card__label">Stage A speed</p><p class="card__big">3<span class="card__sup">×</span></p><p class="card__sub">faster RG cycle vs. baseline</p></div>
@@ -674,7 +784,7 @@
 
       <!-- ROADMAP -->
       <section id="roadmap">
-        <h2><span class="num">10</span> Roadmap</h2>
+        <h2><span class="num">12</span> Roadmap</h2>
         <p>Four quarters. Each phase delivers complete DevOps support for a contiguous slice of the AI-SDLC.</p>
         <ol class="phases">
           <li><span class="phases__tag">Phase 0 · Now</span><h4>Foundation</h4><p>Inventory tooling. Tier projects. Pick the pilot. Align with Prody's Stage A pitch (post 14 May closing). Confirm Kotwal CLI surface.</p></li>
@@ -687,7 +797,7 @@
 
       <!-- ASKS -->
       <section id="asks">
-        <h2><span class="num">11</span> What we need from leadership</h2>
+        <h2><span class="num">13</span> What we need from leadership</h2>
         <p>Three categories of support to deliver Stream 4 on the timeline above.</p>
         <div class="asks">
           <div class="ask"><p class="ask__label">People</p><h4>1–2 dedicated DevOps engineers, for four quarters.</h4><p>Part-time support from each project's Tech Lead during their rollout window.</p></div>
@@ -698,7 +808,7 @@
 
       <!-- OPEN QUESTIONS -->
       <section id="open-questions">
-        <h2><span class="num">12</span> Open questions for the closing sessions</h2>
+        <h2><span class="num">14</span> Open questions for the closing sessions</h2>
         <p>Carrying into 12 May and 14 May, framed from Stream 4.</p>
         <ol class="questions">
           <li>Does Stage A's gate at Sol Doc sign-off (Step 10) hand off to Stage B's first AI-coding prompt with no separate "Planning" step in between, or do we add an explicit Step 10½ for dev-plan + test-case decomposition?</li>
