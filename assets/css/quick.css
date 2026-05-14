@@ -1,0 +1,533 @@
+:root {
+  --orange: #F47C20;
+  --orange-dark: #D9651C;
+  --orange-soft: #FFF1E5;
+  --ink: #1A1A1A;
+  --ink-2: #4A4A4A;
+  --muted: #6B6B6B;
+  --line: #ECECE6;
+  --line-strong: #D6D6CF;
+  --bg: #FFFFFF;
+  --bg-alt: #FAFAF7;
+  --bg-code: #F4F4EE;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+a { color: var(--orange-dark); text-decoration: none; border-bottom: 1px solid currentColor; }
+a:hover { color: var(--orange); }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-code);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-alt);
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+
+/* Progress bar at the very top */
+.deck__progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--line);
+  z-index: 100;
+}
+.deck__progress span {
+  display: block;
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%);
+  transition: width .25s ease;
+}
+
+/* Top brand bar */
+.deck__bar {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  z-index: 90;
+  pointer-events: none;
+}
+.deck__bar > * { pointer-events: auto; }
+.deck__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+}
+.deck__brand strong { color: var(--ink); font-weight: 700; }
+.deck__mark {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  box-shadow: 0 0 0 3px var(--orange-soft);
+}
+.deck__deep {
+  font-size: 12.5px;
+  color: var(--muted);
+  border-bottom: 1px dashed var(--line-strong);
+  padding-bottom: 1px;
+}
+.deck__deep:hover { color: var(--orange-dark); border-bottom-color: var(--orange); }
+
+/* Slide container */
+.slides { height: 100vh; }
+.slide {
+  display: none;
+  height: 100vh;
+  padding: 8vh 6vw 10vh;
+  overflow: auto;
+  cursor: pointer;
+}
+.slide.is-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadein .3s ease;
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide.is-active { animation: none; }
+}
+
+.slide__inner {
+  width: 100%;
+  max-width: 1100px;
+}
+.slide__num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+  margin: 0 0 14px;
+  letter-spacing: 0;
+}
+.slide h1 {
+  font-size: clamp(36px, 5.4vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+.slide h2 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+.slide h3 {
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.slide h4 {
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.slide p {
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0 0 10px;
+}
+.slide ul, .slide ol {
+  font-size: clamp(14px, 1.2vw, 17px);
+  color: var(--ink-2);
+  line-height: 1.5;
+  padding-left: 22px;
+}
+.slide li { padding: 3px 0; }
+.slide li::marker { color: var(--orange); }
+.slide strong { color: var(--ink); font-weight: 700; }
+
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  background: var(--orange-soft);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin: 0 0 22px !important;
+}
+.lede {
+  font-size: clamp(17px, 1.8vw, 22px) !important;
+  color: var(--ink-2);
+  max-width: 64ch;
+  margin: 0 0 28px !important;
+  line-height: 1.45 !important;
+}
+.cover__meta {
+  font-size: clamp(13px, 1.1vw, 15px) !important;
+  color: var(--muted);
+  margin: 0 0 24px !important;
+}
+.cover__hint {
+  font-size: 13px !important;
+  color: var(--muted);
+  margin: 18px 0 0 !important;
+}
+.cover__hint kbd { margin: 0 2px; }
+
+.slide__tag {
+  margin-top: 22px !important;
+  padding: 12px 16px;
+  background: var(--orange-soft);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  color: var(--ink) !important;
+  font-size: clamp(13px, 1.15vw, 16px) !important;
+}
+
+/* Slide 2 — the frame */
+.frame {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 8px 0 0;
+}
+.frame__col {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  background: var(--bg-alt);
+}
+.frame__col--accent {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 70%);
+  border-color: var(--orange);
+}
+.frame__when {
+  font-family: var(--font-mono);
+  font-size: 12px !important;
+  color: var(--orange-dark);
+  font-weight: 600;
+  margin: 0 0 10px !important;
+}
+
+/* Slide 3 — personas */
+.qpersonas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.qpersona {
+  padding: 26px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.qpersona__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px !important;
+  height: 44px !important;
+  background: var(--orange);
+  color: #fff !important;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px !important;
+  border-radius: 10px;
+  margin: 0 0 14px !important;
+}
+.qpersona p { margin: 0; }
+
+/* Slide 4 — flow pills */
+.qflow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 4px 0 0;
+}
+.qflow__pill {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 600;
+  color: var(--ink);
+  min-height: 78px;
+  justify-content: space-between;
+}
+.qflow__pill b {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--orange-dark);
+  font-weight: 700;
+}
+.qflow__pill small {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.qflow__pill--accent {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 70%);
+  border-color: var(--orange);
+}
+
+/* Slide 5 — layers */
+.layers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.layer {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.layer--accent {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 80%);
+  border-color: var(--orange);
+}
+.layer__range {
+  font-family: var(--font-mono);
+  font-size: 12px !important;
+  color: var(--orange-dark);
+  font-weight: 600;
+  margin: 0 0 4px !important;
+  letter-spacing: 0;
+}
+.layer ul { margin: 8px 0 0; }
+
+/* Slide 6 — enablers */
+.qenablers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.qenabler {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.qenabler__lbl {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-dark);
+  font-weight: 700;
+  margin: 0 0 8px !important;
+}
+.qenabler p { margin: 0; font-size: clamp(14px, 1.15vw, 16px) !important; }
+
+/* Slide 7 — outcomes cards */
+.qcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.qcard {
+  padding: 26px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  text-align: left;
+}
+.qcard__big {
+  font-size: clamp(34px, 3.8vw, 48px) !important;
+  font-weight: 800 !important;
+  color: var(--orange-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px !important;
+  line-height: 1 !important;
+}
+.qcard__big span {
+  font-size: 0.55em;
+  font-weight: 600;
+  margin-left: 4px;
+  color: var(--orange);
+}
+.qcard__lbl {
+  font-size: clamp(13px, 1.1vw, 15px) !important;
+  color: var(--muted);
+  margin: 0 !important;
+}
+
+/* Slide 8 — roadmap stripe */
+.qroad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.qroad__item {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--radius-sm);
+  padding: 18px 18px 16px;
+  background: var(--bg-alt);
+}
+.qroad__q {
+  font-family: var(--font-mono);
+  font-size: 12px !important;
+  color: var(--orange-dark);
+  font-weight: 600;
+  margin: 0 0 6px !important;
+  letter-spacing: 0;
+}
+.qroad__item h4 { margin: 0 0 6px; font-size: clamp(15px, 1.3vw, 17px); }
+.qroad__item p { margin: 0; font-size: clamp(12.5px, 1.05vw, 14.5px) !important; }
+
+/* Slide 9 — asks */
+.qasks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.qask {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.qask__lbl {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-dark);
+  font-weight: 700;
+  margin: 0 0 8px !important;
+}
+.qask h3 { font-size: clamp(16px, 1.45vw, 19px); margin: 0 0 6px; line-height: 1.35; }
+.qask p { margin: 0; font-size: clamp(13.5px, 1.1vw, 15.5px) !important; }
+
+/* Slide 10 — open questions + close */
+.qopen {
+  margin: 0 0 24px;
+  padding-left: 28px;
+  font-size: clamp(15px, 1.3vw, 18px) !important;
+  line-height: 1.55;
+}
+.qopen li { padding: 5px 0; }
+.qopen li::marker { font-weight: 700; color: var(--orange); }
+.closing {
+  font-size: clamp(22px, 2.2vw, 28px) !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  margin-top: 20px !important;
+}
+
+/* Nav at the bottom */
+.deck__nav {
+  position: fixed;
+  bottom: 16px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  z-index: 90;
+  pointer-events: none;
+}
+.deck__nav button,
+.deck__counter {
+  pointer-events: auto;
+}
+.deck__nav button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.deck__nav button:hover {
+  border-color: var(--orange);
+  color: var(--orange-dark);
+  background: var(--orange-soft);
+}
+.deck__counter {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 6px 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* Cover slide special */
+.slide--cover h1 { margin-bottom: 22px; }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .frame,
+  .qpersonas,
+  .qroad,
+  .qasks { grid-template-columns: 1fr; gap: 12px; }
+  .qcards { grid-template-columns: repeat(2, 1fr); }
+  .qflow { grid-template-columns: repeat(2, 1fr); }
+  .layers,
+  .qenablers { grid-template-columns: 1fr; }
+  .slide { padding: 8vh 5vw 12vh; }
+  .deck__bar { padding: 8px 16px; }
+}
+@media (max-width: 560px) {
+  .qcards { grid-template-columns: 1fr; }
+  .qflow { grid-template-columns: 1fr; }
+}

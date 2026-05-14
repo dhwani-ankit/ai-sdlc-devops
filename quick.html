@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevOps for AI-SDLC — Quick View · Dhwani RIS</title>
+  <meta name="description" content="A 10-slide quick view of the DevOps vertical's input for the AI-SDLC closing sessions at Dhwani RIS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/quick.css" />
+</head>
+<body class="deck">
+
+  <div class="deck__progress" aria-hidden="true"><span id="progress"></span></div>
+
+  <header class="deck__bar">
+    <a class="deck__brand" href="#s1">
+      <span class="deck__mark" aria-hidden="true"></span>
+      <span><strong>Dhwani RIS</strong> · DevOps for AI-SDLC</span>
+    </a>
+    <a class="deck__deep" href="index.html">Full document →</a>
+  </header>
+
+  <main class="slides">
+
+    <!-- 1 · Cover -->
+    <section class="slide slide--cover" data-slide="1">
+      <div class="slide__inner">
+        <p class="kicker">AI-SDLC · DevOps vertical input</p>
+        <h1>DevOps support for<br/>the AI-SDLC at Dhwani RIS</h1>
+        <p class="lede">How DevOps plugs into the 10 SDLC steps and supports the three personas — Product Builder, Architect, Account Manager.</p>
+        <p class="cover__meta">Prepared by <strong>Dhwani RIS DevOps</strong> · for the closing sessions · 12 / 14 May 2026</p>
+        <p class="cover__hint">Press <kbd>→</kbd> to start · <kbd>←</kbd> / <kbd>→</kbd> to navigate · <kbd>Esc</kbd> for overview</p>
+      </div>
+    </section>
+
+    <!-- 2 · The frame -->
+    <section class="slide" data-slide="2">
+      <div class="slide__inner">
+        <p class="slide__num">01</p>
+        <h2>What's already agreed</h2>
+        <div class="frame">
+          <div class="frame__col">
+            <p class="frame__when">7 May ✓</p>
+            <h3>Three personas</h3>
+            <p>Product Builder · Architect · Account Manager</p>
+          </div>
+          <div class="frame__col">
+            <p class="frame__when">7 May ✓</p>
+            <h3>Ten SDLC steps</h3>
+            <p>With proposed per-step ownership</p>
+          </div>
+          <div class="frame__col frame__col--accent">
+            <p class="frame__when">12 / 14 May →</p>
+            <h3>Lock + enablers</h3>
+            <p>Stack, tooling, sign-off, AI tooling, pilot</p>
+          </div>
+        </div>
+        <p class="slide__tag">This deck is the <strong>DevOps vertical's input</strong> for the closing sessions.</p>
+      </div>
+    </section>
+
+    <!-- 3 · The three personas -->
+    <section class="slide" data-slide="3">
+      <div class="slide__inner">
+        <p class="slide__num">02</p>
+        <h2>Three personas</h2>
+        <div class="qpersonas">
+          <article class="qpersona">
+            <p class="qpersona__icon">PB</p>
+            <h3>Product Builder</h3>
+            <p>Empowered with AI to ship. Owns Requirements, Mock-ups, Tech-Spec drafting, Dev + QA execution.</p>
+          </article>
+          <article class="qpersona">
+            <p class="qpersona__icon">AR</p>
+            <h3>Architect</h3>
+            <p>Defines guardrails. Owns architectural integrity + sign-off. <em>Reviewer, not implementer.</em></p>
+          </article>
+          <article class="qpersona">
+            <p class="qpersona__icon">AM</p>
+            <h3>Account Manager</h3>
+            <p>Owns the client + the intent. Holds scope at Intent Check, drives UAT, owns Go-Live handover.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · The 10 steps -->
+    <section class="slide" data-slide="4">
+      <div class="slide__inner">
+        <p class="slide__num">03</p>
+        <h2>The 10 SDLC steps · DevOps preview</h2>
+        <div class="qflow">
+          <span class="qflow__pill"><b>01</b> Intent Check<small>AM + PB</small></span>
+          <span class="qflow__pill"><b>02</b> Requirements<small>PB</small></span>
+          <span class="qflow__pill"><b>03</b> Mock-up First<small>PB</small></span>
+          <span class="qflow__pill"><b>04</b> Tech Spec<small>PB + Architect</small></span>
+          <span class="qflow__pill"><b>05</b> Plan + Tests<small>PB + QA</small></span>
+          <span class="qflow__pill qflow__pill--accent"><b>06</b> Dev + QA Loop<small>Eng + QA</small></span>
+          <span class="qflow__pill"><b>07</b> Client UAT<small>AM + Client</small></span>
+          <span class="qflow__pill qflow__pill--accent"><b>08</b> Pre-Prod<small>Engineering</small></span>
+          <span class="qflow__pill qflow__pill--accent"><b>09</b> Perf + Security<small>Eng + Security</small></span>
+          <span class="qflow__pill qflow__pill--accent"><b>10</b> Go-Live<small>Eng + AM</small></span>
+        </div>
+        <p class="slide__tag">Steps <strong>6, 8, 9, 10</strong> are where DevOps owns the bar. Steps 1–5, 7 are where DevOps enables the personas.</p>
+      </div>
+    </section>
+
+    <!-- 5 · Connective layer -->
+    <section class="slide" data-slide="5">
+      <div class="slide__inner">
+        <p class="slide__num">04</p>
+        <h2>DevOps is the connective layer</h2>
+        <div class="layers">
+          <div class="layer">
+            <p class="layer__range">Steps 01–05</p>
+            <h3>Enable the personas</h3>
+            <ul>
+              <li>Delivery-posture catalogue (AM at Intent Check)</li>
+              <li>Requirement ↔ code traceability built in</li>
+              <li>Hosted preview URLs for mock-ups</li>
+              <li>ADR template + IaC catalogue (Architect signs against a shelf)</li>
+            </ul>
+          </div>
+          <div class="layer layer--accent">
+            <p class="layer__range">Steps 06–07</p>
+            <h3>Build &amp; QA, safely</h3>
+            <ul>
+              <li>AI-aware code guardrails (hallucination check, test-quality gate, <code>ai-generated</code> label)</li>
+              <li>Self-serve review environments &lt; 15 min</li>
+              <li>UAT-tier with anonymised data + per-project status page</li>
+            </ul>
+          </div>
+          <div class="layer layer--accent">
+            <p class="layer__range">Steps 08–10</p>
+            <h3>Release with evidence</h3>
+            <ul>
+              <li>Pre-Prod from same IaC modules · Vault · observability default-on</li>
+              <li><strong>Kotwal</strong> scan as required gate · load test · evidence packet</li>
+              <li>Readiness portal · published <strong>Release Readiness Report</strong></li>
+            </ul>
+          </div>
+          <div class="layer">
+            <p class="layer__range">+ Beyond Go-Live</p>
+            <h3>Operate &amp; feedback</h3>
+            <ul>
+              <li><strong>Mukhbir</strong> for runtime health · default observability stack</li>
+              <li>Weekly + monthly auto-reports · per-project status pages</li>
+              <li>Blameless incident review · quarterly portfolio review</li>
+            </ul>
+          </div>
+        </div>
+        <p class="slide__tag">DevOps recommendation: add an explicit <strong>11th step</strong> for Operate &amp; Feedback.</p>
+      </div>
+    </section>
+
+    <!-- 6 · Project-start enablers -->
+    <section class="slide" data-slide="6">
+      <div class="slide__inner">
+        <p class="slide__num">05</p>
+        <h2>Project-start enablers — DevOps input</h2>
+        <div class="qenablers">
+          <div class="qenabler">
+            <p class="qenabler__lbl">Stack &amp; tooling</p>
+            <p>Starter repos with pre-commit, CI/CD, IaC and observability stubs already wired. Component-library catalogue. Mock-up tooling integrated with preview envs.</p>
+          </div>
+          <div class="qenabler">
+            <p class="qenabler__lbl">Sign-off &amp; governance</p>
+            <p>Every sign-off is an artefact, not an email. Required-reviewer rules wire the Architect ↔ PB escalation. Tech-spec template co-designed with the Architect.</p>
+          </div>
+          <div class="qenabler">
+            <p class="qenabler__lbl">AI in the SDLC</p>
+            <p>Quality gates apply regardless of who or what wrote the code. DevOps prescribes the bar the output must clear, not which AI assistant a persona uses.</p>
+          </div>
+          <div class="qenabler">
+            <p class="qenabler__lbl">Rollout</p>
+            <p>Pilot criteria: exercises all 10 steps · not client-critical from day one · willing PM + Tech Lead. Sequence Tier S → M → L envs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Outcomes -->
+    <section class="slide" data-slide="7">
+      <div class="slide__inner">
+        <p class="slide__num">06</p>
+        <h2>Outcomes we're targeting</h2>
+        <div class="qcards">
+          <div class="qcard"><p class="qcard__big">3<span>×</span></p><p class="qcard__lbl">faster idea → UAT</p></div>
+          <div class="qcard"><p class="qcard__big">&lt; 15<span>min</span></p><p class="qcard__lbl">env provision</p></div>
+          <div class="qcard"><p class="qcard__big">0</p><p class="qcard__lbl">critical vulns in prod</p></div>
+          <div class="qcard"><p class="qcard__big">100<span>%</span></p><p class="qcard__lbl">releases through the gate</p></div>
+          <div class="qcard"><p class="qcard__big">100<span>%</span></p><p class="qcard__lbl">projects observed by default</p></div>
+          <div class="qcard"><p class="qcard__big">Auto</p><p class="qcard__lbl">weekly + monthly reports</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Roadmap -->
+    <section class="slide" data-slide="8">
+      <div class="slide__inner">
+        <p class="slide__num">07</p>
+        <h2>Roadmap — four quarters</h2>
+        <div class="qroad">
+          <div class="qroad__item"><p class="qroad__q">P0 · Now</p><h4>Foundation</h4><p>Inventory, tiering, pilot pick, "done" definitions.</p></div>
+          <div class="qroad__item"><p class="qroad__q">P1 · Q1</p><h4>Build the spine</h4><p>Steps 2–6. Code guardrails, ADR, IaC catalogue.</p></div>
+          <div class="qroad__item"><p class="qroad__q">P2 · Q2</p><h4>Self-serve envs</h4><p>Steps 3, 6, 7. Portal MVP, three env tiers.</p></div>
+          <div class="qroad__item"><p class="qroad__q">P3 · Q3</p><h4>Release with evidence</h4><p>Steps 8–10. Readiness portal, Kotwal gate, reports.</p></div>
+          <div class="qroad__item"><p class="qroad__q">P4 · Q4</p><h4>Beyond Go-Live</h4><p>Mukhbir, observability default-on, auto-reports.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · Asks -->
+    <section class="slide" data-slide="9">
+      <div class="slide__inner">
+        <p class="slide__num">08</p>
+        <h2>What we need from leadership</h2>
+        <div class="qasks">
+          <div class="qask"><p class="qask__lbl">People</p><h3>1–2 dedicated DevOps engineers, four quarters</h3><p>Part-time support from each project's Tech Lead during their rollout window.</p></div>
+          <div class="qask"><p class="qask__lbl">Tooling</p><h3>Small set of licences — security &amp; observability</h3><p>Bulk of the stack is open source. Kotwal + Mukhbir anchor the internal layer.</p></div>
+          <div class="qask"><p class="qask__lbl">Decisions</p><h3>Standards calls only leadership can make</h3><p>Front-end stack · CI/CD platform · cloud target · build-vs-buy portal · who classifies project tiers.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · Open questions + close -->
+    <section class="slide slide--close" data-slide="10">
+      <div class="slide__inner">
+        <p class="slide__num">09</p>
+        <h2>Open questions to settle</h2>
+        <ol class="qopen">
+          <li>Add an 11th step for Operate &amp; Feedback?</li>
+          <li>Multi-persona handling on small projects — which sign-offs stay separate?</li>
+          <li>Which pilot project? (exercises all 10 steps, not client-critical day one)</li>
+          <li>Does DevOps prescribe the AI tooling, or only the gates output must clear?</li>
+          <li>Exception process for failing pre-Go-Live checks — who signs, how audited?</li>
+          <li>Phase-exit definition of "done" — who signs?</li>
+        </ol>
+        <p class="slide__tag">Full document: <a href="index.html">dhwani-ankit.github.io/ai-sdlc-devops</a></p>
+        <p class="closing"><strong>Let's lock it.</strong></p>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="deck__nav" aria-label="Slide navigation">
+    <button type="button" data-action="prev" aria-label="Previous slide">◀</button>
+    <span class="deck__counter"><span id="cur">1</span> / <span id="tot">10</span></span>
+    <button type="button" data-action="next" aria-label="Next slide">▶</button>
+  </nav>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const cur = document.getElementById('cur');
+      const tot = document.getElementById('tot');
+      const progress = document.getElementById('progress');
+      let idx = 0;
+
+      tot.textContent = slides.length;
+
+      function show(i) {
+        idx = Math.max(0, Math.min(slides.length - 1, i));
+        slides.forEach((s, j) => s.classList.toggle('is-active', j === idx));
+        cur.textContent = idx + 1;
+        progress.style.width = ((idx + 1) / slides.length * 100) + '%';
+        try { history.replaceState(null, '', '#s' + (idx + 1)); } catch (_) {}
+        const live = slides[idx];
+        if (live) live.scrollTop = 0;
+      }
+
+      // Init from URL hash
+      const m = (location.hash || '').match(/^#s(\d+)$/);
+      show(m ? Math.max(0, parseInt(m[1], 10) - 1) : 0);
+
+      document.addEventListener('keydown', function (e) {
+        const tag = (e.target && e.target.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          e.preventDefault(); show(idx + 1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault(); show(idx - 1);
+        } else if (e.key === 'Home') {
+          e.preventDefault(); show(0);
+        } else if (e.key === 'End') {
+          e.preventDefault(); show(slides.length - 1);
+        } else if (e.key === 'f' || e.key === 'F') {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+          else document.exitFullscreen?.();
+        }
+      });
+
+      document.querySelectorAll('[data-action]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          show(idx + (btn.dataset.action === 'next' ? 1 : -1));
+        });
+      });
+
+      // Click on slide body advances (but not on links/buttons)
+      document.querySelector('.slides').addEventListener('click', function (e) {
+        if (e.target.closest('a, button, kbd')) return;
+        show(idx + 1);
+      });
+
+      // Touch swipe
+      let tx = 0;
+      document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - tx;
+        if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
