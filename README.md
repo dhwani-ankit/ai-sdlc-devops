@@ -1,33 +1,37 @@
-# AI-SDLC + DevOps — The Future of Delivery at Dhwani RIS
+# DevOps support for AI-SDLC at Dhwani RIS
 
-A **strategic plan for senior leadership**. Not an implementation runbook — a clear, semi-technical picture of what AI-assisted delivery looks like at Dhwani RIS, and what DevOps support makes it work.
+The **DevOps vertical's input** for the AI-SDLC closing sessions at Dhwani RIS.
 
 > Live site: **https://dhwani-ankit.github.io/ai-sdlc-devops/**
 
+## What this is
+
+On 7 May, the AI-SDLC session agreed three personas (**Product Builder**, **Architect**, **Account Manager**) and a per-step accountability table across ten SDLC steps. The 12 May and 14 May closing sessions are locking the personas, ownership, and project-start enablers.
+
+Each vertical was asked to come carrying its own inputs — as the voice of the vertical, not just the individual. **This document is the DevOps vertical's input.**
+
 ## What's in the plan
 
-1. **Why now** — what's changed in how Dhwani builds software
-2. **The shift we're navigating** — today vs. the future, side by side
-3. **Four capabilities** — the changes stakeholders will feel:
-   - **C1 · Smart Code Guardrails** — AI code becomes safer than human-only code
-   - **C2 · On-Demand Environments** — fifteen-minute test environments, on request
-   - **C3 · Confident Releases** — every release ships with a one-page readiness report
-   - **C4 · Always-On Visibility** — every project observed by default, reports go out automatically
-4. **A day in the future** — narratives for the PM, analyst, developer, and client
-5. **Outcomes we're targeting** — measurable promises to leadership
-6. **Roadmap** — four quarters, each delivering a complete capability
-7. **What we need from leadership** — people, tooling, decisions
-8. **Open questions** — to be settled before Phase 1 closes
+1. **Where this fits** — context from the 7 May session
+2. **The three personas** — quick recap
+3. **The 10 SDLC steps** — flow diagram with DevOps' contribution previewed per step
+4. **Per-step DevOps support** — deep-dives for each of the 10 steps, plus a recommended +1 (Beyond Go-Live: Operate & Feedback)
+5. **Project-start enablers** — DevOps' input against stack & tooling, sign-off & governance, AI in the SDLC, rollout
+6. **How it lands for each persona** — what changes for the PB, the Architect, the AM, and the client
+7. **Outcomes** — measurable promises
+8. **Roadmap** — four quarters
+9. **What we need from leadership** — people, tooling, decisions
+10. **Open questions for the closing sessions**
 
 ## Audience
 
-Senior stakeholders, semi-technical. The plan trades implementation-detail tables for outcome framing, before/after views, and day-in-the-life narratives — so a decision-maker can read it cover-to-cover in ten minutes and leave with a clear picture.
+The AI-SDLC group (Sunandan, Swapnil, Abhijit, Harshdeep, Deepak, Nihaan, Prody, Ankit) — semi-technical, decision-making. The doc is paced so a reader can scan in 5 minutes or go cover-to-cover in 15.
 
 ## Structure of the site
 
 ```
 .
-├── index.html              # The plan, rendered as a single page
+├── index.html              # The plan, as a single page
 ├── assets/
 │   └── css/styles.css      # Dhwani-branded stylesheet
 └── .nojekyll               # Disable Jekyll on GitHub Pages
@@ -35,14 +39,12 @@ Senior stakeholders, semi-technical. The plan trades implementation-detail table
 
 Pure HTML + CSS. No build step.
 
-## Editing the plan
+## Editing
 
 `index.html` is the source of truth. Edit, commit, push — GitHub Pages redeploys automatically.
-
-For substantive changes, open a PR so stakeholders can comment section by section.
 
 ## Prepared by
 
 Dhwani RIS DevOps
 
-Status: **Draft v0.1** · last updated 2026-05-14
+Status: **Draft v0.2** · last updated 2026-05-14 · For the AI-SDLC closing sessions (12 May, 14 May)

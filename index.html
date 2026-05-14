@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI-SDLC + DevOps — The Future of Delivery at Dhwani RIS</title>
-  <meta name="description" content="A strategic plan for senior leadership: how DevOps support turns AI-assisted delivery into Dhwani RIS's biggest competitive advantage — safer, faster, more confident releases." />
+  <title>DevOps support for AI-SDLC — Dhwani RIS</title>
+  <meta name="description" content="The DevOps vertical's input for the AI-SDLC closing sessions at Dhwani RIS — how DevOps plugs into the 10 SDLC steps and supports the three personas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -19,13 +19,13 @@
         <span class="brand__mark" aria-hidden="true"></span>
         <span class="brand__name">Dhwani RIS</span>
         <span class="brand__sep">/</span>
-        <span class="brand__title">AI-SDLC + DevOps</span>
+        <span class="brand__title">DevOps support for AI-SDLC</span>
       </a>
       <nav class="topnav" aria-label="Primary">
-        <a href="#shift">The Shift</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#future">The Future</a>
-        <a href="#outcomes">Outcomes</a>
+        <a href="#personas">Personas</a>
+        <a href="#flow">10 Steps</a>
+        <a href="#steps">Per-step support</a>
+        <a href="#enablers">Enablers</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#asks">Asks</a>
       </nav>
@@ -36,238 +36,600 @@
     <aside class="sidebar" aria-label="On this page">
       <p class="sidebar__label">On this page</p>
       <ol class="toc">
-        <li><a href="#why">Why now</a></li>
-        <li><a href="#shift">The shift we're navigating</a></li>
-        <li><a href="#capabilities">Four capabilities</a>
+        <li><a href="#context">Where this fits</a></li>
+        <li><a href="#personas">The three personas</a></li>
+        <li><a href="#flow">The 10 SDLC steps</a></li>
+        <li><a href="#steps">Per-step DevOps support</a>
           <ol>
-            <li><a href="#c1">Smart Code Guardrails</a></li>
-            <li><a href="#c2">On-Demand Environments</a></li>
-            <li><a href="#c3">Confident Releases</a></li>
-            <li><a href="#c4">Always-On Visibility</a></li>
+            <li><a href="#s01">01 · Intent Check</a></li>
+            <li><a href="#s02">02 · Requirement Gathering</a></li>
+            <li><a href="#s03">03 · Mock-up First</a></li>
+            <li><a href="#s04">04 · Tech Spec</a></li>
+            <li><a href="#s05">05 · Dev Plan + Test Cases</a></li>
+            <li><a href="#s06">06 · Dev + QA Loop</a></li>
+            <li><a href="#s07">07 · Client UAT</a></li>
+            <li><a href="#s08">08 · Pre-Prod Setup</a></li>
+            <li><a href="#s09">09 · Perf + Security</a></li>
+            <li><a href="#s10">10 · Go-Live</a></li>
+            <li><a href="#sbeyond">+ Beyond Go-Live</a></li>
           </ol>
         </li>
-        <li><a href="#future">A day in the future</a></li>
-        <li><a href="#outcomes">Outcomes we're targeting</a></li>
+        <li><a href="#enablers">Project-start enablers</a></li>
+        <li><a href="#people">How it lands for each persona</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#asks">What we need from leadership</a></li>
         <li><a href="#open-questions">Open questions</a></li>
       </ol>
-      <p class="sidebar__meta">Audience: Senior leadership<br />Prepared by: Dhwani RIS DevOps<br />Status: Draft v0.1 · 2026-05-14</p>
+      <p class="sidebar__meta">Prepared by: Dhwani RIS DevOps<br />For: AI-SDLC closing sessions<br />Status: Draft v0.2 · 2026-05-14</p>
     </aside>
 
     <main id="main" class="content">
-      <section class="hero">
-        <p class="kicker">Strategic Plan · For Senior Leadership</p>
-        <h1>The Future of Delivery at Dhwani RIS</h1>
-        <p class="lede">Code now ships from PMs, analysts, and developers alike — all assisted by AI. This is the plan for how DevOps turns that shift into Dhwani's biggest delivery advantage: safer, faster, and more confident than ever before.</p>
-        <div class="hero__meta">
-          <span><strong>Prepared by</strong> Dhwani RIS DevOps</span>
-          <span><strong>Audience</strong> Senior Leadership</span>
-          <span><strong>Decision needed by</strong> Q3 2026</span>
-          <span><strong>Version</strong> Draft v0.1 · 2026-05-14</span>
+
+      <!-- HERO -->
+      <section class="hero hero--lifecycle">
+        <div class="hero__copy">
+          <p class="kicker">AI-SDLC · DevOps Vertical Input</p>
+          <h1>DevOps support for AI-SDLC at Dhwani RIS</h1>
+          <p class="lede">The AI-SDLC has three personas — <strong>Product Builder, Architect, Account Manager</strong> — and ten SDLC steps. This is the DevOps vertical's response: how DevOps plugs into every one of those steps, supports every persona, and turns AI-assisted delivery into Dhwani's delivery edge.</p>
+          <div class="hero__meta">
+            <span><strong>Prepared by</strong> Dhwani RIS DevOps</span>
+            <span><strong>For</strong> AI-SDLC closing sessions</span>
+            <span><strong>Status</strong> Draft v0.2 · 2026-05-14</span>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" class="ring">
+            <defs>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F47C20" />
+                <stop offset="100%" stop-color="#D9651C" />
+              </linearGradient>
+            </defs>
+            <circle cx="110" cy="110" r="92" fill="none" stroke="#ECECE6" stroke-width="2" />
+            <circle cx="110" cy="110" r="92" fill="none" stroke="url(#ringGrad)" stroke-width="3" stroke-dasharray="6 14" class="ring__rotor" />
+            <g class="ring__nodes" fill="#FFF1E5" stroke="#F47C20" stroke-width="2">
+              <circle cx="110" cy="18"  r="7" />
+              <circle cx="155" cy="33"  r="7" />
+              <circle cx="187" cy="65"  r="7" />
+              <circle cx="202" cy="110" r="7" />
+              <circle cx="187" cy="155" r="7" />
+              <circle cx="155" cy="187" r="7" />
+              <circle cx="110" cy="202" r="7" />
+              <circle cx="65"  cy="187" r="7" />
+              <circle cx="33"  cy="155" r="7" />
+              <circle cx="18"  cy="110" r="7" />
+            </g>
+            <circle cx="110" cy="110" r="42" fill="#FFFFFF" stroke="#F47C20" stroke-width="2" />
+            <text x="110" y="104" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1A1A1A">DevOps</text>
+            <text x="110" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="500" fill="#6B6B6B">across 10 steps</text>
+          </svg>
         </div>
       </section>
 
-      <section id="why">
-        <h2><span class="num">01</span> Why now</h2>
-        <p>The way software gets built at Dhwani RIS has fundamentally changed. Until recently, "writing code" meant a developer at a keyboard. Today, AI assistants help everyone contribute — a PM drafting a small flow, an analyst tightening a report, a developer scaffolding a service. That is a tremendous opportunity, and it is already happening on our projects.</p>
-        <p>It also surfaces a question senior leadership needs to answer: <strong>what does our DevOps function look like when anyone can ship code?</strong> The old answer — pre-commit hooks, linters, and a manual checklist — was designed for a world where developers wrote and reviewed each other's code. It does not match how AI fails, and it does not scale to the number of contributors AI unlocks.</p>
+      <!-- CONTEXT -->
+      <section id="context">
+        <h2><span class="num">00</span> Where this document fits</h2>
+        <p>On <strong>7 May</strong>, the AI-SDLC session at Dhwani agreed three personas and a per-step ownership table across the ten SDLC steps. The closing sessions on <strong>12 May</strong> and <strong>14 May</strong> are locking the personas, the per-step accountability, and the project-start enablers (stack, tooling, sign-off, AI tooling, pilot).</p>
+        <p>Each vertical was asked to come in carrying its own inputs — <em>"as the voice of the vertical, not just yourself."</em> <strong>This document is the DevOps vertical's input.</strong></p>
         <div class="callout">
-          <p><strong>The opportunity in one line.</strong> AI lets us deliver more, with more people. The right DevOps support makes sure "more" never means "less safe", and gives senior leadership a clear, evidence-based picture of every project's health.</p>
+          <p><strong>DevOps is the connective layer of the AI-SDLC.</strong> The personas define <em>who</em> does the work, the 10 steps define <em>what</em> the work is. DevOps defines <em>how the work flows</em> — the pipelines, environments, guardrails, evidence, and observability that make AI-assisted delivery fast and accountable, end to end.</p>
         </div>
       </section>
 
-      <section id="shift">
-        <h2><span class="num">02</span> The shift we're navigating</h2>
-        <p>This is the journey, in one view. The right column is where we're going, with DevOps support designed for the AI-SDLC era.</p>
-        <div class="shift">
-          <div class="shift__col shift__col--before">
-            <p class="shift__label">Today</p>
+      <!-- PERSONAS -->
+      <section id="personas">
+        <h2><span class="num">01</span> The three personas (recap)</h2>
+        <p>Recapped here so this document is self-contained. To be locked in the closing sessions.</p>
+        <div class="personas">
+          <article class="persona">
+            <p class="persona__icon" aria-hidden="true">PB</p>
+            <h3>Product Builder</h3>
+            <p>Empowered with AI to ship. Owns Requirements, Mock-ups, Tech-Spec drafting, and the Dev + QA loop execution. The high-leverage role — most of DevOps' value lands here.</p>
+          </article>
+          <article class="persona">
+            <p class="persona__icon" aria-hidden="true">AR</p>
+            <h3>Architect</h3>
+            <p>Defines guardrails. Owns architectural integrity and sign-off. Prevents drift across projects. <em>Reviewer and decision-maker, not implementer.</em></p>
+          </article>
+          <article class="persona">
+            <p class="persona__icon" aria-hidden="true">AM</p>
+            <h3>Account Manager</h3>
+            <p>Owns the client relationship and the intent. Holds scope at Intent Check, drives Client UAT, owns Go-Live handover.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FLOW (10 steps) -->
+      <section id="flow">
+        <h2><span class="num">02</span> The 10 SDLC steps</h2>
+        <p>The ten steps agreed on 7 May, the persona that owns each, and a one-line preview of DevOps' contribution. Click a step to jump to its detailed support plan.</p>
+
+        <div class="flow flow--10" role="list">
+          <a href="#s01" class="flow__node" role="listitem">
+            <span class="flow__num">01</span>
+            <span class="flow__name">Intent Check</span>
+            <span class="flow__owner">AM + PB</span>
+            <span class="flow__devops">Quote delivery posture from a published catalogue</span>
+          </a>
+          <a href="#s02" class="flow__node" role="listitem">
+            <span class="flow__num">02</span>
+            <span class="flow__name">Requirement Gathering</span>
+            <span class="flow__owner">PB</span>
+            <span class="flow__devops">Requirement ↔ code traceability built into the repo</span>
+          </a>
+          <a href="#s03" class="flow__node" role="listitem">
+            <span class="flow__num">03</span>
+            <span class="flow__name">Mock-up First</span>
+            <span class="flow__owner">PB · client sign-off</span>
+            <span class="flow__devops">Hosted preview URL per mock-up branch</span>
+          </a>
+          <a href="#s04" class="flow__node" role="listitem">
+            <span class="flow__num">04</span>
+            <span class="flow__name">Tech Spec</span>
+            <span class="flow__owner">PB drafts · Architect signs</span>
+            <span class="flow__devops">ADR template · reference IaC catalogue</span>
+          </a>
+          <a href="#s05" class="flow__node" role="listitem">
+            <span class="flow__num">05</span>
+            <span class="flow__name">Dev Plan + Test Cases</span>
+            <span class="flow__owner">PB + QA</span>
+            <span class="flow__devops">Test scaffolds and pipeline templates per repo</span>
+          </a>
+          <a href="#s06" class="flow__node flow__node--accent" role="listitem">
+            <span class="flow__num">06</span>
+            <span class="flow__name">Dev + QA Loop</span>
+            <span class="flow__owner">Engineering + QA</span>
+            <span class="flow__devops">AI-aware code guardrails · self-serve envs</span>
+          </a>
+          <a href="#s07" class="flow__node" role="listitem">
+            <span class="flow__num">07</span>
+            <span class="flow__name">Client UAT</span>
+            <span class="flow__owner">AM + Client</span>
+            <span class="flow__devops">UAT env · anonymised data · status page</span>
+          </a>
+          <a href="#s08" class="flow__node flow__node--accent" role="listitem">
+            <span class="flow__num">08</span>
+            <span class="flow__name">Pre-Prod Setup</span>
+            <span class="flow__owner">Engineering</span>
+            <span class="flow__devops">IaC · Vault · observability default-on</span>
+          </a>
+          <a href="#s09" class="flow__node flow__node--accent" role="listitem">
+            <span class="flow__num">09</span>
+            <span class="flow__name">Perf + Security</span>
+            <span class="flow__owner">Engineering + Security</span>
+            <span class="flow__devops">Kotwal · load tests · evidence packet</span>
+          </a>
+          <a href="#s10" class="flow__node flow__node--accent" role="listitem">
+            <span class="flow__num">10</span>
+            <span class="flow__name">Go-Live</span>
+            <span class="flow__owner">Engineering + AM</span>
+            <span class="flow__devops">Readiness gate · published readiness report</span>
+          </a>
+        </div>
+
+        <div class="loop">
+          <svg viewBox="0 0 800 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="loop__svg">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#F47C20" />
+              </marker>
+            </defs>
+            <path d="M 770 10 Q 770 50 700 50 L 100 50 Q 30 50 30 10" fill="none" stroke="#F47C20" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)" />
+          </svg>
+          <span class="loop__label">After Go-Live, operations and feedback feed the next intent — the lifecycle is a loop, not a line.</span>
+        </div>
+      </section>
+
+      <!-- STEP DEEP-DIVES -->
+      <section id="steps">
+        <h2><span class="num">03</span> Per-step DevOps support</h2>
+        <p>For each of the ten steps: <em>what happens</em>, <em>who owns it</em>, <em>where DevOps plugs in</em>, and <em>what this unlocks</em>. The order and naming match the per-step accountability table agreed on 7 May.</p>
+
+        <article class="stage" id="s01">
+          <header class="stage__head">
+            <span class="stage__num">01</span>
+            <h3>Intent Check</h3>
+            <span class="stage__owner">AM + PB</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The AM holds the client's intent; together with the PB they translate it into a scoped engagement.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>Published <strong>delivery-posture catalogue</strong> — environment tiers, observability commitments, security baselines — that the AM can quote at Intent.</li>
+                <li>Standard SLA / SLO bands the AM can promise without checking back with Engineering.</li>
+                <li>Estimating shortcuts: tier-by-tier indicative timelines and cost ranges.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>The AM enters Intent conversations with a credible delivery posture in hand — fewer surprises later, faster scope agreement now.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s02">
+          <header class="stage__head">
+            <span class="stage__num">02</span>
+            <h3>Requirement Gathering</h3>
+            <span class="stage__owner">PB</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The PB captures and refines requirements with AI assistance.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>Templated requirement format that CI can read — a PR linked to a requirement ID lets the pipeline assert "this change was for that ask".</li>
+                <li><strong>Audit trail starts at the requirement, not the commit.</strong></li>
+                <li>Repo scaffolding ships with the requirement-link convention pre-wired.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>Any line of code at Go-Live can be traced back to the business need it served. The AM and Architect both gain provenance for free.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s03">
+          <header class="stage__head">
+            <span class="stage__num">03</span>
+            <h3>Mock-up First</h3>
+            <span class="stage__owner">PB · client sign-off</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The PB builds mock-ups with AI and gets client sign-off before any production code is written.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li><strong>Hosted preview URL per mock-up branch.</strong> Share a working link with the client, not a screenshot deck.</li>
+                <li>Auto-teardown after sign-off or 7-day idle — cost predictable.</li>
+                <li>Standard mock-up sign-off captured against the PR — the audit trail records who approved which mock-up, and when.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>Clients sign off on something interactive. Sign-offs are auditable artefacts, not email threads.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s04">
+          <header class="stage__head">
+            <span class="stage__num">04</span>
+            <h3>Tech Spec</h3>
+            <span class="stage__owner">PB drafts · Architect signs off</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The PB drafts the tech spec (AI-assisted). The Architect signs off — reviewer and decision-maker, not implementer.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li><strong>ADR template</strong> ships in every new repo.</li>
+                <li><strong>Reference-architecture and IaC catalogue</strong> published. The Architect signs against a known catalogue, not from scratch.</li>
+                <li>Automated check: the tech-spec PR must link the chosen reference pattern (or explain the deviation).</li>
+                <li>Architect → PB escalation runs through GitHub PR review with required-reviewer rules.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>The Architect scales across many more projects without becoming the bottleneck. AI-suggested designs are sanity-checked against Dhwani's chosen patterns, every time.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s05">
+          <header class="stage__head">
+            <span class="stage__num">05</span>
+            <h3>Dev Plan + Test Cases</h3>
+            <span class="stage__owner">PB + QA</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>PB and QA plan the development and test coverage.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>Test scaffolds and CI pipeline templates ship with the repo.</li>
+                <li>Coverage thresholds and required test types defined per project tier.</li>
+                <li>Test-data anonymisation pipeline available — QA can request anonymised data slices for new test cases.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>The team doesn't reinvent test setup per project. QA plans against a known harness.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s06">
+          <header class="stage__head">
+            <span class="stage__num">06</span>
+            <h3>Dev + QA Loop</h3>
+            <span class="stage__owner">Engineering + QA</span>
+            <span class="stage__pill stage__pill--accent">High-leverage</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>Code is written, with AI assistance, by the PB and engineers. The most dynamic loop — and where AI volume is highest.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li><strong>AI-aware code guardrails:</strong> secrets scan, "hallucination check" (do the imports actually exist?), test-quality gate (no mock-only tests), <code>ai-generated</code> PR label.</li>
+                <li>Pre-commit baseline rolled out to every active repo — issues caught at the laptop.</li>
+                <li><strong>Self-service review environments</strong> in under 15 minutes — no waiting on DevOps.</li>
+                <li>Conventional commits enforced. Audit trail stays machine-readable.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>AI-assisted code becomes <em>safer</em> than purely human-written code. Volume goes up; the bar holds.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s07">
+          <header class="stage__head">
+            <span class="stage__num">07</span>
+            <h3>Client UAT</h3>
+            <span class="stage__owner">AM + Client</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The AM walks the client through a UAT environment and collects sign-off.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>Dedicated <strong>UAT-tier environment</strong>, provisioned on request, prod-shaped.</li>
+                <li>Anonymised production-like data seeded; no PII leaves prod.</li>
+                <li>Per-project <strong>status page</strong> — the client can see env health independently.</li>
+                <li>UAT sign-off captured in the PR / release record. The AM never says "let me check with DevOps".</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>The AM shares a working URL, not a deck. UAT sign-offs are durable artefacts.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s08">
+          <header class="stage__head">
+            <span class="stage__num">08</span>
+            <h3>Pre-Prod Setup</h3>
+            <span class="stage__owner">Engineering</span>
+            <span class="stage__pill stage__pill--accent">High-leverage</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>Engineering prepares a production-shape environment for the release.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>IaC is templated — Pre-Prod is provisioned from the same modules as Prod, only smaller / segregated.</li>
+                <li>Secrets injected from Vault. Never in env files.</li>
+                <li><strong>Observability is default-on</strong> — dashboards, alerts, runbook links present <em>before</em> deploy, not after.</li>
+                <li>Database backup and restore policy configured before first deploy.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>No project ships "blind". Pre-Prod is a faithful rehearsal for Prod, not a guess.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s09">
+          <header class="stage__head">
+            <span class="stage__num">09</span>
+            <h3>Perf + Security</h3>
+            <span class="stage__owner">Engineering + Security</span>
+            <span class="stage__pill stage__pill--accent">High-leverage</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>Load tests, performance baseline, security review.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li><strong>Kotwal scan</strong> — Dhwani's own scanner — runs CERT tests, penetration tests, and open-source vulnerability checks as a required gate.</li>
+                <li>Load test runs in a dedicated environment tier; performance regression compared against the last release.</li>
+                <li>Evidence packet for the Security sign-off assembled automatically (scan reports, perf baseline, exception log).</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>Security signs off against evidence, not assurances. Performance regressions are caught here, not after Go-Live.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage" id="s10">
+          <header class="stage__head">
+            <span class="stage__num">10</span>
+            <h3>Go-Live</h3>
+            <span class="stage__owner">Engineering + AM</span>
+            <span class="stage__pill stage__pill--accent">High-leverage</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>Promotion to production. AM owns client handover.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li><strong>Release-readiness portal</strong> — promote-to-production is enabled only when every required check is green (or has a signed exception).</li>
+                <li>A versioned <strong>Release Readiness Report</strong> is published. The AM hands it to the client.</li>
+                <li>Post-deploy monitoring tightens for the first 30 minutes — rollback triggers documented in advance.</li>
+                <li>Rollback rehearsed; runbook linked from the report.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>Predictable, defensible Go-Lives. The AM shares evidence with the client, not assurances. Hot-fix releases drop sharply.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="stage stage--bonus" id="sbeyond">
+          <header class="stage__head">
+            <span class="stage__num">+</span>
+            <h3>Beyond Go-Live · Operate &amp; Feedback</h3>
+            <span class="stage__owner">Engineering + DevOps</span>
+          </header>
+          <div class="stage__grid">
+            <div>
+              <h4>What happens</h4>
+              <p>The application runs in production. Incidents, usage patterns, and client signals flow back into the next Intent Check. The lifecycle is a loop.</p>
+            </div>
+            <div>
+              <h4>Where DevOps plugs in</h4>
+              <ul class="bullets">
+                <li>Default observability stack on every project — metrics, logs, traces, runtime health.</li>
+                <li><strong>Mukhbir</strong> — Dhwani's own monitoring — tracks uptime, SSL, security headers, response health, and produces shareable runtime reports.</li>
+                <li><strong>Weekly + monthly automated reports</strong> to project owners — uptime, performance, errors, infrastructure usage, security signals, cost.</li>
+                <li>Blameless incident review template for every Sev-1 / Sev-2.</li>
+                <li>Quarterly portfolio review feeds findings back to the AM and PB for the next intent.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>What this unlocks</h4>
+              <p>The 10 steps are not where AI-SDLC ends. Operations and feedback close the loop — each cycle, the bar gets higher. <em>(Recommended addition to the official table.)</em></p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ENABLERS -->
+      <section id="enablers">
+        <h2><span class="num">04</span> Project-start enablers — what DevOps brings</h2>
+        <p>The closing sessions are asking each vertical for inputs against four enablers: stack &amp; tooling, sign-off &amp; governance, AI in the SDLC, and rollout. Here is the DevOps input on each.</p>
+
+        <div class="enablers">
+          <div class="enabler">
+            <p class="enabler__label">Stack &amp; tooling</p>
+            <h4>A maintained reference stack and project scaffold per repo type.</h4>
             <ul>
-              <li>Only developers write code.</li>
-              <li>Reviews focus on style and syntax.</li>
-              <li>Environments take days to provision.</li>
-              <li>Release readiness is a verbal assurance.</li>
-              <li>Issues are discovered in production.</li>
-              <li>Stakeholders ask for status. Teams scramble to produce it.</li>
+              <li>Starter repos with pre-commit baseline, CI/CD template, IaC modules, and observability stubs already wired.</li>
+              <li>Component-library catalogue published; PBs pick from a shelf, they don't shop the web.</li>
+              <li>Mock-up tooling integrated with the hosted preview environment workflow.</li>
             </ul>
           </div>
-          <div class="shift__col shift__col--after">
-            <p class="shift__label">With AI-SDLC + DevOps Support</p>
+
+          <div class="enabler">
+            <p class="enabler__label">Sign-off &amp; governance</p>
+            <h4>Every sign-off is an artefact, not an email.</h4>
             <ul>
-              <li>Anyone — PM, analyst, developer — contributes safely.</li>
-              <li>Reviews focus on <em>intent and behaviour</em>, not just style.</li>
-              <li>Environments are on-demand in under 15 minutes.</li>
-              <li>Every release ships with a published readiness report.</li>
-              <li>Issues are caught and prevented before clients see them.</li>
-              <li>Stakeholders get health reports automatically — weekly or monthly.</li>
+              <li>Standard tech-spec doc set (DevOps + Architect to co-design): inputs, outputs, dependencies, deployment shape, observability plan.</li>
+              <li>Mock-up sign-off, UAT sign-off, Security sign-off, AM handover — all captured against the PR / release record.</li>
+              <li>Architect ↔ PB escalation path runs through required-reviewer rules. No out-of-band approvals.</li>
+            </ul>
+          </div>
+
+          <div class="enabler">
+            <p class="enabler__label">AI in the SDLC</p>
+            <h4>Quality gates apply regardless of who or what wrote the code.</h4>
+            <ul>
+              <li><strong>AI-aware gates</strong>: suspicion gate, hallucination check, test-quality gate, dependency justification, <code>ai-generated</code> labels.</li>
+              <li>Same gates apply to AI-augmented work and human-only work — no special casing, no exemptions.</li>
+              <li>DevOps does not prescribe which AI assistant each persona uses — DevOps prescribes the bar the output must clear.</li>
+            </ul>
+          </div>
+
+          <div class="enabler">
+            <p class="enabler__label">Rollout</p>
+            <h4>Pilot project criteria + sequencing.</h4>
+            <ul>
+              <li><strong>Pilot criteria:</strong> not client-critical from day one; exercises every one of the 10 steps; PM and Tech Lead willing to be the pilot.</li>
+              <li>Sequence by repo tier — Tier S (review envs) first, Tier M (UAT) next, Tier L (perf) last.</li>
+              <li>Parallel initiatives folded in: the existing pre-commit work, IaC modules, and Kotwal / Mukhbir integrations are foundation, not duplication.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section id="capabilities">
-        <h2><span class="num">03</span> Four capabilities we'll build</h2>
-        <p>The plan rests on four capabilities. Each is a clear outcome the team and stakeholders will feel — not a list of tools, but a change in how Dhwani delivers.</p>
-        <div class="pillars">
-          <a class="pillar" href="#c1">
-            <span class="pillar__num">C1</span>
-            <h3>Smart Code Guardrails</h3>
-            <p>AI-assisted code becomes safer than purely human-written code, because every contribution passes through a review layer designed for how AI actually fails.</p>
-          </a>
-          <a class="pillar" href="#c2">
-            <span class="pillar__num">C2</span>
-            <h3>On-Demand Environments</h3>
-            <p>Anyone on the team can request a working test environment in minutes. Teams run in parallel instead of taking turns.</p>
-          </a>
-          <a class="pillar" href="#c3">
-            <span class="pillar__num">C3</span>
-            <h3>Confident Releases</h3>
-            <p>No release goes live until a published readiness checklist is green. Every release ships with a one-page report stakeholders can trust.</p>
-          </a>
-          <a class="pillar" href="#c4">
-            <span class="pillar__num">C4</span>
-            <h3>Always-On Visibility</h3>
-            <p>Every project is observed by default. Senior stakeholders see how each application is performing, without anyone chasing numbers.</p>
-          </a>
-        </div>
-      </section>
-
-      <!-- C1 -->
-      <section id="c1">
-        <h2><span class="num">C1</span> Smart Code Guardrails</h2>
-        <p class="section-lede">AI-assisted code becomes safer, not riskier, than purely human-written code.</p>
-        <h3>What changes</h3>
-        <ul class="bullets">
-          <li>Secrets, weak security patterns, and risky shortcuts are caught at the contributor's laptop — before any push to a shared branch.</li>
-          <li>Code that "looks right but is wrong" — generic patterns, fabricated APIs, tests that pass without exercising real behaviour — is flagged automatically.</li>
-          <li>Imported libraries and functions are verified to actually exist (a common AI failure mode).</li>
-          <li>AI-assisted contributions are labelled clearly, so human reviewers know what to scrutinise twice.</li>
-        </ul>
-        <h3>What stakeholders see</h3>
-        <ul class="bullets">
-          <li>Far fewer security and compliance issues making it past code review.</li>
-          <li>A measurable, repeatable bar for what "good code" means at Dhwani.</li>
-          <li>Reviewer time spent on logic and design, not on chasing formatting issues.</li>
-        </ul>
-      </section>
-
-      <!-- C2 -->
-      <section id="c2">
-        <h2><span class="num">C2</span> On-Demand Environments</h2>
-        <p class="section-lede">Any team member can spin up a working environment in under fifteen minutes — without waiting on DevOps.</p>
-        <h3>What changes</h3>
-        <ul class="bullets">
-          <li>A simple self-service portal: pick the project, the branch, and the purpose. A working URL comes back in minutes.</li>
-          <li>Three sizes of environment — for quick reviews, full UAT, and performance testing — so people pick the right one for the job.</li>
-          <li>Idle environments are torn down automatically. Costs stay predictable.</li>
-          <li>Environments are seeded with safe, anonymised data. No client PII ever leaves production.</li>
-        </ul>
-        <h3>What stakeholders see</h3>
-        <ul class="bullets">
-          <li>Demos to clients the <em>same day</em> a feature is built.</li>
-          <li>Teams unblocked from each other — parallel work instead of queueing.</li>
-          <li>Environment costs that are visible, predictable, and tied to project tiers.</li>
-        </ul>
-      </section>
-
-      <!-- C3 -->
-      <section id="c3">
-        <h2><span class="num">C3</span> Confident Releases</h2>
-        <p class="section-lede">No release goes live until a published readiness checklist is green. Every release ships with a one-page report.</p>
-        <h3>What changes</h3>
-        <p>Each release passes through a release-readiness portal. The portal runs the checks, gathers the evidence, and only enables <em>Promote to Production</em> when every required box is green (or has a signed, recorded exception).</p>
-        <div class="checklist">
-          <div class="checklist__item"><span class="checklist__bullet">01</span><div><strong>Security scans pass</strong><p>Anchored on <em>Kotwal</em>, our own scanner — covering open-source vulnerabilities and penetration tests. Zero criticals, zero highs.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">02</span><div><strong>End-to-end tests pass</strong><p>Every critical user journey is exercised before release.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">03</span><div><strong>Load and performance hold up</strong><p>The application meets its performance targets at expected peak load.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">04</span><div><strong>No performance regression</strong><p>Less than 10% slower than the previous release.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">05</span><div><strong>Backup and restore drill complete</strong><p>The team has rehearsed restoring from backup in the last 30 days.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">06</span><div><strong>Observability ready</strong><p>Dashboards, alerts, and a runbook are in place before — not after — release.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">07</span><div><strong>Data protection verified</strong><p>PII is encrypted at rest and masked in non-production environments.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">08</span><div><strong>Compliance verified</strong><p>For government projects, audit logging and retention policies are confirmed live.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">09</span><div><strong>Rollback plan documented</strong><p>If something goes wrong, the team knows exactly how to revert.</p></div></div>
-          <div class="checklist__item"><span class="checklist__bullet">10</span><div><strong>Sign-offs collected</strong><p>Tech Lead, QA, DevOps — and Security for sensitive projects — have signed.</p></div></div>
-        </div>
-        <h3>What stakeholders see</h3>
-        <ul class="bullets">
-          <li>A consistent, published bar for "ready to ship" that every project follows.</li>
-          <li>A versioned <strong>Release Readiness Report</strong> — shareable with clients, archived for audit.</li>
-          <li>Far fewer hot-fix releases right after a deploy. Far fewer surprise client calls.</li>
-        </ul>
-      </section>
-
-      <!-- C4 -->
-      <section id="c4">
-        <h2><span class="num">C4</span> Always-On Visibility</h2>
-        <p class="section-lede">Every project is observed by default. Reports go to stakeholders without anyone having to ask.</p>
-        <h3>What changes</h3>
-        <ul class="bullets">
-          <li>A default monitoring stack is applied to every new project. No project ships "blind".</li>
-          <li>Runtime health is tracked by <em>Mukhbir</em>, our own monitoring tool — uptime, SSL, security headers, response health.</li>
-          <li>Weekly and monthly automated reports cover uptime, performance, errors, infrastructure usage, security signals, and (for cloud projects) cost.</li>
-          <li>Each project has a status page — clients can see system health themselves.</li>
-          <li>Alerts reach the right people in Slack and on pager. Issues surface before clients notice.</li>
-        </ul>
-        <h3>What stakeholders see</h3>
-        <ul class="bullets">
-          <li>A single-pane view of project health across the portfolio.</li>
-          <li>Early warning when a project starts to drift in quality, performance, or cost.</li>
-          <li>Hard numbers to back up infrastructure, scaling, and renewal decisions.</li>
-        </ul>
-      </section>
-
-      <section id="future">
-        <h2><span class="num">04</span> A day in the future</h2>
-        <p>What does this future actually feel like, for the people in it? Four short scenes.</p>
+      <!-- HOW IT LANDS FOR EACH PERSONA -->
+      <section id="people">
+        <h2><span class="num">05</span> How it lands for each persona</h2>
+        <p>The same DevOps layer, lived from three different chairs.</p>
         <div class="stories">
           <article class="story">
-            <p class="story__role">For a PM</p>
-            <p class="story__quote">"I describe a small feature in plain English. The AI drafts it. A review environment is ready within minutes, with safe sample data. I demo it to the client the same afternoon — and have a clear answer when they ask, 'Is this safe to roll out?'"</p>
+            <p class="story__role">Product Builder</p>
+            <p class="story__quote">"I capture the requirement, draft the mock-up, draft the tech spec, then run the Dev + QA loop with AI assistance. DevOps gives me the pipeline the moment the repo is created — guardrails on AI-generated code, automatic review environments per branch, test scaffolds ready to fill. I move fast without becoming the project's risk."</p>
           </article>
           <article class="story">
-            <p class="story__role">For an analyst</p>
-            <p class="story__quote">"I propose a small change to a report. Automated checks confirm it's safe and won't break anything else. A developer reviews the logic. It's live within the week, not the month. I never have to ask DevOps to 'set something up' for me."</p>
+            <p class="story__role">Architect</p>
+            <p class="story__quote">"My job is to sign off, not to implement. DevOps publishes reference IaC and architecture patterns. When a Product Builder submits a tech spec, my review is anchored on whether they used the catalogue — and policy-as-code blocks the drift patterns I'd otherwise catch by hand. I scale across many more projects without being the bottleneck."</p>
           </article>
           <article class="story">
-            <p class="story__role">For a developer</p>
-            <p class="story__quote">"I focus on the hard problems — architecture, edge cases, integrations. The repetitive scaffolding is handled by AI, and the guardrails catch its mistakes before they reach me. I spend more time on review and design, less on babysitting boilerplate."</p>
+            <p class="story__role">Account Manager</p>
+            <p class="story__quote">"At Intent Check I quote a delivery posture I can stand behind, because DevOps has already defined what Tier 2 environments and SLAs look like. At UAT I share a working URL, not a slide. At Go-Live I share a published Release Readiness Report. The client sees evidence, not assurances."</p>
           </article>
           <article class="story">
-            <p class="story__role">For a client</p>
+            <p class="story__role">Client</p>
             <p class="story__quote">"Every release comes with a one-page readiness report. Every month I get an automated health report — uptime, performance, anything to watch. I always know what's being delivered and how it's performing. I never have to chase."</p>
           </article>
         </div>
       </section>
 
+      <!-- OUTCOMES -->
       <section id="outcomes">
-        <h2><span class="num">05</span> Outcomes we're targeting</h2>
-        <p>If this plan succeeds, here is what we measure — and what we promise senior leadership.</p>
+        <h2><span class="num">06</span> Outcomes</h2>
+        <p>If DevOps support lands as described, here is what we measure across the 10 steps and beyond.</p>
         <div class="cards">
           <div class="card">
             <p class="card__label">Speed</p>
             <p class="card__big">3<span class="card__sup">×</span></p>
-            <p class="card__sub">faster from idea to UAT</p>
+            <p class="card__sub">faster from idea to UAT (Steps 1–7)</p>
           </div>
           <div class="card">
             <p class="card__label">Environments</p>
             <p class="card__big">&lt; 15 min</p>
-            <p class="card__sub">from request to a working URL</p>
+            <p class="card__sub">from request to working URL (Step 6, 7)</p>
           </div>
           <div class="card">
             <p class="card__label">Release safety</p>
             <p class="card__big">0</p>
-            <p class="card__sub">critical / high vulnerabilities in prod</p>
+            <p class="card__sub">critical / high vulnerabilities in prod (Step 9, 10)</p>
           </div>
           <div class="card">
-            <p class="card__label">Visibility</p>
-            <p class="card__big">100%</p>
-            <p class="card__sub">of projects monitored by default</p>
+            <p class="card__label">Traceability</p>
+            <p class="card__big">End-to-end</p>
+            <p class="card__sub">requirement to commit to release (Steps 2–10)</p>
           </div>
           <div class="card">
             <p class="card__label">Releases</p>
             <p class="card__big">100%</p>
-            <p class="card__sub">through the readiness gate</p>
+            <p class="card__sub">through the readiness gate (Step 10)</p>
+          </div>
+          <div class="card">
+            <p class="card__label">Visibility</p>
+            <p class="card__big">100%</p>
+            <p class="card__sub">of projects observed by default (Beyond)</p>
           </div>
           <div class="card">
             <p class="card__label">Reports</p>
@@ -275,53 +637,50 @@
             <p class="card__sub">weekly + monthly, no chasing</p>
           </div>
           <div class="card">
-            <p class="card__label">Client confidence</p>
-            <p class="card__big">1-pager</p>
-            <p class="card__sub">readiness report per release</p>
-          </div>
-          <div class="card">
-            <p class="card__label">Cost predictability</p>
+            <p class="card__label">Cost</p>
             <p class="card__big">Tiered</p>
-            <p class="card__sub">env costs visible, capped, reportable</p>
+            <p class="card__sub">env spend visible, capped, reportable</p>
           </div>
         </div>
       </section>
 
+      <!-- ROADMAP -->
       <section id="roadmap">
-        <h2><span class="num">06</span> Roadmap</h2>
-        <p>Four quarters. Each quarter delivers a complete, visible capability — not a half-built tool. Leadership reviews at the end of each phase before continuing.</p>
+        <h2><span class="num">07</span> Roadmap</h2>
+        <p>Four quarters. Each phase delivers complete DevOps support for a contiguous slice of the 10 steps. Leadership reviews at each phase boundary.</p>
         <ol class="phases">
           <li>
             <span class="phases__tag">Phase 0 · Now</span>
-            <h4>Foundation</h4>
-            <p>Inventory current tooling. Classify projects by criticality. Agree the definition of "done" with senior leadership. Pick the pilot project.</p>
+            <h4>Foundation · all steps</h4>
+            <p>Inventory current tooling step by step. Pick the pilot project against the criteria in §04. Lock the project-start enabler answers. Define "done" for each phase exit with senior leadership.</p>
           </li>
           <li>
             <span class="phases__tag">Phase 1 · Q1</span>
-            <h4>Smart Code Guardrails</h4>
-            <p>AI-aware code checks live in CI. Kotwal integrated as a required step. The pre-commit baseline reaches every active repo. First metric: fewer issues reaching code review.</p>
+            <h4>Steps 2–6 · Build the spine</h4>
+            <p>Requirement-link convention, ADR template, reference IaC catalogue, AI-aware code guardrails, pre-commit baseline. The PB has a working spine end-to-end. First metric: fewer issues reaching review.</p>
           </li>
           <li>
             <span class="phases__tag">Phase 2 · Q2</span>
-            <h4>On-Demand Environments</h4>
-            <p>Self-service portal MVP live for one pilot project. Three environment tiers operational. Anonymised data snapshots flowing nightly. First metric: time-to-environment under fifteen minutes.</p>
+            <h4>Steps 3, 6, 7 · Environments self-service</h4>
+            <p>Self-service portal MVP for one pilot. Three environment tiers operational. Mock-up preview URLs flow automatically. Anonymised data nightly. First metric: time-to-environment under 15 minutes.</p>
           </li>
           <li>
             <span class="phases__tag">Phase 3 · Q3</span>
-            <h4>Confident Releases</h4>
-            <p>Release-readiness portal live. All ten checks wired up. First release passes through the gate end-to-end. First metric: every production release has a published readiness report.</p>
+            <h4>Steps 8–10 · Release with evidence</h4>
+            <p>Release-readiness portal live. Kotwal integrated as a required gate. Policy-as-code wired. Every release ships a Release Readiness Report. First metric: 100% of releases through the gate.</p>
           </li>
           <li>
             <span class="phases__tag">Phase 4 · Q4</span>
-            <h4>Always-On Visibility</h4>
-            <p>Default observability stack applied to every active project. Auto-reports going out weekly and monthly. Public-or-private status pages live per project. First metric: 100% of projects observed by default.</p>
+            <h4>Beyond · Operate &amp; Feedback</h4>
+            <p>Default observability stack on every active project. Mukhbir feeding status pages and auto-reports. Quarterly portfolio review formalised. First metric: 100% of projects observed by default.</p>
           </li>
         </ol>
       </section>
 
+      <!-- ASKS -->
       <section id="asks">
-        <h2><span class="num">07</span> What we need from leadership</h2>
-        <p>To make this real on the timeline above, three categories of support are needed.</p>
+        <h2><span class="num">08</span> What we need from leadership</h2>
+        <p>Three categories of support. The decisions below align to the project-start enabler questions surfaced in the 7 May session.</p>
         <div class="asks">
           <div class="ask">
             <p class="ask__label">People</p>
@@ -331,38 +690,41 @@
           <div class="ask">
             <p class="ask__label">Tooling</p>
             <h4>A small set of licences for security scanning and observability.</h4>
-            <p>The bulk of the stack is open source. Our internal tools (Kotwal, Mukhbir) anchor the security and runtime layers. A detailed line-item appears in the implementation plan.</p>
+            <p>The bulk of the stack is open source. Our internal tools — <strong>Kotwal</strong> and <strong>Mukhbir</strong> — anchor the security and runtime layers. Detailed line-item in the implementation plan.</p>
           </div>
           <div class="ask">
             <p class="ask__label">Decisions</p>
-            <h4>A handful of standards calls only senior leadership can make.</h4>
+            <h4>Standards calls only senior leadership can make.</h4>
             <ul>
-              <li>Standardise on one CI/CD platform across all projects, or accept mixed tooling?</li>
+              <li>Front-end stack standardisation — Vue / React / both?</li>
+              <li>One CI/CD platform across all projects, or accept mixed tooling?</li>
               <li>Cloud target — AWS primary, with on-prem for government projects?</li>
-              <li>Build the team portal ourselves, or buy a ready platform?</li>
+              <li>Internal portal — build (Backstage) or buy (Port / Cortex)?</li>
               <li>Who classifies project criticality tiers — PM, Tech Lead, or DevOps?</li>
             </ul>
           </div>
         </div>
       </section>
 
+      <!-- OPEN QUESTIONS -->
       <section id="open-questions">
-        <h2><span class="num">08</span> Open questions for the team</h2>
-        <p>These do not need to be answered by leadership — but they need to be answered <em>before</em> Phase 1 closes. They are tracked alongside this plan.</p>
+        <h2><span class="num">09</span> Open questions for the closing sessions</h2>
+        <p>To carry into the 12 May and 14 May sessions, framed from the DevOps vertical.</p>
         <ol class="questions">
-          <li>What is the right pilot project — one that exercises all four capabilities without being client-critical from day one?</li>
-          <li>Exception process — who signs exceptions on failing pre-go-live checks, and how are those signs-off audited?</li>
-          <li>Government-project specifics — data residency requirements per state and per scheme?</li>
-          <li>Internal portal — does Backstage clear our needs, or do we evaluate a paid platform?</li>
-          <li>Kotwal's API and CLI surface for full CI integration — is it ready, or does Phase 1 include a small extension?</li>
-          <li>Project tiering — who owns the classification day-to-day, and how often is it reviewed?</li>
-          <li>What does success look like at each phase exit, and who signs it off?</li>
+          <li>Does the official 10-step list close at Go-Live, or do we explicitly add an 11th step for Operate &amp; Feedback? (DevOps recommends the latter — see §03 +Beyond.)</li>
+          <li>Multi-persona handling — when one person plays PB and AM (small projects), which sign-offs must still be separated?</li>
+          <li>Pilot project — which candidate exercises all 10 steps without being client-critical from day one?</li>
+          <li>AI tooling per persona — does DevOps prescribe the toolchain or only the gates the output must clear? (DevOps recommends the latter.)</li>
+          <li>Exception process for failing pre-Go-Live checks — who signs, and how is the exception audited?</li>
+          <li>Architect ↔ PB escalation — required-reviewer in GitHub PRs, or a separate forum?</li>
+          <li>Government-project specifics — data residency per state and per scheme?</li>
+          <li>Phase-exit definition of "done" — who signs each phase off in the roadmap?</li>
         </ol>
       </section>
 
       <footer class="foot">
         <p><strong>Dhwani RIS</strong> · Empowering Social Impact Through Technology</p>
-        <p class="foot__meta">A strategic plan for senior leadership · Draft v0.1 · 2026-05-14 · Prepared by Dhwani RIS DevOps</p>
+        <p class="foot__meta">DevOps support for AI-SDLC · Draft v0.2 · 2026-05-14 · Prepared by Dhwani RIS DevOps</p>
       </footer>
     </main>
   </div>
