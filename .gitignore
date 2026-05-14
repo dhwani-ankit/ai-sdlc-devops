@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local artifacts
+node_modules/
+dist/
+build/
+.cache/
+
+# Local previews
+.serve/
