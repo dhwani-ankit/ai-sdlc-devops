@@ -41,8 +41,8 @@ Pure HTML + CSS. No build step.
 
 For substantive changes, open a PR so stakeholders can comment section by section.
 
-## Owner
+## Prepared by
 
-Ravi Jangir — DevOps, Dhwani RIS · `ravi.jangir@dhwaniris.com`
+Dhwani RIS DevOps
 
 Status: **Draft v0.1** · last updated 2026-05-14
