@@ -366,6 +366,95 @@ kbd {
 }
 .qenabler p { margin: 0; font-size: clamp(14px, 1.15vw, 16px) !important; }
 
+/* Slide 7 — Tools & Agents */
+.qtools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0 0 14px;
+}
+.qtool {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.qtool--dhwani {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 70%);
+  border-color: var(--orange);
+}
+.qtool__lbl {
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--ink) !important;
+  margin: 0 0 6px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.qtool p:not(.qtool__lbl) {
+  font-size: clamp(12.5px, 1.05vw, 14.5px) !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+  color: var(--ink-2);
+}
+.qagents {
+  padding: 14px 18px;
+  border-left: 3px solid var(--orange);
+  background: var(--orange-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 0 0 12px;
+}
+.qagents__lbl {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--orange-dark) !important;
+  margin: 0 0 6px !important;
+}
+.qagents p:not(.qagents__lbl) {
+  font-size: clamp(12.5px, 1.05vw, 14.5px) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  color: var(--ink);
+}
+
+/* Tag pills (shared with main doc styling, redefined here for deck) */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1;
+}
+.tag--today { background: #1f8a4a; color: #fff; }
+.tag--sprint { background: var(--orange); color: #fff; }
+.tag--quarter { background: #fff; color: var(--orange-dark); border: 1px solid var(--orange); }
+.tag--aspire { background: var(--bg-alt); color: var(--muted); border: 1px solid var(--line-strong); }
+
+.badge-dhwani {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--orange-dark);
+  background: #fff;
+  border: 1px solid var(--orange);
+  padding: 2px 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
 /* Slide 7 — outcomes cards */
 .qcards {
   display: grid;
@@ -522,6 +611,7 @@ kbd {
   .qasks { grid-template-columns: 1fr; gap: 12px; }
   .qcards { grid-template-columns: repeat(2, 1fr); }
   .qflow { grid-template-columns: repeat(2, 1fr); }
+  .qtools { grid-template-columns: 1fr; }
   .layers,
   .qenablers { grid-template-columns: 1fr; }
   .slide { padding: 8vh 5vw 12vh; }

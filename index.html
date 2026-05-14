@@ -28,6 +28,7 @@
         <a href="#enablers">Enablers</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#asks">Asks</a>
+        <a href="#tools">Tools</a>
         <a href="quick.html" class="topnav__cta">Slide view →</a>
       </nav>
     </div>
@@ -60,6 +61,7 @@
         <li><a href="#outcomes">Outcomes</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
         <li><a href="#asks">What we need from leadership</a></li>
+        <li><a href="#tools">Tools &amp; agents</a></li>
         <li><a href="#open-questions">Open questions</a></li>
       </ol>
       <p class="sidebar__meta">Prepared by: Dhwani RIS DevOps<br />For: AI-SDLC closing sessions<br />Status: Draft v0.2 · 2026-05-14</p>
@@ -707,9 +709,195 @@
         </div>
       </section>
 
+      <!-- TOOLS & AGENTS -->
+      <section id="tools">
+        <h2><span class="num">09</span> Tools &amp; Agents — what runs each task</h2>
+        <p>The capabilities described above need concrete tooling, and any AI agent in the workflow needs explicit governance. Each item below is tagged with its maturity at Dhwani <em>today</em>.</p>
+
+        <div class="legend">
+          <span class="tag tag--today">Today</span> off the shelf or already in our stack
+          <span class="tag tag--sprint">Sprint</span> 1–2 weeks of focused engineering
+          <span class="tag tag--quarter">Quarter</span> a real 3-month build
+          <span class="tag tag--aspire">Aspire</span> no concrete plan yet
+        </div>
+
+        <h3>Tool stack by area</h3>
+        <div class="tools-grid">
+          <article class="toolset">
+            <p class="toolset__lbl">Pre-commit &amp; local guardrails</p>
+            <p class="toolset__steps">Steps 03, 06</p>
+            <ul>
+              <li><code>pre-commit</code> framework <span class="tag tag--today">Today</span></li>
+              <li><code>gitleaks</code> / <code>detect-secrets</code> <span class="tag tag--today">Today</span></li>
+              <li>Python: <code>black</code>, <code>isort</code>, <code>flake8</code>, <code>mypy</code>, <code>bandit</code>, <code>safety</code> <span class="tag tag--today">Today</span></li>
+              <li>JS/TS: <code>prettier</code>, <code>eslint</code>, <code>tsc</code> <span class="tag tag--today">Today</span></li>
+              <li><code>commitlint</code> (conventional commits) <span class="tag tag--today">Today</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">CI / automation platform</p>
+            <p class="toolset__steps">All steps</p>
+            <ul>
+              <li><strong>GitHub Actions</strong> (recommended standard) <span class="tag tag--today">Today</span></li>
+              <li><code>actionlint</code> workflow validator <span class="tag tag--today">Today</span></li>
+              <li>Reusable workflow library (Dhwani-published) <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Code analysis · SAST · SCA · DAST</p>
+            <p class="toolset__steps">Steps 06, 09</p>
+            <ul>
+              <li>SAST: <code>Semgrep</code> + custom Frappe rules <span class="tag tag--sprint">Sprint</span></li>
+              <li>SCA: <code>OSV-Scanner</code> · <code>Dependabot</code> <span class="tag tag--today">Today</span></li>
+              <li>DAST: <code>OWASP ZAP</code> staged scan <span class="tag tag--sprint">Sprint</span></li>
+              <li>Container: <code>Trivy</code> <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Testing — unit · E2E · load</p>
+            <p class="toolset__steps">Steps 05, 06, 09</p>
+            <ul>
+              <li>Unit / integration: language-native runners <span class="tag tag--today">Today</span></li>
+              <li>E2E: <code>Playwright</code> (driven by our <code>e2e-runner</code> agent) <span class="tag tag--sprint">Sprint</span></li>
+              <li>Load: <code>k6</code> (Grafana) <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Infrastructure &amp; secrets</p>
+            <p class="toolset__steps">Steps 04, 08</p>
+            <ul>
+              <li><code>Terraform</code> — extends <code>bse-iaas</code> <span class="tag tag--today">Today</span></li>
+              <li><code>Helm</code> for Kubernetes <span class="tag tag--today">Today</span></li>
+              <li>Secrets: <strong>HashiCorp Vault</strong> or AWS Secrets Manager <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Environment provisioning</p>
+            <p class="toolset__steps">Steps 03, 06, 07</p>
+            <ul>
+              <li>MVP: GitHub Actions <code>workflow_dispatch</code> + form <span class="tag tag--sprint">Sprint</span></li>
+              <li>Production portal: <strong>Backstage</strong> (OSS) or Port / Cortex — decision pending <span class="tag tag--quarter">Quarter</span></li>
+              <li>Anonymised data snapshot pipeline <span class="tag tag--quarter">Quarter</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset toolset--dhwani">
+            <p class="toolset__lbl">Security gates · Dhwani internal</p>
+            <p class="toolset__steps">Step 09</p>
+            <ul>
+              <li><strong>Kotwal</strong> — CERT testing · pen test · OSS vulnerability scan (Black Duck / Veracode equivalent) <span class="tag tag--today">Today</span></li>
+              <li>Confirm Kotwal's CLI / API surface for CI <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset toolset--dhwani">
+            <p class="toolset__lbl">Runtime health · Dhwani internal</p>
+            <p class="toolset__steps">Beyond Go-Live</p>
+            <ul>
+              <li><strong>Mukhbir</strong> — uptime · SSL · security headers · response health <span class="tag tag--today">Today</span></li>
+              <li><code>mukhbir-ops-report</code> skill — client-facing health reports <span class="tag tag--today">Today</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Observability stack</p>
+            <p class="toolset__steps">Beyond Go-Live</p>
+            <ul>
+              <li>Metrics: <code>Prometheus</code> + <code>Grafana</code> <span class="tag tag--sprint">Sprint</span></li>
+              <li>Logs: <code>Loki</code> + <code>Grafana</code> <span class="tag tag--sprint">Sprint</span></li>
+              <li>Traces: <code>Tempo</code> + <code>Grafana</code> <span class="tag tag--sprint">Sprint</span></li>
+              <li>Alerts: <code>Alertmanager</code> → Slack + PagerDuty <span class="tag tag--sprint">Sprint</span></li>
+              <li>Status page: <code>Statping-ng</code> (OSS) or Better Uptime / Instatus <span class="tag tag--sprint">Sprint</span></li>
+            </ul>
+          </article>
+
+          <article class="toolset">
+            <p class="toolset__lbl">Glue we'll build ourselves</p>
+            <p class="toolset__steps">Multiple steps</p>
+            <ul>
+              <li>Requirement ↔ PR linker (GitHub Action) <span class="tag tag--sprint">Sprint</span></li>
+              <li><code>ai-generated</code> PR auto-label <span class="tag tag--sprint">Sprint</span></li>
+              <li>Hallucination check — imports vs declared deps <span class="tag tag--sprint">Sprint</span></li>
+              <li>Test-quality gate — mock-vs-real assertion ratio <span class="tag tag--quarter">Quarter</span></li>
+              <li>Release Readiness Report PDF generator <span class="tag tag--quarter">Quarter</span></li>
+              <li>Auto weekly / monthly project health report <span class="tag tag--quarter">Quarter</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <h3>AI agents — how the personas use AI, and how DevOps governs it</h3>
+        <p>The AI-SDLC means AI is in every persona's workflow. <strong>DevOps does not prescribe which assistant a persona uses</strong> — DevOps prescribes the bar the output must clear, and how agent activity is governed across the org.</p>
+
+        <h4>Persona ↔ AI surface</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Persona</th><th>Primary AI surface</th><th>Where it runs</th><th>Output reviewed by</th></tr></thead>
+            <tbody>
+              <tr><td>Product Builder</td><td>Claude Code · Cursor · GitHub Copilot</td><td>Local (laptop)</td><td>Architect at Tech Spec · QA at Dev Plan · CI gates always</td></tr>
+              <tr><td>Architect</td><td>Claude Code with <code>architect</code>, <code>code-reviewer</code>, <code>security-reviewer</code> sub-agents</td><td>Local · sometimes CI</td><td>Self · peer Architect for cross-project</td></tr>
+              <tr><td>Account Manager</td><td>Claude / ChatGPT for client-comms drafts</td><td>Local</td><td>PB at scope hand-off · AM senior for sensitive comms</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Specialist agents already in our catalogue</h4>
+        <p>The agents below are <em>already in use</em> in Dhwani's Claude Code stack today. The role of DevOps is to <strong>standardise their invocation</strong> across projects and put them behind the per-step gates — not to replace them.</p>
+        <div class="agents-grid">
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Planning &amp; design</p>
+            <p><code>planner</code> · <code>architect</code></p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Code review (language-aware)</p>
+            <p><code>frappe-reviewer</code> · <code>python-reviewer</code> · <code>typescript-reviewer</code> · <code>angular-node-reviewer</code> · <code>java-reviewer</code> · <code>kotlin-reviewer</code> · <code>go-reviewer</code> · <code>rust-reviewer</code> · <code>cpp-reviewer</code></p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Security &amp; data</p>
+            <p><code>security-reviewer</code> · <code>database-reviewer</code> · <strong>Kotwal</strong> <span class="badge-dhwani">Dhwani</span> — Step 09 gate</p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Testing</p>
+            <p><code>tdd-guide</code> · <code>e2e-runner</code></p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Build &amp; cleanup</p>
+            <p><code>build-error-resolver</code> (+ language variants) · <code>refactor-cleaner</code></p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Docs &amp; lookup</p>
+            <p><code>doc-updater</code> · <code>docs-lookup</code></p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Operations</p>
+            <p><strong>Mukhbir</strong> <span class="badge-dhwani">Dhwani</span> — Beyond Go-Live</p>
+          </div>
+          <div class="agent-cat">
+            <p class="agent-cat__lbl">Meta &amp; harness</p>
+            <p><code>memory-curator</code> · <code>prompt-improver</code> · <code>harness-optimizer</code></p>
+          </div>
+        </div>
+
+        <h4>Agent governance — DevOps-owned principles</h4>
+        <ol class="principles">
+          <li><strong>Catalogue.</strong> Every agent in production use is registered in a central repo with owner, version, change log, and allowed scopes. New agents are reviewed before wide adoption.</li>
+          <li><strong>Where it runs.</strong> Local agents are at the persona's discretion. CI-invoked agents must come from approved workflows. No agent runs against production data without Security approval.</li>
+          <li><strong>Access scope.</strong> Agents never receive production secrets, raw PII, or push access to protected branches. Vault-injected credentials only.</li>
+          <li><strong>Output review.</strong> Every agent output that lands in code or infrastructure passes the same gates as human output — PR review, CI checks, the <code>ai-generated</code> label.</li>
+          <li><strong>Cost tracking.</strong> API spend per project tracked monthly. Budget cap per project tier; breaches require escalation.</li>
+          <li><strong>Audit trail.</strong> CI agent invocations logged (input prompt + output) for 90 days. Enables incident replay — "which agent ran on this PR".</li>
+          <li><strong>Versioning.</strong> Agent prompts and configurations are versioned in git. Any past run is reproducible with the same agent version.</li>
+          <li><strong>Deprecation.</strong> Agents not invoked in 90 days are quarantined. Deprecated agents removed from the catalogue.</li>
+        </ol>
+      </section>
+
       <!-- OPEN QUESTIONS -->
       <section id="open-questions">
-        <h2><span class="num">09</span> Open questions for the closing sessions</h2>
+        <h2><span class="num">10</span> Open questions for the closing sessions</h2>
         <p>To carry into the 12 May and 14 May sessions, framed from the DevOps vertical.</p>
         <ol class="questions">
           <li>Does the official 10-step list close at Go-Live, or do we explicitly add an 11th step for Operate &amp; Feedback? (DevOps recommends the latter — see §03 +Beyond.)</li>

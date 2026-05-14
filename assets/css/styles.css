@@ -944,6 +944,178 @@ tbody tr:nth-child(even) td { background: var(--bg-alt); }
   color: var(--orange);
 }
 
+/* Tools & Agents section */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  margin: 8px 0 22px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  margin-left: 4px;
+  vertical-align: middle;
+  line-height: 1;
+}
+.tag--today {
+  background: #1f8a4a;
+  color: #fff;
+}
+.tag--sprint {
+  background: var(--orange);
+  color: #fff;
+}
+.tag--quarter {
+  background: #fff;
+  color: var(--orange-dark);
+  border: 1px solid var(--orange);
+}
+.tag--aspire {
+  background: var(--bg-alt);
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 14px 0 32px;
+}
+.toolset {
+  padding: 18px 20px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.toolset--dhwani {
+  border-color: var(--orange);
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 60%);
+}
+.toolset__lbl {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  margin: 0 0 4px !important;
+}
+.toolset__steps {
+  font-family: var(--font-mono);
+  font-size: 11px !important;
+  color: var(--orange-dark) !important;
+  font-weight: 600;
+  margin: 0 0 12px !important;
+  letter-spacing: 0;
+}
+.toolset ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toolset li {
+  padding: 5px 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  border-bottom: 1px dashed var(--line);
+  line-height: 1.5;
+}
+.toolset li:last-child { border-bottom: none; }
+.toolset code {
+  font-size: 0.92em;
+}
+
+/* Agents catalogue */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 12px 0 28px;
+}
+.agent-cat {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.agent-cat__lbl {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--orange-dark) !important;
+  margin: 0 0 6px !important;
+}
+.agent-cat p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.agent-cat code {
+  font-size: 0.9em;
+  padding: 1px 5px;
+}
+.badge-dhwani {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--orange-dark);
+  background: var(--orange-soft);
+  border: 1px solid var(--orange);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+/* Governance principles */
+.principles {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  counter-reset: principle;
+  list-style: none;
+}
+.principles li {
+  position: relative;
+  padding: 8px 0 8px 38px;
+  counter-increment: principle;
+  border-bottom: 1px solid var(--line);
+}
+.principles li:last-child { border-bottom: none; }
+.principles li::before {
+  content: counter(principle, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 9px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  background: var(--orange-soft);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
 /* Open questions */
 .questions {
   padding-left: 22px;
@@ -985,6 +1157,8 @@ tbody tr:nth-child(even) td { background: var(--bg-alt); }
   .personas { grid-template-columns: 1fr; }
   .flow { grid-template-columns: repeat(2, 1fr); }
   .enablers { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .agents-grid { grid-template-columns: 1fr; }
   .stage__grid { grid-template-columns: 1fr; gap: 16px; }
   .stage__head h3 { font-size: 18px; }
   .shift { grid-template-columns: 1fr; }
