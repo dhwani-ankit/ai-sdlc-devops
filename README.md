@@ -1,44 +1,45 @@
-# AI-SDLC DevOps Playbook
+# AI-SDLC + DevOps — The Future of Delivery at Dhwani RIS
 
-DevOps strategy for AI-assisted software delivery at **Dhwani RIS**.
+A **strategic plan for senior leadership**. Not an implementation runbook — a clear, semi-technical picture of what AI-assisted delivery looks like at Dhwani RIS, and what DevOps support makes it work.
 
 > Live site: **https://dhwani-ankit.github.io/ai-sdlc-devops/**
 
-## What's in this repo
+## What's in the plan
 
-A single-page strategy document outlining how DevOps operates inside the AI-SDLC lifecycle at Dhwani RIS — covering four pillars:
+1. **Why now** — what's changed in how Dhwani builds software
+2. **The shift we're navigating** — today vs. the future, side by side
+3. **Four capabilities** — the changes stakeholders will feel:
+   - **C1 · Smart Code Guardrails** — AI code becomes safer than human-only code
+   - **C2 · On-Demand Environments** — fifteen-minute test environments, on request
+   - **C3 · Confident Releases** — every release ships with a one-page readiness report
+   - **C4 · Always-On Visibility** — every project observed by default, reports go out automatically
+4. **A day in the future** — narratives for the PM, analyst, developer, and client
+5. **Outcomes we're targeting** — measurable promises to leadership
+6. **Roadmap** — four quarters, each delivering a complete capability
+7. **What we need from leadership** — people, tooling, decisions
+8. **Open questions** — to be settled before Phase 1 closes
 
-1. **AI-Aware Code Analysis** — replacing "lint + push" with a layered pipeline that assumes the author may have been an LLM.
-2. **Self-Service Environments** — staging and UAT on demand, with defined SLAs/SLOs.
-3. **Pre-Go-Live Gate** — portal-driven release readiness anchored on Kotwal (CERT, pen test, OSS vulnerability scans).
-4. **Post-Deployment Operations** — default-on observability and automated weekly/monthly reports.
+## Audience
 
-Plus a 16-week roadmap and a list of open questions for the team.
+Senior stakeholders, semi-technical. The plan trades implementation-detail tables for outcome framing, before/after views, and day-in-the-life narratives — so a decision-maker can read it cover-to-cover in ten minutes and leave with a clear picture.
 
-## Structure
+## Structure of the site
 
 ```
 .
-├── index.html              # The plan, rendered
+├── index.html              # The plan, rendered as a single page
 ├── assets/
 │   └── css/styles.css      # Dhwani-branded stylesheet
 └── .nojekyll               # Disable Jekyll on GitHub Pages
 ```
 
-## Local preview
-
-The site is plain HTML and CSS — no build step. Open `index.html` directly, or serve the directory:
-
-```bash
-python -m http.server 8000
-# then http://localhost:8000
-```
+Pure HTML + CSS. No build step.
 
 ## Editing the plan
 
-`index.html` is the source of truth. Edit it, commit, push — GitHub Pages redeploys automatically.
+`index.html` is the source of truth. Edit, commit, push — GitHub Pages redeploys automatically.
 
-For non-trivial changes, open a PR so reviewers can comment section by section.
+For substantive changes, open a PR so stakeholders can comment section by section.
 
 ## Owner
 

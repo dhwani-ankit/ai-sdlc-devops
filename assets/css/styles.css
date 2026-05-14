@@ -424,6 +424,225 @@ tbody tr:nth-child(even) td { background: var(--bg-alt); }
   margin: 0;
 }
 
+/* Section lede (intro paragraph for capability sections) */
+.section-lede {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  font-weight: 500;
+  border-left: 3px solid var(--orange);
+  padding: 4px 0 4px 16px;
+  margin: 8px 0 22px;
+  max-width: 70ch;
+}
+
+/* The shift — Today vs Future */
+.shift {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 0;
+}
+.shift__col {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  background: var(--bg-alt);
+}
+.shift__col--after {
+  border-color: var(--orange);
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 60%);
+  box-shadow: var(--shadow-md);
+}
+.shift__label {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0 0 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+.shift__col--after .shift__label {
+  color: var(--orange-dark);
+  border-color: var(--orange);
+  background: var(--bg);
+}
+.shift__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.shift__col li {
+  position: relative;
+  padding: 7px 0 7px 22px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  border-bottom: 1px dashed var(--line);
+}
+.shift__col li:last-child { border-bottom: none; }
+.shift__col--before li::before {
+  content: '×';
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 700;
+}
+.shift__col--after li::before {
+  content: '✓';
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  color: var(--orange-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Checklist (numbered, used in Confident Releases) */
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+.checklist__item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  align-items: flex-start;
+}
+.checklist__bullet {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange-dark);
+  background: var(--orange-soft);
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0;
+}
+.checklist__item strong {
+  display: block;
+  font-size: 14.5px;
+  margin-bottom: 2px;
+  color: var(--ink);
+}
+.checklist__item p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Stories (day in the life) */
+.stories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 16px 0 0;
+}
+.story {
+  position: relative;
+  padding: 22px 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.story::before {
+  content: '"';
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  font-family: Georgia, serif;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--orange);
+  opacity: 0.35;
+}
+.story__role {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--orange-dark);
+  margin: 0 0 10px;
+}
+.story__quote {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  font-style: italic;
+}
+
+/* Asks (what we need from leadership) */
+.asks {
+  display: grid;
+  gap: 14px;
+  margin: 16px 0 0;
+}
+.ask {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.ask__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--orange-dark);
+  margin: 4px 0 0;
+}
+.ask h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.ask p {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.ask ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+}
+.ask ul li { padding: 3px 0; }
+.ask ul li::marker { color: var(--orange); }
+
+/* Card superscript (for "3x" style numbers) */
+.card__sup {
+  font-size: 0.55em;
+  font-weight: 600;
+  vertical-align: super;
+  margin-left: 2px;
+  color: var(--orange);
+}
+
 /* Open questions */
 .questions {
   padding-left: 22px;
@@ -457,6 +676,10 @@ tbody tr:nth-child(even) td { background: var(--bg-alt); }
   .sidebar { position: static; }
   .pillars { grid-template-columns: 1fr; }
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .shift { grid-template-columns: 1fr; }
+  .stories { grid-template-columns: 1fr; }
+  .checklist { grid-template-columns: 1fr; }
+  .ask { grid-template-columns: 1fr; gap: 8px; }
   .topnav { display: none; }
   .topbar__inner { padding: 12px 20px; }
 }
