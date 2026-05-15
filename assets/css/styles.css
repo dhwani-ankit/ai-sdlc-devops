@@ -1130,6 +1130,115 @@ p { color: var(--ink-2); }
 .ask__list li { padding: 3px 0; }
 .ask__list li::marker { color: var(--orange); font-weight: 700; }
 
+/* ── Ask · People split into two engineer roles ────── */
+.ask-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 14px 0 14px;
+}
+.ask-grid__item {
+  padding: 14px 16px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--orange);
+}
+.ask-grid__role {
+  margin: 0 0 8px !important;
+  font-family: var(--font-mono);
+  font-size: 11.5px !important;
+  font-weight: 700;
+  color: var(--orange-dark) !important;
+  letter-spacing: 0.02em;
+}
+.ask-grid__bullets {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.ask-grid__bullets li { padding: 2px 0; }
+.ask-grid__bullets li::marker { color: var(--orange); font-weight: 700; }
+.ask-grid__bullets code { font-size: 0.88em; padding: 1px 4px; }
+
+/* ── Ask · Tooling free vs paid ────────────────────── */
+.ask-split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 14px 0 14px;
+}
+.ask-split__col {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+}
+.ask-split__col--free {
+  border-left: 3px solid #1f8a4a;
+}
+.ask-split__col--paid {
+  border-left: 3px solid var(--orange);
+}
+.ask-split__lbl {
+  margin: 0 0 8px !important;
+  font-family: var(--font-mono);
+  font-size: 11.5px !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.ask-split__col--free .ask-split__lbl { color: #1f8a4a !important; }
+.ask-split__col--paid .ask-split__lbl { color: var(--orange-dark) !important; }
+.ask-split__col p:not(.ask-split__lbl) {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+/* ── Ask · Decisions with reasons ──────────────────── */
+.decisions {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: decision;
+}
+.decisions li {
+  position: relative;
+  padding: 14px 16px 14px 56px;
+  margin-bottom: 8px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--orange);
+  counter-increment: decision;
+}
+.decisions li::before {
+  content: counter(decision, decimal-leading-zero);
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--orange);
+  width: 28px;
+  text-align: left;
+}
+.decisions__q {
+  margin: 0 0 4px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  line-height: 1.45;
+}
+.decisions__why {
+  margin: 0 !important;
+  font-size: 13px !important;
+  color: var(--muted) !important;
+  line-height: 1.5;
+  font-style: italic;
+}
+
 /* ── Open questions ────────────────────────────────── */
 .qs {
   /* shared with .qs above for Adopt — context separates */
@@ -1195,6 +1304,8 @@ ol.qs strong { color: var(--ink); }
   .assistants { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }
   .shared-repos { grid-template-columns: 1fr; }
+  .ask-grid { grid-template-columns: 1fr; }
+  .ask-split { grid-template-columns: 1fr; }
   .flow-step {
     grid-template-columns: 1fr;
     gap: 12px;

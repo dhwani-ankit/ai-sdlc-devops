@@ -199,29 +199,76 @@
     <section class="band" id="asks">
       <div class="container">
         <p class="kicker kicker--dark">04 · What we need</p>
-        <h2>Two engineers. Four quarters. A few decisions.</h2>
+        <h2>Two engineers. A small budget. Four decisions.</h2>
+        <p class="sub">Concrete, time-bound, and reviewable at each quarter boundary.</p>
 
         <div class="asks">
+
           <article class="ask">
             <p class="ask__lbl">People</p>
-            <h3>2 dedicated DevOps engineers, for 4 quarters.</h3>
-            <p>Plus part-time support from each project's Tech Lead during the rollout window. No new permanent hires beyond what's already planned.</p>
+            <h3>2 dedicated DevOps engineers · 4 quarters.</h3>
+            <div class="ask-grid">
+              <div class="ask-grid__item">
+                <p class="ask-grid__role">Engineer 1 · Quality &amp; Delivery anchor</p>
+                <ul class="ask-grid__bullets">
+                  <li>Owns Stage C end-to-end (pre-go-live checks)</li>
+                  <li>Builds Kotwal CI integration</li>
+                  <li>Builds the Release Readiness Report pipeline</li>
+                  <li>Owns the <code>ai-sdlc-devops-plugin</code> Quality &amp; Delivery surface</li>
+                </ul>
+              </div>
+              <div class="ask-grid__item">
+                <p class="ask-grid__role">Engineer 2 · Adoption &amp; Operate anchor</p>
+                <ul class="ask-grid__bullets">
+                  <li>Builds the Day 1 starter template</li>
+                  <li>Builds inter-plugin bridge skills</li>
+                  <li>Owns Production Monitoring + the hub</li>
+                  <li>Owns the <code>ai-sdlc-devops-plugin</code> Monitoring surface</li>
+                </ul>
+              </div>
+            </div>
+            <p>Plus part-time support from each project's Tech Lead during their rollout window. <strong>No new permanent hires</strong> beyond what's already planned.</p>
           </article>
+
           <article class="ask">
             <p class="ask__lbl">Tooling</p>
-            <h3>The core stack is free or already-licensed.</h3>
-            <p>A small budget is needed for security scanning, production monitoring, and a self-service deployment portal. Most of what we use is open source or already in our hands.</p>
+            <h3>Free for most things · small licence budget for the rest.</h3>
+            <div class="ask-split">
+              <div class="ask-split__col ask-split__col--free">
+                <p class="ask-split__lbl">Free or already-licensed</p>
+                <p>GitHub (private) · Claude CLI · Mermaid · Google Stitch · Fireflies.ai · <strong>Kotwal</strong> · <strong>Mukhbir</strong> · Prometheus · Loki · Tempo · Grafana · Terraform · pre-commit · gitleaks</p>
+              </div>
+              <div class="ask-split__col ask-split__col--paid">
+                <p class="ask-split__lbl">Needs a small budget</p>
+                <p>Paid security scanning tier (Semgrep / Snyk) · production status page (Better Uptime or Instatus) · self-service deployment portal — <em>Backstage (OSS, build effort) or paid (Port / Cortex)</em></p>
+              </div>
+            </div>
+            <p>Exact annual licence estimate refined in the <strong>Q0 inventory phase</strong> — before the spend commitment is made.</p>
           </article>
+
           <article class="ask">
             <p class="ask__lbl">Decisions</p>
             <h3>Four standards calls only leadership can make.</h3>
-            <ul class="ask__list">
-              <li>Front-end stack — standardise on one, or keep it project-dependent?</li>
-              <li>Cloud target — AWS as the default, with on-premise for government work?</li>
-              <li>Build our own deployment portal, or buy a ready platform?</li>
-              <li>Who classifies project size (solo / pair / full team) — PM, Tech Lead, or DevOps?</li>
-            </ul>
+            <ol class="decisions">
+              <li>
+                <p class="decisions__q">Front-end stack — standardise on one, or stay project-dependent?</p>
+                <p class="decisions__why">Drives which Builder-plugin templates we build first (Vue vs React).</p>
+              </li>
+              <li>
+                <p class="decisions__q">Cloud target — AWS default, with on-premise for government work?</p>
+                <p class="decisions__why">Drives IaC module choice and Architecture Assistant reference patterns.</p>
+              </li>
+              <li>
+                <p class="decisions__q">Deployment portal — build with Backstage, or buy Port / Cortex?</p>
+                <p class="decisions__why">Q2 capacity hinges on this — OSS is a build effort, paid is faster but recurring spend.</p>
+              </li>
+              <li>
+                <p class="decisions__q">Project sizing — who classifies solo / pair / full team?</p>
+                <p class="decisions__why">Determines team-shape assignment per project and DevOps pull on each engagement.</p>
+              </li>
+            </ol>
           </article>
+
         </div>
       </div>
     </section>
