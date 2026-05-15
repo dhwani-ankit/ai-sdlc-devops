@@ -17,15 +17,15 @@
     <div class="bar__inner">
       <a class="bar__brand" href="#top">
         <span class="bar__mark" aria-hidden="true"></span>
-        <span>Dhwani RIS · DevOps for AI-SDLC</span>
+        <span>Dhwani RIS · AI-SDLC end-to-end</span>
       </a>
       <nav class="bar__nav" aria-label="Primary">
         <a href="#plugins">Plugins</a>
-        <a href="#stage-a">Stage A</a>
-        <a href="#stage-c">Stage C</a>
+        <a href="#stage-a">A</a>
+        <a href="#stage-b">B</a>
+        <a href="#stage-c">C</a>
         <a href="#lifecycle">Lifecycle</a>
         <a href="#adopt">Adopt</a>
-        <a href="#evolve">Evolve</a>
         <a href="#asks">Asks</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
       </nav>
@@ -37,9 +37,9 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="container">
-        <p class="kicker">AI-SDLC · Streams 3 + 4 · Dhwani RIS DevOps</p>
-        <h1>DevOps support for<br/><span class="accent">the AI-SDLC.</span></h1>
-        <p class="lede">We own two streams. We bridge five. We make adoption a one-command Monday morning.</p>
+        <p class="kicker">Dhwani RIS · AI-SDLC · end-to-end</p>
+        <h1>The AI-SDLC at Dhwani RIS,<br/><span class="accent">end to end.</span></h1>
+        <p class="lede">Five streams. Three personas. Three always-on verticals. From the first client conversation to the weekly health report years later — with the plugins, gates, and rails that make it work.</p>
 
         <div class="streams">
           <div class="stream"><span class="stream__n">01</span><span class="stream__name">RG</span><span class="stream__who">Prody</span></div>
@@ -49,7 +49,7 @@
           <div class="stream"><span class="stream__n">05</span><span class="stream__name">Knowledge Mgmt</span><span class="stream__who">Deepak</span></div>
         </div>
 
-        <p class="hero__meta">Aligned with <a href="https://prody-dris.github.io/ai-sdlc-rg-pitch/" target="_blank" rel="noopener">Prody's Stage A pitch</a> · Draft v1.0 · for Closing Session 2/2 · 14 May 2026</p>
+        <p class="hero__meta">Stage A aligned with <a href="https://prody-dris.github.io/ai-sdlc-rg-pitch/" target="_blank" rel="noopener">Prody's pitch</a> · Stages B + C + Operate via the Engineering Solutions plugins (Ankit + Deepak, Session 2) · v1.1 · 2026-05-15</p>
       </div>
     </section>
 
@@ -57,8 +57,8 @@
     <section class="band band--alt" id="map">
       <div class="container">
         <p class="kicker">00 · The whole AI-SDLC, one view</p>
-        <h2>Five streams. Three verticals. One delivery.</h2>
-        <p class="sub">Every Dhwani project flows through five streams and is supported by three always-on verticals (KM · PG · DevOps). Here's the whole map — and where DevOps shows up in each.</p>
+        <h2>Five streams. Three personas. Three verticals.</h2>
+        <p class="sub">Every Dhwani project flows through five streams, is driven by three personas, and supported by three always-on verticals — from the first client conversation to weekly health reports years later.</p>
 
         <div class="map">
           <article class="map-row">
@@ -113,6 +113,49 @@
         </div>
 
         <p class="caveat">Verticals are <em>always-on</em>, not boxes that get checked once. KM stores everything, PG governs every sign-off, DevOps wires every project.</p>
+
+        <h3 class="sub-h3">Personas — who plays each part</h3>
+        <div class="personas">
+          <article class="persona">
+            <p class="persona__tag">PB</p>
+            <h3>Product Builder</h3>
+            <p>Drives Stage A Steps 1–8. Drafts the Tech Spec. Runs the Dev + QA loop in Stage B via the Builder plugin.</p>
+          </article>
+          <article class="persona">
+            <p class="persona__tag">AR</p>
+            <h3>Architect</h3>
+            <p>Reviewer + decision-maker, not implementer. Signs off Sol Doc at Steps 9–10. Validates architecture before UAT and at pre-go-live.</p>
+          </article>
+          <article class="persona">
+            <p class="persona__tag">AM</p>
+            <h3>Account Manager</h3>
+            <p>Owns client + intent. Holds scope at Kickoff and Charter. Drives Client UAT. Owns Go-Live handover.</p>
+          </article>
+        </div>
+
+        <h3 class="sub-h3">Team shapes — how the personas combine</h3>
+        <p class="sub" style="margin-bottom:18px;">Personas flex with project size. The plugins don't change — who plays each part does.</p>
+        <div class="shapes">
+          <article class="shape">
+            <p class="shape__lbl">Shape S · Solo</p>
+            <h3>Builder + AM = same person</h3>
+            <p>One person plays both roles. Architect is shared with the portfolio. DevOps support is shared. Self-serve everything — request staging, push files, merge to dev — all driven from one PR.</p>
+            <p class="shape__fit"><strong>Best for:</strong> mGrant fit-gap (~5 days) · small features · single-stack work</p>
+          </article>
+          <article class="shape">
+            <p class="shape__lbl">Shape M · Pair</p>
+            <h3>Builder + AM separate</h3>
+            <p>Two distinct roles. Architect is shared across a few projects. DevOps support is shared. Sign-offs are separated — AM signs Charter and UAT, Builder owns code.</p>
+            <p class="shape__fit"><strong>Best for:</strong> mGrant NuO (~2 weeks) · Frappe customizations</p>
+          </article>
+          <article class="shape shape--full">
+            <p class="shape__lbl">Shape L · Full team</p>
+            <h3>Builder · AM · dedicated Architect · dedicated DevOps</h3>
+            <p>Each role is its own person. Multiple Builders possible. Architect dedicated to one project. DevOps engineer assigned for the duration. All sign-offs distinct.</p>
+            <p class="shape__fit"><strong>Best for:</strong> Non-Frappe greenfield (~4 weeks) · government projects · regulated workloads</p>
+          </article>
+        </div>
+        <p class="caveat">Across all shapes, the three always-on verticals (KM · PG · DevOps) still check every phase. Team shape changes <em>who plays</em> — not <em>what gets checked</em>.</p>
       </div>
     </section>
 
@@ -219,10 +262,57 @@
       </div>
     </section>
 
+    <!-- STAGE B -->
+    <section class="band" id="stage-b">
+      <div class="container">
+        <p class="kicker kicker--dark">04 · Stream 2 · Stage B · Dev &amp; Testing</p>
+        <h2>Where AI writes the code.</h2>
+        <p class="sub">After Sol Doc sign-off, the first AI-coding prompt fires. The Builder plugin orchestrates four named personas inside one repo. Engineering-led · DevOps as the always-on vertical.</p>
+
+        <div class="phases">
+          <article class="phase">
+            <p class="phase__lbl">Inside the Builder plugin</p>
+            <h3>Four personas, one loop</h3>
+            <ol class="steps">
+              <li><b>Dev</b> <em>· writes code strictly following the Sol Doc · no scope expansion</em></li>
+              <li><b>QA</b> <em>· writes test cases first from the PRD · then validates code against them</em></li>
+              <li><b>BA</b> <em>· owns comms · maintains docs as code evolves</em></li>
+              <li><b>Rev</b> <em>· checks tests + docs + PR hygiene before merge</em></li>
+            </ol>
+            <p class="phase__gate">Gate · CI green · review approved · <code>ai-generated</code> label set</p>
+          </article>
+
+          <article class="phase">
+            <p class="phase__lbl">DevOps · always-on vertical</p>
+            <h3>Guardrails on every PR</h3>
+            <ol class="steps">
+              <li><b>Local</b> <em>· pre-commit: secrets · format · lint at the laptop</em></li>
+              <li><b>CI</b> <em>· SAST + SCA + hallucination check + test-quality gate</em></li>
+              <li><b>Envs</b> <em>· self-serve review env per branch &lt; 15 min</em></li>
+              <li><b>Trigger</b> <em>· PR merge → fires the Stage C pipeline</em></li>
+            </ol>
+            <p class="phase__gate">Gate · merge to <code>development</code> → auto-deploy to dev env</p>
+          </article>
+
+          <article class="phase phase--accent">
+            <p class="phase__lbl">Iteration loop</p>
+            <h3>Build → test → review → merge</h3>
+            <ol class="steps">
+              <li><b>Round</b> <em>· tests precede code · each loop is small</em></li>
+              <li><b>Docs</b> <em>· BA updates docs as code evolves · no drift</em></li>
+              <li><b>Drift</b> <em>· Reviewer catches scope creep early</em></li>
+              <li><b>Speed</b> <em>· comes from the Day 1 starter, not from skipped gates</em></li>
+            </ol>
+            <p class="phase__gate">Closes when · regression complete · UAT branch ready to cut</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- STAGE C -->
     <section class="band band--alt" id="stage-c">
       <div class="container">
-        <p class="kicker">03 · Stream 3 · Stage C · DevOps proposal</p>
+        <p class="kicker">05 · Stream 3 · Stage C · DevOps proposal</p>
         <h2>What follows Sol Doc sign-off.</h2>
         <p class="sub">Stage C isn't yet pitched. Below is our proposal — three phases, eight steps, six new skills to author. To validate with the working group.</p>
 
@@ -267,7 +357,7 @@
     <!-- INTER-STREAM GLUE -->
     <section class="band" id="glue">
       <div class="container">
-        <p class="kicker kicker--dark">04 · In between · Inter-stream glue</p>
+        <p class="kicker kicker--dark">06 · In between · Inter-stream glue</p>
         <h2>Bridges keep artefacts moving.</h2>
         <p class="sub">Streams are parallel. Artefacts flow between them. DevOps builds and maintains the bridges so nothing falls on the floor.</p>
 
@@ -299,7 +389,7 @@
     <!-- DEPLOYMENT LIFECYCLE -->
     <section class="band" id="lifecycle">
       <div class="container">
-        <p class="kicker">05 · From wrapper to production</p>
+        <p class="kicker">07 · From wrapper to production</p>
         <h2>One repo. Five environments. One gate at each.</h2>
         <p class="sub">Builder pushes files into the GitHub wrapper. Environments self-provision per branch. DevOps owns the gate to production. <strong>No public users before the gate passes.</strong></p>
 
@@ -341,7 +431,7 @@
     <!-- ADOPT -->
     <section class="band band--dark" id="adopt">
       <div class="container">
-        <p class="kicker kicker--light">06 · Adopt</p>
+        <p class="kicker kicker--light">08 · Adopt</p>
         <h2 class="light">Day 1 is one command.</h2>
         <p class="sub light">No wiki crawl. No setup day. Clone, open Claude, start with Kickoff &amp; Stakeholder Map.</p>
 
@@ -388,7 +478,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- EVOLVE -->
     <section class="band band--alt" id="evolve">
       <div class="container">
-        <p class="kicker">07 · Evolve</p>
+        <p class="kicker">09 · Evolve</p>
         <h2>Three loops keep the framework alive.</h2>
         <p class="sub">Static methodology gets stale. Anyone can raise. AI drafts the fix. Champion reviews. Telemetry tells leadership it's working.</p>
 
@@ -425,7 +515,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- ASKS -->
     <section class="band" id="asks">
       <div class="container">
-        <p class="kicker kicker--dark">08 · What we need from leadership</p>
+        <p class="kicker kicker--dark">10 · What we need from leadership</p>
         <h2>To deliver Streams 3 + 4, four quarters.</h2>
 
         <div class="asks">
@@ -457,7 +547,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- OPEN QUESTIONS + CLOSE -->
     <section class="band band--alt" id="close">
       <div class="container container--narrow">
-        <p class="kicker">09 · Open questions for today</p>
+        <p class="kicker">11 · Open questions for today</p>
         <h2>Five to lock in the closing session.</h2>
 
         <ol class="qs">

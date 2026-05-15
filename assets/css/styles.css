@@ -282,6 +282,87 @@ p { color: var(--ink-2); }
 }
 .band--alt .caveat { background: var(--bg); }
 
+/* ── Personas (in Map section) ─────────────────────── */
+.personas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 6px 0 0;
+}
+.persona {
+  padding: 22px 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.band--alt .persona { background: var(--bg-alt); }
+.persona__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  font-family: var(--font-mono);
+  font-size: 13px !important;
+  font-weight: 700;
+  color: #fff !important;
+  background: var(--orange);
+  border-radius: 8px;
+  margin: 0 0 14px !important;
+  letter-spacing: 0;
+}
+.persona h3 { font-size: 17px; margin: 0 0 6px; }
+.persona p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+
+/* ── Team shapes ──────────────────────────────────── */
+.shapes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 6px 0 0;
+}
+.shape {
+  padding: 24px 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+.band--alt .shape { background: var(--bg-alt); }
+.shape--full {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 70%);
+  border-color: var(--orange);
+}
+.shape__lbl {
+  font-family: var(--font-mono);
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--orange-dark) !important;
+  margin: 0 0 8px !important;
+}
+.shape h3 {
+  font-size: 17px;
+  margin: 0 0 10px;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+.shape p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.shape__fit {
+  margin: auto 0 0 !important;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 13px !important;
+  color: var(--muted) !important;
+}
+.shape__fit strong { color: var(--ink); }
+
 /* ── Plugins (Plugin architecture) ─────────────────── */
 .plugins {
   display: grid;
@@ -819,6 +900,8 @@ ol.qs strong { color: var(--ink); }
   .plugins { grid-template-columns: 1fr; }
   .lifecycle-flow { grid-template-columns: 1fr; }
   .phases { grid-template-columns: 1fr; }
+  .personas { grid-template-columns: 1fr; }
+  .shapes { grid-template-columns: 1fr; }
   .bridges { grid-template-columns: 1fr; }
   .quickstart { grid-template-columns: 1fr; }
   .loops { grid-template-columns: 1fr; }
