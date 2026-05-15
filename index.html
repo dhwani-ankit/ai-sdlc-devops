@@ -20,9 +20,10 @@
         <span>Dhwani RIS · DevOps for AI-SDLC</span>
       </a>
       <nav class="bar__nav" aria-label="Primary">
+        <a href="#plugins">Plugins</a>
         <a href="#stage-a">Stage A</a>
         <a href="#stage-c">Stage C</a>
-        <a href="#glue">Glue</a>
+        <a href="#lifecycle">Lifecycle</a>
         <a href="#adopt">Adopt</a>
         <a href="#evolve">Evolve</a>
         <a href="#asks">Asks</a>
@@ -115,10 +116,68 @@
       </div>
     </section>
 
-    <!-- STAGE A -->
-    <section class="band" id="stage-a">
+    <!-- PLUGINS -->
+    <section class="band" id="plugins">
       <div class="container">
-        <p class="kicker kicker--dark">01 · Stage A · 10 RG steps in 3 phases</p>
+        <p class="kicker kicker--dark">01 · How we ship · plugin architecture</p>
+        <h2>Five Claude Code plugins. One hub. One shared skills repo.</h2>
+        <p class="sub">Each persona gets a packaged set of skills, agents, and prompts as a Claude Code plugin. Each plugin lives in its own GitHub repo. One hub holds the SOPs and onboarding so anyone can find which plugin is for them and how to use it.</p>
+
+        <div class="plugins">
+          <article class="plugin">
+            <p class="plugin__owner">Pre-build · Stage A Steps 1–8</p>
+            <h3>ai-sdlc-intent-plugin</h3>
+            <p>Intent · Solutioning · Planning. Drives Stakeholder Map · Discovery · Charter · FRs · RBAC · Workflows · Data Model · Wireframes. Persona: <strong>Product Builder</strong>. Source docs already exist (Harshdeep + Nihaan, Session 1) — this plugin packages them as a Claude Code distribution.</p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Sign-off · Stage A Steps 9–10 + Stage C</p>
+            <h3>ai-sdlc-architect-plugin</h3>
+            <p>Architecture finalisation · validation before UAT · pre-go-live sign-off. Persona: <strong>Architect</strong>. Connects to ADR templates and the reference IaC catalogue. Built by <strong>Ankit + Deepak</strong> per Session 2.</p>
+          </article>
+
+          <article class="plugin plugin--builder">
+            <p class="plugin__owner">Execute · Stage B</p>
+            <h3>ai-sdlc-builder-plugin</h3>
+            <p>Stage B execution. Master-prompt creation + execution command. Four personas inside: <strong>Developer · QA · BA · Reviewer</strong>. AI writes test cases <em>first</em> (from the PRD), then code; developer follows docs strictly, no extra scope; reviewer checks tests + docs + PR hygiene; BA owns comms + doc-as-you-go. Built by <strong>Ankit + Deepak</strong>.</p>
+          </article>
+
+          <article class="plugin plugin--ours">
+            <p class="plugin__owner">Streams 3 + 4</p>
+            <h3>ai-sdlc-devops-plugin</h3>
+            <p>Pre-go-live gates: <strong>VAPT · SAST · PenT · E2E finalisation · load · perf reports</strong> — all auto-generated. No public users before this passes. Post-prod monitoring: weekly health · backup + utilisation reports · CPU &lt; 50% check every 7 days · <strong>3-tier alert escalation</strong> (3rd alert = critical = auto scale up/down). Persona: <strong>DevOps</strong>. Built by Ankit.</p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Shared infrastructure</p>
+            <h3>ai-sdlc-skills</h3>
+            <p>Central skills repo. Every <code>*-author</code> skill lives here — semver-tagged, eval-suite-gated. Plugins consume from here; projects pin versions in <code>.claude/skills.lock.json</code>. Prody's deck: "AI raises PRs into the skills repo when gaps appear."</p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Onboarding · SOPs · index</p>
+            <h3>ai-sdlc-hub</h3>
+            <p>Central reference site (GitHub Pages). Holds the SOPs, the per-persona onboarding paths, the plugin docs, the deployment lifecycle, the FAQs. <strong>One URL anyone in the team can land on</strong> and find the right plugin for their role.</p>
+          </article>
+        </div>
+
+        <h3 class="sub-h3">Release sequence — Phase 0 to Phase 4</h3>
+        <ol class="release">
+          <li><strong>Phase 0 · Foundation.</strong> <code>ai-sdlc-hub</code> + <code>ai-sdlc-skills</code>. The rails everyone else uses. Without these, every plugin reinvents structure.</li>
+          <li><strong>Phase 1 · Pre-build.</strong> <code>ai-sdlc-intent-plugin</code>. Stage A docs already exist — fastest plugin to ship.</li>
+          <li><strong>Phase 2 · Sign-off.</strong> <code>ai-sdlc-architect-plugin</code>. Makes Sol Doc reviews and pre-go-live sign-offs auditable.</li>
+          <li><strong>Phase 3 · Execute.</strong> <code>ai-sdlc-builder-plugin</code>. Four Builder personas live. AI writes tests + code together. Triggered when Sol Doc is signed and the first prompt fires.</li>
+          <li><strong>Phase 4 · Ship + Run.</strong> <code>ai-sdlc-devops-plugin</code>. Pre-go-live gates auto-run. Post-prod monitoring on every app.</li>
+        </ol>
+
+        <p class="caveat"><strong>Repo names are proposals.</strong> Naming follows existing Dhwani convention (kebab-case · <code>ai-sdlc-</code> prefix). Change any of them in the closing session — the structure is what matters, not the names.</p>
+      </div>
+    </section>
+
+    <!-- STAGE A -->
+    <section class="band band--alt" id="stage-a">
+      <div class="container">
+        <p class="kicker">02 · Stage A · 10 RG steps in 3 phases</p>
         <h2>Where DevOps plugs into Prody's Stage A.</h2>
         <p class="sub">Prody's deck defines the steps. DevOps brings the rails that make them repeatable across projects.</p>
 
@@ -163,7 +222,7 @@
     <!-- STAGE C -->
     <section class="band band--alt" id="stage-c">
       <div class="container">
-        <p class="kicker">02 · Stream 3 · Stage C · DevOps proposal</p>
+        <p class="kicker">03 · Stream 3 · Stage C · DevOps proposal</p>
         <h2>What follows Sol Doc sign-off.</h2>
         <p class="sub">Stage C isn't yet pitched. Below is our proposal — three phases, eight steps, six new skills to author. To validate with the working group.</p>
 
@@ -208,7 +267,7 @@
     <!-- INTER-STREAM GLUE -->
     <section class="band" id="glue">
       <div class="container">
-        <p class="kicker kicker--dark">03 · In between · Inter-stream glue</p>
+        <p class="kicker kicker--dark">04 · In between · Inter-stream glue</p>
         <h2>Bridges keep artefacts moving.</h2>
         <p class="sub">Streams are parallel. Artefacts flow between them. DevOps builds and maintains the bridges so nothing falls on the floor.</p>
 
@@ -237,10 +296,52 @@
       </div>
     </section>
 
+    <!-- DEPLOYMENT LIFECYCLE -->
+    <section class="band" id="lifecycle">
+      <div class="container">
+        <p class="kicker">05 · From wrapper to production</p>
+        <h2>One repo. Five environments. One gate at each.</h2>
+        <p class="sub">Builder pushes files into the GitHub wrapper. Environments self-provision per branch. DevOps owns the gate to production. <strong>No public users before the gate passes.</strong></p>
+
+        <div class="lifecycle-flow">
+          <article class="env">
+            <span class="env__n">①</span>
+            <h3>Wrapper · GitHub repo</h3>
+            <p>Builder creates the project repo from the Dhwani starter (one command — see §06). If Builder &amp; AM are the same persona, the request is self-service. Files arrive in GitHub; first prompt is ready to execute.</p>
+          </article>
+          <article class="env">
+            <span class="env__n">②</span>
+            <h3>Staging · auto-provisioned</h3>
+            <p>Spins up automatically when the repo is wrapped. The first AI prompt runs here. Auto-configured naming (<code>{project}-staging</code>).</p>
+          </article>
+          <article class="env">
+            <span class="env__n">③</span>
+            <h3>Development branch → dev env</h3>
+            <p>Merge to the <code>development</code> branch → auto-deploys to dev env. Regression runs here. Iterations land without ceremony.</p>
+          </article>
+          <article class="env">
+            <span class="env__n">④</span>
+            <h3>UAT · often optional</h3>
+            <p>Once development passes regression, UAT auto-creates. Client validates. <em>Staging can also serve as client preview if a full UAT cycle is overkill on a small engagement.</em></p>
+          </article>
+          <article class="env env--gate">
+            <span class="env__n">⑤</span>
+            <h3>Pre-go-live gate · DevOps plugin</h3>
+            <p>VAPT · SAST · PenT · E2E finalisation · load · perf reports — all auto-generated. SLOs confirmed against the Sol Doc. <strong>If any check fails, the gate stays shut.</strong></p>
+          </article>
+          <article class="env env--prod">
+            <span class="env__n">⑥</span>
+            <h3>Production</h3>
+            <p>Public users only after the gate passes. Post-deploy, weekly monitoring takes over: <strong>CPU &lt; 50% check every 7 days · 3-tier alert escalation · 3rd critical alert triggers auto scale up / down</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ADOPT -->
     <section class="band band--dark" id="adopt">
       <div class="container">
-        <p class="kicker kicker--light">04 · Adopt</p>
+        <p class="kicker kicker--light">06 · Adopt</p>
         <h2 class="light">Day 1 is one command.</h2>
         <p class="sub light">No wiki crawl. No setup day. Clone, open Claude, start with Kickoff &amp; Stakeholder Map.</p>
 
@@ -287,7 +388,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- EVOLVE -->
     <section class="band band--alt" id="evolve">
       <div class="container">
-        <p class="kicker">05 · Evolve</p>
+        <p class="kicker">07 · Evolve</p>
         <h2>Three loops keep the framework alive.</h2>
         <p class="sub">Static methodology gets stale. Anyone can raise. AI drafts the fix. Champion reviews. Telemetry tells leadership it's working.</p>
 
@@ -324,7 +425,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- ASKS -->
     <section class="band" id="asks">
       <div class="container">
-        <p class="kicker kicker--dark">06 · What we need from leadership</p>
+        <p class="kicker kicker--dark">08 · What we need from leadership</p>
         <h2>To deliver Streams 3 + 4, four quarters.</h2>
 
         <div class="asks">
@@ -356,7 +457,7 @@ cd dhwani-{stack}-{client} &amp;&amp; claude</code></pre>
     <!-- OPEN QUESTIONS + CLOSE -->
     <section class="band band--alt" id="close">
       <div class="container container--narrow">
-        <p class="kicker">07 · Open questions for today</p>
+        <p class="kicker">09 · Open questions for today</p>
         <h2>Five to lock in the closing session.</h2>
 
         <ol class="qs">
