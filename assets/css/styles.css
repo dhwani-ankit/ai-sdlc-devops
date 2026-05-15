@@ -381,6 +381,84 @@ p { color: var(--ink-2); }
 }
 .shared-repo p { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
 
+/* ── Client journey · user flow ────────────────────── */
+.journey {
+  display: grid;
+  gap: 12px;
+  margin: 6px 0 0;
+}
+.journey-step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  align-items: start;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.journey-step--gate {
+  background: var(--orange-soft);
+  border-color: var(--orange);
+}
+.journey-step--ongoing {
+  background: linear-gradient(180deg, var(--orange-soft) 0%, var(--bg) 70%);
+  border-color: var(--orange);
+  border-left: 4px solid var(--orange);
+}
+.journey-step__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+.journey-step--gate .journey-step__icon {
+  background: var(--ink);
+}
+.journey-step__quote {
+  margin: 0 0 12px !important;
+  font-size: 16px !important;
+  font-style: italic;
+  color: var(--orange-dark) !important;
+  border-left: 3px solid var(--orange);
+  padding: 4px 0 4px 14px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.journey-step__body h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  letter-spacing: -0.005em;
+}
+.journey-step__body p:not(.journey-step__quote):not(.journey-step__win) {
+  margin: 0 0 12px;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.journey-step__win {
+  margin: 0 !important;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--orange-soft) !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  border-radius: 999px;
+  display: inline-block;
+  letter-spacing: 0.01em;
+}
+.journey-step--gate .journey-step__win {
+  background: var(--orange-dark);
+  color: #fff !important;
+}
+
 /* ── Lifestep flow · 11-stage project lifecycle ───── */
 .lifestep-flow {
   display: grid;
@@ -1417,6 +1495,8 @@ ol.qs strong { color: var(--ink); }
   .lifestep__num { font-size: 32px; }
   .lifestep__dl { grid-template-columns: 1fr; gap: 4px 0; }
   .lifestep__dl dt { padding-top: 8px; }
+  .journey-step { grid-template-columns: 1fr; gap: 12px; padding: 20px 22px; }
+  .journey-step__icon { width: 44px; height: 44px; font-size: 20px; }
   .bridges { grid-template-columns: 1fr; }
   .quickstart { grid-template-columns: 1fr; }
   .loops { grid-template-columns: 1fr; }
