@@ -649,11 +649,42 @@ p { color: var(--ink-2); }
   color: var(--ink);
 }
 .plugin p {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 14px;
   color: var(--ink-2);
   line-height: 1.55;
 }
+.plugin p:last-child { margin-bottom: 0; }
+.plugin-list {
+  margin: 6px 0 10px;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  list-style: none;
+}
+.plugin-list li {
+  padding: 4px 0;
+  position: relative;
+  padding-left: 14px;
+}
+.plugin-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+.plugin-list code { font-size: 0.9em; padding: 1px 4px; }
+.plugin code {
+  font-size: 0.92em;
+  padding: 2px 6px;
+  background: var(--bg-alt);
+  color: var(--orange-dark);
+  font-weight: 600;
+}
+.plugin--builder .plugin code,
+.plugin--ours .plugin code { background: var(--bg); }
 
 /* Release sequence list */
 .release {

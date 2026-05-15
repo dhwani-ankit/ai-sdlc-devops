@@ -23,9 +23,10 @@
         <a href="#process">Process</a>
         <a href="#team">Team</a>
         <a href="#assistants">Assistants</a>
-        <a href="#asks">Asks</a>
         <a href="#timeline">Timeline</a>
         <a href="#complete">Complete view</a>
+        <a href="#inside">Plugin internals</a>
+        <a href="#journey">Journey</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
       </nav>
     </div>
@@ -352,6 +353,123 @@
         </div>
 
         <p class="caveat">All eight stages happen on every project. Their <em>depth</em> changes with project size — a 5-day mGrant fit-gap moves through them faster than a 4-week greenfield. The gates never get skipped.</p>
+      </div>
+    </section>
+
+    <!-- INSIDE EACH PLUGIN -->
+    <section class="band band--alt" id="inside">
+      <div class="container">
+        <p class="kicker">07 · Inside each plugin</p>
+        <h2>What's actually in each repo.</h2>
+        <p class="sub">For engineers and the curious. Each plugin is a packaged set of skills, sub-personas, and commands that Claude Code loads on demand.</p>
+
+        <div class="plugins">
+          <article class="plugin">
+            <p class="plugin__owner">Used by · Product Builder</p>
+            <h3>ai-sdlc-intent-plugin</h3>
+            <p><strong>Skills inside:</strong> stakeholder mapping · MoM authoring · charter drafting · FR specification · RBAC matrix · workflow diagrams · data modelling · wireframe authoring</p>
+            <p><strong>Main command:</strong> <code>claude /intent</code></p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Used by · Architect</p>
+            <h3>ai-sdlc-architect-plugin</h3>
+            <p><strong>Skills inside:</strong> architecture review · pattern matching · ADR drafting · IaC pattern selection · pre-go-live validation</p>
+            <p><strong>Main command:</strong> <code>claude /architect</code></p>
+          </article>
+
+          <article class="plugin plugin--builder">
+            <p class="plugin__owner">Used by · Builder + Engineering</p>
+            <h3>ai-sdlc-builder-plugin</h3>
+            <p><strong>Four sub-personas inside:</strong></p>
+            <ul class="plugin-list">
+              <li><strong>Dev</strong> · writes code strictly following docs · no scope expansion</li>
+              <li><strong>QA</strong> · writes test cases <em>first</em> from the PRD · then validates code</li>
+              <li><strong>BA</strong> · owns comms · maintains docs as code evolves</li>
+              <li><strong>Reviewer</strong> · checks tests + docs + PR hygiene before merge</li>
+            </ul>
+            <p><strong>Main command:</strong> <code>claude /build</code> · plus master-prompt creation tool</p>
+          </article>
+
+          <article class="plugin plugin--ours">
+            <p class="plugin__owner">Used by · DevOps + Security</p>
+            <h3>ai-sdlc-devops-plugin</h3>
+            <p><strong>Two surfaces inside the same plugin:</strong></p>
+            <ul class="plugin-list">
+              <li><strong>Quality &amp; Delivery</strong> · VAPT · SAST · PenT · E2E finalisation · load · performance reports — all auto-generated · SLOs confirmed</li>
+              <li><strong>Production Monitoring</strong> · weekly health · CPU &lt; 50% check every 7 days · 3-tier alert escalation · auto scale on 3rd critical · weekly + monthly reports</li>
+            </ul>
+            <p><strong>Main commands:</strong> <code>claude /pre-go-live</code> · <code>claude /monitor</code></p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Shared infrastructure</p>
+            <h3>ai-sdlc-skills</h3>
+            <p>Every skill referenced above lives here. Semver-tagged with eval suites. Plugins pull from here, so a fix in one place flows to every active project.</p>
+          </article>
+
+          <article class="plugin">
+            <p class="plugin__owner">Onboarding · SOPs · index</p>
+            <h3>ai-sdlc-hub</h3>
+            <p>Single GitHub Pages site. Per-persona onboarding paths, plugin docs, deployment lifecycle, FAQs. <strong>One URL anyone lands on</strong> to find the plugin for their role.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW A PROJECT STARTS AND SHIPS -->
+    <section class="band" id="journey">
+      <div class="container">
+        <p class="kicker kicker--dark">08 · From idea to live · the project journey</p>
+        <h2>How a project starts, builds, and ships.</h2>
+        <p class="sub">Six environments. One gate at each. The same flow whether the project is a 5-day fit-gap or a 4-week greenfield.</p>
+
+        <div class="lifecycle-flow">
+          <article class="env">
+            <span class="env__n">①</span>
+            <h3>Wrapper · GitHub repo</h3>
+            <p><strong>Triggered by:</strong> Product Builder (or AM = Builder on solo projects). One command:</p>
+            <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg-alt);padding:8px 10px;border-radius:6px;color:var(--ink-2);">gh repo create dhwani-{stack}-{client} --template ai-sdlc-stage-a-starter</p>
+            <p>Repo arrives pre-wired: folders · schemas · CI seed · Pages → CloudFront · <code>.claude/</code> catalogue. First AI prompt ready to execute.</p>
+          </article>
+
+          <article class="env">
+            <span class="env__n">②</span>
+            <h3>Staging · auto-provisioned</h3>
+            <p><strong>Triggered by:</strong> automatic on repo creation.</p>
+            <p>Staging env spins up the moment the wrapper is set up. First AI prompt runs here. Auto-named: <code>{project}-staging.dhwaniris.in</code>. Builder validates approach before going wider.</p>
+          </article>
+
+          <article class="env">
+            <span class="env__n">③</span>
+            <h3>Development · the working branch</h3>
+            <p><strong>Triggered by:</strong> merge to the <code>development</code> branch.</p>
+            <p>Auto-deploys to the dev environment. Builder iterates with the Code Building Assistant — Dev writes code, QA writes tests first, BA keeps docs current, Reviewer checks PRs. Regression runs continuously.</p>
+          </article>
+
+          <article class="env">
+            <span class="env__n">④</span>
+            <h3>UAT · often optional</h3>
+            <p><strong>Triggered by:</strong> AM, after dev passes regression. Auto-creates the UAT env.</p>
+            <p>Client validates against the original intent. On small projects, staging often serves as the client preview and UAT is skipped. On larger projects, UAT is a formal cycle with named approvers.</p>
+          </article>
+
+          <article class="env env--gate">
+            <span class="env__n">⑤</span>
+            <h3>Pre-go-live gate · DevOps plugin</h3>
+            <p><strong>Triggered by:</strong> DevOps, when UAT (or dev) signs off.</p>
+            <p>The Quality &amp; Delivery Assistant runs every check: VAPT · SAST · PenT · E2E finalisation · load test · performance reports. SLOs confirmed against the Sol Doc. <strong>If any check fails, the gate stays shut — no production deploy.</strong></p>
+          </article>
+
+          <article class="env env--prod">
+            <span class="env__n">⑥</span>
+            <h3>Production · public users</h3>
+            <p><strong>Triggered by:</strong> the gate passes. AM + DevOps sign Go-Live.</p>
+            <p>Public deploy. Post-deploy monitoring tightens for 30 minutes. Production Monitoring Assistant takes over: <strong>weekly CPU check &lt; 50%</strong>, three-tier alert escalation, auto scale on the third critical alert, weekly + monthly reports to project owners.</p>
+          </article>
+        </div>
+
+        <p class="caveat">The journey is the same on every project. <em>Depth</em> changes — a 5-day fit-gap might collapse Stages ③ + ④ into one merge, while a regulated government project may add a compliance gate between ⑤ and ⑥. The six environments stay constant.</p>
       </div>
     </section>
 
