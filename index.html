@@ -139,11 +139,11 @@
 
         <div class="assistants">
           <article class="assistant">
-            <p class="assistant__role">For the Product Builder</p>
+            <p class="assistant__role">For the Account Manager</p>
             <h3>Client Conversation Assistant</h3>
-            <p><strong>What it does:</strong> Helps the team capture intent, draft requirements, and design mock-ups with the client — all in one flow.</p>
+            <p><strong>What it does:</strong> Helps the AM capture client intent, run discovery, draft the charter, and keep scope under control through the project.</p>
             <p><strong>What stakeholders see:</strong> Faster sign-offs. Fewer "that's not what I meant" moments later.</p>
-            <p class="assistant__repo">Repo · <code>ai-sdlc-intent-plugin</code></p>
+            <p class="assistant__repo">Repos · <code>service-am-plugin</code> · <code>product-am-plugin</code> <em>(one per department)</em></p>
           </article>
 
           <article class="assistant">
@@ -151,7 +151,7 @@
             <h3>Architecture Assistant</h3>
             <p><strong>What it does:</strong> Reviews technical designs against Dhwani's reference patterns. Catches drift before it ships.</p>
             <p><strong>What stakeholders see:</strong> Consistent quality across projects. No rogue architectures.</p>
-            <p class="assistant__repo">Repo · <code>ai-sdlc-architect-plugin</code></p>
+            <p class="assistant__repo">Repos · <code>service-architect-plugin</code> · <code>product-architect-plugin</code> <em>(one per department)</em></p>
           </article>
 
           <article class="assistant">
@@ -159,7 +159,7 @@
             <h3>Code Building Assistant</h3>
             <p><strong>What it does:</strong> Writes code with AI — but enforces tests-first, documentation-alongside, and proper review before merge.</p>
             <p><strong>What stakeholders see:</strong> Faster delivery without the quality drops you'd normally expect from speed.</p>
-            <p class="assistant__repo">Repo · <code>ai-sdlc-builder-plugin</code></p>
+            <p class="assistant__repo">Repos · <code>service-builder-plugin</code> · <code>product-builder-plugin</code> <em>(one per department)</em></p>
           </article>
 
           <article class="assistant assistant--ours">
@@ -191,7 +191,7 @@
           </article>
         </div>
 
-        <p class="caveat">Six repos total. Two of the assistants (Quality &amp; Delivery, Production Monitoring) live in one shared <code>ai-sdlc-devops-plugin</code> repo. The other three each have their own. <strong>Repo names are proposals</strong> — change them in the closing session.</p>
+        <p class="caveat"><strong>Nine repos total.</strong> Each persona-facing assistant (AM, Architect, Builder) ships as two repos — one per department (<code>service-*</code> and <code>product-*</code>) — so each department can tune its plugin without colliding. The DevOps plugin is shared across departments. Plus the two shared infrastructure repos.</p>
       </div>
     </section>
 
@@ -322,8 +322,8 @@
             <span class="flow-step__n">01</span>
             <div class="flow-step__main">
               <h3>Intent &amp; Charter</h3>
-              <p class="flow-step__meta"><strong>AM + PB</strong> · using the <em>Client Conversation Assistant</em></p>
-              <p>Capture the client's real intent. Map stakeholders. Agree the Charter — scope, success criteria, team, escalation.</p>
+              <p class="flow-step__meta"><strong>AM (with PB)</strong> · using the <em>Client Conversation Assistant</em></p>
+              <p>AM-led. Capture the client's real intent. Map stakeholders. Agree the Charter — scope, success criteria, team, escalation.</p>
             </div>
             <p class="flow-step__gate">Gate · Signed Charter</p>
           </article>
@@ -332,8 +332,8 @@
             <span class="flow-step__n">02</span>
             <div class="flow-step__main">
               <h3>Solutioning</h3>
-              <p class="flow-step__meta"><strong>PB</strong> · using the <em>Client Conversation Assistant</em></p>
-              <p>Draft functional requirements, user roles, process workflows, data model, wireframes. Mock-ups signed off by client.</p>
+              <p class="flow-step__meta"><strong>PB (AM in client-facing parts)</strong> · using the <em>Client Conversation Assistant</em></p>
+              <p>Draft functional requirements, user roles, process workflows, data model, wireframes. Mock-ups signed off by client — AM facilitates the client touchpoints.</p>
             </div>
             <p class="flow-step__gate">Gate · Client signs the mock-up</p>
           </article>
@@ -412,23 +412,25 @@
 
         <div class="plugins">
           <article class="plugin">
-            <p class="plugin__owner">Used by · Product Builder</p>
-            <h3>ai-sdlc-intent-plugin</h3>
-            <p><strong>Skills inside:</strong> stakeholder mapping · MoM authoring · charter drafting · FR specification · RBAC matrix · workflow diagrams · data modelling · wireframe authoring</p>
+            <p class="plugin__owner">Used by · Account Manager</p>
+            <h3>service-am-plugin · product-am-plugin</h3>
+            <p><strong>Two repos, one per department.</strong> Same skills shape, tuned for the engagement model of each.</p>
+            <p><strong>Skills inside:</strong> stakeholder mapping · MoM authoring · charter drafting · client comms · scope monitor · sign-off capture</p>
             <p><strong>Main command:</strong> <code>claude /intent</code></p>
           </article>
 
           <article class="plugin">
             <p class="plugin__owner">Used by · Architect</p>
-            <h3>ai-sdlc-architect-plugin</h3>
+            <h3>service-architect-plugin · product-architect-plugin</h3>
+            <p><strong>Two repos, one per department.</strong> Reference patterns differ between Service and Product work.</p>
             <p><strong>Skills inside:</strong> architecture review · pattern matching · ADR drafting · IaC pattern selection · pre-go-live validation</p>
             <p><strong>Main command:</strong> <code>claude /architect</code></p>
           </article>
 
           <article class="plugin plugin--builder">
             <p class="plugin__owner">Used by · Builder + Engineering</p>
-            <h3>ai-sdlc-builder-plugin</h3>
-            <p><strong>Four sub-personas inside:</strong></p>
+            <h3>service-builder-plugin · product-builder-plugin</h3>
+            <p><strong>Two repos, one per department.</strong> Same four sub-personas inside each:</p>
             <ul class="plugin-list">
               <li><strong>Dev</strong> · writes code strictly following docs · no scope expansion</li>
               <li><strong>QA</strong> · writes test cases <em>first</em> from the PRD · then validates code</li>
