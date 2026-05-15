@@ -466,59 +466,169 @@
       </div>
     </section>
 
-    <!-- HOW A PROJECT STARTS AND SHIPS -->
+    <!-- COMPLETE PROJECT LIFECYCLE -->
     <section class="band" id="journey">
       <div class="container">
-        <p class="kicker kicker--dark">08 · From idea to live · the project journey</p>
-        <h2>How a project starts, builds, and ships.</h2>
-        <p class="sub">Six environments. One gate at each. The same flow whether the project is a 5-day fit-gap or a 4-week greenfield.</p>
+        <p class="kicker kicker--dark">08 · From project start to live · the complete lifecycle</p>
+        <h2>Eleven stages. Three iteration loops. One repo end-to-end.</h2>
+        <p class="sub">Every trigger event, every environment that spins up, every iteration loop — from the moment a client signs the Charter to the weekly health report two years later.</p>
 
-        <div class="lifecycle-flow">
-          <article class="env">
-            <span class="env__n">①</span>
-            <h3>Wrapper · GitHub repo</h3>
-            <p><strong>Triggered by:</strong> Product Builder (or AM = Builder on solo projects). One command:</p>
-            <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg-alt);padding:8px 10px;border-radius:6px;color:var(--ink-2);">gh repo create dhwani-{stack}-{client} --template ai-sdlc-stage-a-starter</p>
-            <p>Repo arrives pre-wired: folders · schemas · CI seed · Pages → CloudFront · <code>.claude/</code> catalogue. First AI prompt ready to execute.</p>
+        <div class="lifestep-flow">
+
+          <article class="lifestep">
+            <div class="lifestep__num">01</div>
+            <div class="lifestep__body">
+              <h3>Project starts</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>Charter signed by client + Dhwani PM</dd>
+                <dt>Who</dt><dd>AM + PB</dd>
+                <dt>What happens</dt><dd>Project classified by department (Service or Product) and team shape (solo / pair / full team). Tech Lead + Architect assigned.</dd>
+                <dt>Output</dt><dd>Signed Charter, archived in KM</dd>
+              </dl>
+            </div>
           </article>
 
-          <article class="env">
-            <span class="env__n">②</span>
-            <h3>Staging · auto-provisioned</h3>
-            <p><strong>Triggered by:</strong> automatic on repo creation.</p>
-            <p>Staging env spins up the moment the wrapper is set up. First AI prompt runs here. Auto-named: <code>{project}-staging.dhwaniris.in</code>. Builder validates approach before going wider.</p>
+          <article class="lifestep">
+            <div class="lifestep__num">02</div>
+            <div class="lifestep__body">
+              <h3>Repo created · one command</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>PB (or AM-as-PB on solo projects) runs the starter command</dd>
+                <dt>Who</dt><dd>PB · uses the <code>ai-sdlc-hub</code> starter template</dd>
+                <dt>Command</dt><dd><code>gh repo create dhwani-{dept}-{client}-{project} --template ai-sdlc-stage-a-starter --private --clone</code></dd>
+                <dt>What's pre-wired</dt><dd>Folders for every Stage A artefact · Markdown schemas · CI seed · Pages → CloudFront · <code>.claude/skills/</code> linked · CODEOWNERS (Architect + AM)</dd>
+                <dt>Output</dt><dd><code>github.com/dhwani-{dept}/{project}</code></dd>
+              </dl>
+            </div>
           </article>
 
-          <article class="env">
-            <span class="env__n">③</span>
-            <h3>Development · the working branch</h3>
-            <p><strong>Triggered by:</strong> merge to the <code>development</code> branch.</p>
-            <p>Auto-deploys to the dev environment. Builder iterates with the Code Building Assistant — Dev writes code, QA writes tests first, BA keeps docs current, Reviewer checks PRs. Regression runs continuously.</p>
+          <article class="lifestep lifestep--auto">
+            <div class="lifestep__num">03</div>
+            <div class="lifestep__body">
+              <h3>Staging auto-provisions</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>First push to repo → GitHub Action fires</dd>
+                <dt>Who</dt><dd>Automatic · DevOps plugin handles infrastructure</dd>
+                <dt>What happens</dt><dd>Staging env spins up · DNS configured · secrets injected from Vault · first AI prompt ready to execute</dd>
+                <dt>SLO</dt><dd>&lt; 15 minutes from repo creation to live URL</dd>
+                <dt>Output</dt><dd><code>{project}-staging.dhwaniris.in</code> live</dd>
+              </dl>
+            </div>
           </article>
 
-          <article class="env">
-            <span class="env__n">④</span>
-            <h3>UAT · often optional</h3>
-            <p><strong>Triggered by:</strong> AM, after dev passes regression. Auto-creates the UAT env.</p>
-            <p>Client validates against the original intent. On small projects, staging often serves as the client preview and UAT is skipped. On larger projects, UAT is a formal cycle with named approvers.</p>
+          <article class="lifestep lifestep--iterate">
+            <div class="lifestep__num">04</div>
+            <div class="lifestep__body">
+              <h3>Stage A iterations · Solutioning loop</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>First <code>claude /intent</code> command in the repo</dd>
+                <dt>Who</dt><dd>PB drives · AM facilitates client touchpoints · using <em>Client Conversation Assistant</em> (<code>{dept}-am-plugin</code>)</dd>
+                <dt>Loop</dt><dd>Each Stage A step (FRs · RBAC · workflows · data model · wireframes) is a PR → review → merge → auto-deploys to staging → client preview → iterate</dd>
+                <dt>Typical iterations</dt><dd>5–15 PRs depending on project size</dd>
+                <dt>Output</dt><dd>All Stage A artefacts in repo · client-viewable on staging URL</dd>
+              </dl>
+            </div>
           </article>
 
-          <article class="env env--gate">
-            <span class="env__n">⑤</span>
-            <h3>Pre-go-live gate · DevOps plugin</h3>
-            <p><strong>Triggered by:</strong> DevOps, when UAT (or dev) signs off.</p>
-            <p>The Quality &amp; Delivery Assistant runs every check: VAPT · SAST · PenT · E2E finalisation · load test · performance reports. SLOs confirmed against the Sol Doc. <strong>If any check fails, the gate stays shut — no production deploy.</strong></p>
+          <article class="lifestep lifestep--gate">
+            <div class="lifestep__num">05</div>
+            <div class="lifestep__body">
+              <h3>Sol Doc signed · ready for first AI-coding prompt</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>All Stage A artefacts complete · Architect reviews</dd>
+                <dt>Who</dt><dd>PB drafts Sol Doc · Architect signs · using <em>Architecture Assistant</em> (<code>{dept}-architect-plugin</code>)</dd>
+                <dt>What happens</dt><dd>Sol Doc finalised covering all 16 sections. §5.11 Tech Stack + §5.12 Security + §5.16 List of Objects = TRD seeds.</dd>
+                <dt>Sign-off</dt><dd>Signed git tag · e.g. <code>v0.1-soldoc</code> · immutable archive</dd>
+                <dt>Output</dt><dd>Project moves to "Build" status · first AI-coding prompt can fire</dd>
+              </dl>
+            </div>
           </article>
 
-          <article class="env env--prod">
-            <span class="env__n">⑥</span>
-            <h3>Production · public users</h3>
-            <p><strong>Triggered by:</strong> the gate passes. AM + DevOps sign Go-Live.</p>
-            <p>Public deploy. Post-deploy monitoring tightens for 30 minutes. Production Monitoring Assistant takes over: <strong>weekly CPU check &lt; 50%</strong>, three-tier alert escalation, auto scale on the third critical alert, weekly + monthly reports to project owners.</p>
+          <article class="lifestep lifestep--auto">
+            <div class="lifestep__num">06</div>
+            <div class="lifestep__body">
+              <h3>Development env spins up</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>First merge to the <code>development</code> branch</dd>
+                <dt>Who</dt><dd>Automatic · DevOps plugin provisions from §5.11 Tech Stack</dd>
+                <dt>What happens</dt><dd>Dev env auto-provisions via Terraform · CI pipelines live · auto-deploy on every <code>development</code> push</dd>
+                <dt>Output</dt><dd><code>{project}-dev.dhwaniris.in</code> live</dd>
+              </dl>
+            </div>
           </article>
+
+          <article class="lifestep lifestep--iterate">
+            <div class="lifestep__num">07</div>
+            <div class="lifestep__body">
+              <h3>Stage B iterations · Build &amp; QA loop</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>Daily feature work</dd>
+                <dt>Who</dt><dd>Engineering · using <em>Code Building Assistant</em> (<code>{dept}-builder-plugin</code>) · four sub-personas inside (Dev · QA · BA · Reviewer)</dd>
+                <dt>Loop per feature</dt><dd>QA writes test cases first → Dev writes code following docs → BA updates docs → Reviewer checks tests + PR hygiene → merge to <code>development</code> → auto-deploy → regression</dd>
+                <dt>Typical iterations</dt><dd>Dozens of PRs across the project · merge cadence: multiple per day</dd>
+                <dt>Output</dt><dd>Working features · tests passing · regression green · deployed to dev</dd>
+              </dl>
+            </div>
+          </article>
+
+          <article class="lifestep lifestep--iterate">
+            <div class="lifestep__num">08</div>
+            <div class="lifestep__body">
+              <h3>UAT iterations · client validation</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>AM requests UAT after dev regression passes · UAT env auto-creates</dd>
+                <dt>Who</dt><dd>AM + Client · using the UAT env</dd>
+                <dt>Loop</dt><dd>Client validates → issues filed in GitHub Issues → fixed in dev → merged to UAT → re-validated</dd>
+                <dt>Notes</dt><dd>Optional on small projects — staging often serves as the client preview and UAT is skipped</dd>
+                <dt>Output</dt><dd>UAT sign-off as a signed git tag · e.g. <code>v0.5-uat</code></dd>
+              </dl>
+            </div>
+          </article>
+
+          <article class="lifestep lifestep--gate lifestep--ours">
+            <div class="lifestep__num">09</div>
+            <div class="lifestep__body">
+              <h3>Pre-go-live gate · the hard stop</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>UAT signed (or dev signed if UAT skipped)</dd>
+                <dt>Who</dt><dd>DevOps + Security · using <em>Quality &amp; Delivery Assistant</em> (<code>ai-sdlc-devops-plugin</code>)</dd>
+                <dt>What runs</dt><dd>VAPT · SAST · PenT · E2E finalisation · load test (peak × 1.5) · performance reports — all auto-generated · SLOs confirmed</dd>
+                <dt>Gate behaviour</dt><dd><strong>If any check fails, the gate stays shut. No production deploy.</strong></dd>
+                <dt>Output</dt><dd>Release Readiness Report signed by TL + QA + Security + DevOps + AM</dd>
+              </dl>
+            </div>
+          </article>
+
+          <article class="lifestep lifestep--ours">
+            <div class="lifestep__num">10</div>
+            <div class="lifestep__body">
+              <h3>Production deploy</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>Gate passes · all sign-offs collected</dd>
+                <dt>Who</dt><dd>DevOps + AM</dd>
+                <dt>What happens</dt><dd>Production env provisions (first deploy) or rolling deploy (subsequent). 30-minute heightened monitoring window. Rollback rehearsed and runbook linked.</dd>
+                <dt>Output</dt><dd><code>{project}.dhwaniris.in</code> (or client's own domain via CloudFront) · live to public users</dd>
+              </dl>
+            </div>
+          </article>
+
+          <article class="lifestep lifestep--prod">
+            <div class="lifestep__num">11</div>
+            <div class="lifestep__body">
+              <h3>Operate · always-on</h3>
+              <dl class="lifestep__dl">
+                <dt>Trigger</dt><dd>Production live · for the life of the application</dd>
+                <dt>Who</dt><dd>DevOps · using <em>Production Monitoring Assistant</em> (<code>ai-sdlc-devops-plugin</code>) · plus <strong>Mukhbir</strong> runtime health</dd>
+                <dt>Weekly</dt><dd>CPU &lt; 50% check every 7 days · backup verification · health report to project owner</dd>
+                <dt>Alerts</dt><dd>Three-tier escalation — first alert info · second alert action · <strong>third alert auto-scales</strong> (up or down based on signal)</dd>
+                <dt>Monthly</dt><dd>Client-facing health report · learnings feed back to KM for the next project's Charter</dd>
+              </dl>
+            </div>
+          </article>
+
         </div>
 
-        <p class="caveat">The journey is the same on every project. <em>Depth</em> changes — a 5-day fit-gap might collapse Stages ③ + ④ into one merge, while a regulated government project may add a compliance gate between ⑤ and ⑥. The six environments stay constant.</p>
+        <p class="caveat">The eleven stages are the same on every project. Their <em>depth</em> changes — a 5-day fit-gap might collapse Stages ⑥–⑦ into one merge and skip ⑧ entirely; a 4-week greenfield runs every stage with multiple iteration cycles. The gates (⑤ and ⑨) never get skipped.</p>
       </div>
     </section>
 
