@@ -332,6 +332,129 @@ p { color: var(--ink-2); }
   font-style: italic;
 }
 
+/* ── Assistant repo line ───────────────────────────── */
+.assistant__repo {
+  margin: 12px 0 0 !important;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px !important;
+  color: var(--muted) !important;
+  letter-spacing: 0.02em;
+}
+.assistant__repo code {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--orange-dark);
+  background: var(--bg-alt);
+  padding: 2px 6px;
+}
+.assistant--ours .assistant__repo code { background: var(--bg); }
+.assistant__repo em { font-style: italic; color: var(--muted); }
+
+/* ── Shared repos ──────────────────────────────────── */
+.shared-repos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 6px 0 0;
+}
+.shared-repo {
+  padding: 18px 22px 16px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.shared-repo h4 {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--ink);
+}
+.shared-repo h4 code {
+  font-family: inherit;
+  background: transparent;
+  padding: 0;
+  color: var(--orange-dark);
+  font-weight: 700;
+}
+.shared-repo p { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+
+/* ── Full flow · 8 steps end-to-end ────────────────── */
+.full-flow {
+  display: grid;
+  gap: 12px;
+  margin: 6px 0 0;
+}
+.flow-step {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.flow-step--build {
+  border-left: 4px solid var(--orange);
+  background: var(--bg-alt);
+}
+.flow-step--ours {
+  background: linear-gradient(90deg, var(--orange-soft) 0%, var(--bg) 60%);
+  border-color: var(--orange);
+}
+.flow-step__n {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.flow-step__main h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
+}
+.flow-step__meta {
+  margin: 0 0 8px !important;
+  font-size: 12.5px !important;
+  font-family: var(--font-mono);
+  color: var(--muted) !important;
+  letter-spacing: 0.01em;
+}
+.flow-step__meta em {
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: var(--orange-dark);
+  font-weight: 600;
+}
+.flow-step__meta strong { color: var(--ink); }
+.flow-step__main p:not(.flow-step__meta) {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.flow-step__gate {
+  margin: 0 !important;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: #FFF1E5 !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
+  align-self: center;
+}
+.flow-step--ours .flow-step__gate {
+  background: var(--orange);
+  color: #fff !important;
+}
+
 /* ── Assistants · 5 cards ──────────────────────────── */
 .assistants {
   display: grid;
@@ -1033,6 +1156,12 @@ ol.qs strong { color: var(--ink); }
   .process { grid-template-columns: repeat(2, 1fr); }
   .assistants { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: 1fr; }
+  .shared-repos { grid-template-columns: 1fr; }
+  .flow-step {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .flow-step__gate { white-space: normal; text-align: left; align-self: start; display: inline-block; }
   .bridges { grid-template-columns: 1fr; }
   .quickstart { grid-template-columns: 1fr; }
   .loops { grid-template-columns: 1fr; }

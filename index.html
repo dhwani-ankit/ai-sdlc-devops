@@ -25,6 +25,7 @@
         <a href="#assistants">Assistants</a>
         <a href="#asks">Asks</a>
         <a href="#timeline">Timeline</a>
+        <a href="#complete">Complete view</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
       </nav>
     </div>
@@ -141,6 +142,7 @@
             <h3>Client Conversation Assistant</h3>
             <p><strong>What it does:</strong> Helps the team capture intent, draft requirements, and design mock-ups with the client — all in one flow.</p>
             <p><strong>What stakeholders see:</strong> Faster sign-offs. Fewer "that's not what I meant" moments later.</p>
+            <p class="assistant__repo">Repo · <code>ai-sdlc-intent-plugin</code></p>
           </article>
 
           <article class="assistant">
@@ -148,6 +150,7 @@
             <h3>Architecture Assistant</h3>
             <p><strong>What it does:</strong> Reviews technical designs against Dhwani's reference patterns. Catches drift before it ships.</p>
             <p><strong>What stakeholders see:</strong> Consistent quality across projects. No rogue architectures.</p>
+            <p class="assistant__repo">Repo · <code>ai-sdlc-architect-plugin</code></p>
           </article>
 
           <article class="assistant">
@@ -155,6 +158,7 @@
             <h3>Code Building Assistant</h3>
             <p><strong>What it does:</strong> Writes code with AI — but enforces tests-first, documentation-alongside, and proper review before merge.</p>
             <p><strong>What stakeholders see:</strong> Faster delivery without the quality drops you'd normally expect from speed.</p>
+            <p class="assistant__repo">Repo · <code>ai-sdlc-builder-plugin</code></p>
           </article>
 
           <article class="assistant assistant--ours">
@@ -162,6 +166,7 @@
             <h3>Quality &amp; Delivery Assistant</h3>
             <p><strong>What it does:</strong> Runs security scans, load tests, and the pre-release checklist automatically. Releases ship with a signed report.</p>
             <p><strong>What stakeholders see:</strong> No surprises in production. Every release has evidence.</p>
+            <p class="assistant__repo">Repo · <code>ai-sdlc-devops-plugin</code> <em>(shared)</em></p>
           </article>
 
           <article class="assistant assistant--ours">
@@ -169,10 +174,23 @@
             <h3>Production Monitoring Assistant</h3>
             <p><strong>What it does:</strong> Watches every live application — uptime, performance, security. Sends weekly health reports automatically.</p>
             <p><strong>What stakeholders see:</strong> Issues caught before clients call. Monthly reports in their inbox.</p>
+            <p class="assistant__repo">Repo · <code>ai-sdlc-devops-plugin</code> <em>(shared)</em></p>
           </article>
         </div>
 
-        <p class="caveat">Two of these (Quality &amp; Delivery, Production Monitoring) are owned by the DevOps team (Ankit). The other three are co-owned across the working group.</p>
+        <h3 class="sub-h3">Shared infrastructure</h3>
+        <div class="shared-repos">
+          <article class="shared-repo">
+            <h4><code>ai-sdlc-skills</code></h4>
+            <p>Central library of AI prompts and skills. Every assistant pulls from here. Semver-tagged with built-in tests.</p>
+          </article>
+          <article class="shared-repo">
+            <h4><code>ai-sdlc-hub</code></h4>
+            <p>Single onboarding site. SOPs, plugin docs, role guides. One URL anyone in the team lands on.</p>
+          </article>
+        </div>
+
+        <p class="caveat">Six repos total. Two of the assistants (Quality &amp; Delivery, Production Monitoring) live in one shared <code>ai-sdlc-devops-plugin</code> repo. The other three each have their own. <strong>Repo names are proposals</strong> — change them in the closing session.</p>
       </div>
     </section>
 
@@ -241,6 +259,99 @@
             <p>Production Monitoring Assistant on every active project. Weekly reports automated. The full process is live.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- THE COMPLETE PICTURE -->
+    <section class="band" id="complete">
+      <div class="container">
+        <p class="kicker kicker--dark">06 · The complete picture</p>
+        <h2>Every stage. Every role. Every gate.</h2>
+        <p class="sub">The full AI-SDLC laid out in sequence. Read this once to see how a project moves from a first conversation to a live, monitored application.</p>
+
+        <div class="full-flow">
+          <article class="flow-step">
+            <span class="flow-step__n">01</span>
+            <div class="flow-step__main">
+              <h3>Intent &amp; Charter</h3>
+              <p class="flow-step__meta"><strong>AM + PB</strong> · using the <em>Client Conversation Assistant</em></p>
+              <p>Capture the client's real intent. Map stakeholders. Agree the Charter — scope, success criteria, team, escalation.</p>
+            </div>
+            <p class="flow-step__gate">Gate · Signed Charter</p>
+          </article>
+
+          <article class="flow-step">
+            <span class="flow-step__n">02</span>
+            <div class="flow-step__main">
+              <h3>Solutioning</h3>
+              <p class="flow-step__meta"><strong>PB</strong> · using the <em>Client Conversation Assistant</em></p>
+              <p>Draft functional requirements, user roles, process workflows, data model, wireframes. Mock-ups signed off by client.</p>
+            </div>
+            <p class="flow-step__gate">Gate · Client signs the mock-up</p>
+          </article>
+
+          <article class="flow-step">
+            <span class="flow-step__n">03</span>
+            <div class="flow-step__main">
+              <h3>Tech Spec &amp; sign-off</h3>
+              <p class="flow-step__meta"><strong>PB drafts · Architect signs</strong> · using the <em>Architecture Assistant</em></p>
+              <p>Tech Spec assembled. Architecture validated against reference patterns. Sign-off captured as a signed git tag.</p>
+            </div>
+            <p class="flow-step__gate">Gate · Tech Spec signed · ready for the first AI prompt</p>
+          </article>
+
+          <article class="flow-step flow-step--build">
+            <span class="flow-step__n">04</span>
+            <div class="flow-step__main">
+              <h3>Build &amp; QA loop</h3>
+              <p class="flow-step__meta"><strong>Engineering + PB</strong> · using the <em>Code Building Assistant</em></p>
+              <p>Four AI personas inside one repo: Dev writes code (strictly to docs), QA writes tests first, BA maintains documentation, Reviewer checks PRs. Auto-deploys per branch.</p>
+            </div>
+            <p class="flow-step__gate">Gate · CI green · review approved · merge to <code>development</code></p>
+          </article>
+
+          <article class="flow-step">
+            <span class="flow-step__n">05</span>
+            <div class="flow-step__main">
+              <h3>Client UAT</h3>
+              <p class="flow-step__meta"><strong>AM + Client</strong> · UAT environment auto-provisioned</p>
+              <p>Client validates the built product against the original intent. Often optional on small projects — staging can serve as the preview.</p>
+            </div>
+            <p class="flow-step__gate">Gate · UAT signed · all critical issues resolved</p>
+          </article>
+
+          <article class="flow-step flow-step--ours">
+            <span class="flow-step__n">06</span>
+            <div class="flow-step__main">
+              <h3>Pre-go-live checks</h3>
+              <p class="flow-step__meta"><strong>DevOps + Security</strong> · using the <em>Quality &amp; Delivery Assistant</em></p>
+              <p>Security scans, penetration test, load test, performance baseline, end-to-end test finalisation. All auto-generated. SLOs confirmed.</p>
+            </div>
+            <p class="flow-step__gate">Gate · Every check green · Release Readiness Report signed</p>
+          </article>
+
+          <article class="flow-step flow-step--ours">
+            <span class="flow-step__n">07</span>
+            <div class="flow-step__main">
+              <h3>Go-Live</h3>
+              <p class="flow-step__meta"><strong>DevOps + AM</strong> · using the <em>Quality &amp; Delivery Assistant</em></p>
+              <p>Production deploys. Post-deploy monitoring tightens for the first 30 minutes. Public users only after the gate passes.</p>
+            </div>
+            <p class="flow-step__gate">Gate · Stable on production for 30 min · rollback rehearsed</p>
+          </article>
+
+          <article class="flow-step flow-step--ours">
+            <span class="flow-step__n">08</span>
+            <div class="flow-step__main">
+              <h3>Run forever</h3>
+              <p class="flow-step__meta"><strong>DevOps</strong> · using the <em>Production Monitoring Assistant</em></p>
+              <p>Weekly health monitoring. CPU should stay under 50%. 3-tier alert escalation — third alert is critical and triggers auto scale. Weekly + monthly reports to project owners.</p>
+            </div>
+            <p class="flow-step__gate">Ongoing · feeds learnings back to KM for the next intent</p>
+          </article>
+        </div>
+
+        <p class="caveat">All eight stages happen on every project. Their <em>depth</em> changes with project size — a 5-day mGrant fit-gap moves through them faster than a 4-week greenfield. The gates never get skipped.</p>
       </div>
     </section>
 
