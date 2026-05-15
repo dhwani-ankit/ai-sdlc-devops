@@ -1121,13 +1121,20 @@ ol.qs li:last-child { border-bottom: none; }
 ol.qs li::marker { font-weight: 700; color: var(--orange); }
 ol.qs strong { color: var(--ink); }
 
+/* Override colours when ol.qs lives inside a dark band */
+.band--dark ol.qs { color: var(--ink-on-dark); }
+.band--dark ol.qs li { border-bottom-color: rgba(255,255,255,0.12); }
+.band--dark ol.qs strong { color: #fff; }
+
 .lock {
   margin: 40px 0 0 !important;
   font-size: clamp(28px, 3.4vw, 42px) !important;
   font-weight: 800 !important;
-  color: var(--ink) !important;
+  color: var(--ink);
   letter-spacing: -0.02em;
 }
+.band--dark .lock,
+.lock.light { color: var(--ink-on-dark) !important; }
 
 /* ── Footer ────────────────────────────────────────── */
 .foot {
